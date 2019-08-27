@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dmatek.zgb.db.warn.dao.LowPowerDao">
+	<sql id="selectProperty">
+		UUID uuid,TAGID tagId,TAGNAME tagName,TAGNO tagNo,COMPANYNO companyNo,
+		COMPANYNAME companyName,JOBTYPENO jobTypeNo,JOBTYPENAME jobTypeName,
+		REFERID referId,REFERNAME referName,REGIONID regionId,REGIONNAME regionName,
+		GROUPID groupId,GROUPNAME groupName,
+		MINLOWBATTERY minLowBattery,
+		CURBATTERY curBattery,
+		CREATETIME createTime,HANDLE isHandle,
+		HANDLETIME handleTime,CLEAR isClear,CLEARTIME clearTime 
+	</sql>
+	<sql id="insertProperty">
+		(UUID,TAGID,TAGNAME,TAGNO,COMPANYNO,
+		COMPANYNAME,JOBTYPENO,JOBTYPENAME,REFERID,REFERNAME,
+		REGIONID,REGIONNAME,GROUPID,GROUPNAME,
+		MINLOWBATTERY,CURBATTERY,
+		CREATETIME,HANDLE,HANDLETIME,CLEAR,CLEARTIME)
+	</sql>
+	<sql id="insertValues">
+		(#{lowPowerWarn.uuid},#{lowPowerWarn.tagId},
+		#{lowPowerWarn.tagName},#{lowPowerWarn.tagNo},
+		#{lowPowerWarn.companyNo},#{lowPowerWarn.companyName},
+		#{lowPowerWarn.jobTypeNo},#{lowPowerWarn.jobTypeName},
+		#{lowPowerWarn.referId},#{lowPowerWarn.referName},
+		#{lowPowerWarn.regionId},#{lowPowerWarn.regionName},
+		#{lowPowerWarn.groupId},#{lowPowerWarn.groupName},
+		#{lowPowerWarn.minLowBattery},#{lowPowerWarn.curBattery},
+		#{lowPowerWarn.createTime},#{lowPowerWarn.isHandle},
+		#{lowPowerWarn.handleTime},#{lowPowerWarn.isClear},
+		#{lowPowerWarn.clearTime})
+	</sql>
+	<!-- 添加低电量 -->
+	<insert id="addLowPower" parameterType="com.dmatek.zgb.warn.bean.LowPowerWarn">
+		INSERT INTO LOWPOWER
+		<include refid="insertProperty"></include>
+		VALUES
+		<include refid="insertValues"></include>
+	</insert>
+	<!-- 删除低电量 -->
+	<delete id="deleteLowPower" parameterType="java.lang.String">
+		DELETE FROM LOWPOWER WHERE UUID = #{uuid}
+	</delete>
+	<!-- 根据uuid查找 -->
+	<select id="findOne" resultType="com.dmatek.zgb.warn.bean.LowPowerWarn">
+		SELECT <include refid="selectProperty"></include>
+		FROM LOWPOWER WHERE UUID=#{uuid}
+	</select>
+	<!-- 查找所有 -->
+	<select id="findAll" resultType="com.dmatek.zgb.warn.bean.LowPowerWarn">
+		SELECT <include refid="selectProperty"></include>
+		FROM LOWPOWER
+	</select>
+	
+	<select id="findWarnCardReportInfo" resultType="com.dmatek.zgb.report.warn.bean.WarnTypeCardReportInfo">
+		select 
+		(SELECT COUNT(*) FROM LOWPOWER WHERE DATEDIFF(NOW(),CREATETIME) &lt; #{peroid}) 
+		AS totalNumber, 
+		(SELECT COUNT(*) FROM LOWPOWER WHERE (HANDLE = 1 AND DATEDIFF(NOW(),CREATETIME) &lt; #{peroid})) 
+		AS handleNumber,
+		(SELECT COUNT(*) FROM LOWPOWER WHERE (HANDLE = 0 AND DATEDIFF(NOW(),CREATETIME) &lt; #{peroid})) 
+		AS notHandleNumber
+	</select>
+	<!-- 查组别警告卡片上报讯息 -->
+	<select id="findGroupsWarnCardReportInfo" resultType="com.dmatek.zgb.report.warn.bean.GroupCardReportWarnInfo">
+		SELECT 
+		g.GROUP_ID groupId,g.GROUP_NAME groupName,
+		(SELECT COUNT(*) FROM groups gl INNER JOIN LOWPOWER p on gl.GROUP_ID=p.GROUPID where gl.GROUP_ID=g.GROUP_ID AND DATEDIFF(NOW(),p.CREATETIME) &lt; #{peroid}) 
+			AS totalNumber,
+		(SELECT COUNT(*) FROM groups gl INNER JOIN LOWPOWER p on gl.GROUP_ID=p.GROUPID where gl.GROUP_ID=g.GROUP_ID AND p.HANDLE = 1 AND DATEDIFF(NOW(),p.CREATETIME) &lt; #{peroid})
+			AS handleNumber,
+		(SELECT COUNT(*) FROM groups gl INNER JOIN LOWPOWER p on gl.GROUP_ID=p.GROUPID where gl.GROUP_ID=g.GROUP_ID AND p.HANDLE = 0 AND DATEDIFF(NOW(),p.CREATETIME) &lt; #{peroid}) 
+			AS notHandleNumber 
+		FROM groups g 
+	</select>
+	<!-- 清除低电量警告 -->
+	<delete id="clearLowPowers">
+		DELETE FROM LOWPOWER WHERE DATEDIFF(NOW(),CREATETIME) > #{days}
+	</delete>
+</mapper>

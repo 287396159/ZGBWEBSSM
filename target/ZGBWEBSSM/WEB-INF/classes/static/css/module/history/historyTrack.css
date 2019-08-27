@@ -1,0 +1,166 @@
+/*============
+ * 历史轨迹
+ * ===========*/
+#historyContent>li{
+	height: 98.5% !important;
+}
+#historyContent .layui-show{
+	color: #333 !important;
+	padding: 10px;
+}
+#historyContent .layui-show span{
+	color: red;
+	font-weight: bold;
+}
+div.historySheet{
+	width: 99.5%;
+	margin: auto;
+	overflow-y: auto;
+}
+div.historySheet .layui-table{
+	margin: 5px 0;
+}
+div.trackMapDiv{
+	border: 2px solid #999999;
+	border-radius: 2px;
+	width: 904px;
+	margin: 0 auto 2px;
+}
+div.trackView{
+	display: block;
+	text-align: left;
+}
+div.trackView h3{
+	color: #009688;
+	font-weight: bold;
+	padding: 5px 10px 0;
+	font-size: 15px;
+}
+div.timeQuantum{
+	padding-left: 11px;
+}
+div.trackView input.layui-input{
+	height: 30px;
+	width: 230px;
+}
+div.trackView .layui-form-select{
+	margin-left: 10px;
+}
+div.timeQuantum p{
+	margin-bottom: 2px;
+}
+div.timeQuantum p.endTime{
+	margin-top: 5px;
+}
+div.trackView div.search{
+	padding-top: 5px;
+	text-align: center;
+}
+div.trackView div.search input{
+	font-size: 14px;
+}
+div.trackView div.search input[type="text"]{
+	width: 230px;
+}
+div.trackView div.search input[type="button"]{
+	width: 80px;
+}
+ul.historyContent li{
+	padding: 0;
+}
+div.trackMap{
+	width: 900px;
+	position: relative;
+}
+div.trackMap img{
+	width: 900px;
+}
+P.underwayTAG{
+	padding:0 20px;
+}
+P.underwayTAG span{
+	float: left;
+	display: inline-block;
+	color: white;
+	height: 40px;
+	line-height: 40px;
+}
+.color33E0FF{
+	color: #33E0FF !important;
+}
+ul#trackViewMethods li{
+	background: #D6D6D6;
+}
+select.selectSearchTAG{
+	color: #333;
+	display: block;
+	height: 25px;
+	width: 230px;
+	margin: 5px auto;
+}
+#searchTAG input,
+.layui-btn-fluid{
+	width: 230px;
+	margin-left: 10px;
+}
+.layui-btn-fluid{
+	margin-top: 5px;
+}
+div.playBtn{
+	text-align: center;
+	margin-top: 10px;
+}
+div.playBtn button i {
+	font-size: 20px !important;
+}
+div.playBtn button i.icon-kuaijin {
+	position: relative;
+	top: -1px;
+}
+div.search button{
+	margin-top: 5px;
+	width: 230px;
+}
+#historySheetBox div{
+	position: relative;
+	left: 435px;
+}
+#trackPlayRegionTitle{
+	margin-left: 240px;
+	margin-right: 20px;
+}
+#trackPlayStartTitle{
+	margin-left: 20px;
+	margin-right: 5px;
+}
+#trackPlayEndTitle{
+	margin-left: 2px;
+}
+#regionSwitch{
+	height: 100% !important;
+}
+#regionSwitch img{
+	width: 925px;
+}
+#regionSwitch div.layui-this{
+	overflow-y: auto;
+}
+div.pNode,ul.taglist {
+	position: absolute;
+}
+div.pNode span:last-child{
+	float: left;
+    line-height: 20px;
+    height: 20px;
+    display: inline-block;
+    margin-top: -1px;
+    margin-right: 5px;
+}
+#regionSwitch li[tagId]{
+	height: 22px;
+	line-height: 22px;
+}
+#regionSwitch li[tagId] i{
+	font-size: 21px;
+	float: left;
+}

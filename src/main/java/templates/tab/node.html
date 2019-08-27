@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="utf-8" />
+		<title>ZGBWEB</title>
+		<link rel="stylesheet" type="text/css" th:href="@{/css/lib/reset.css}" href="css/lib/Reset.css"/>
+		<link rel="stylesheet" type="text/css" th:href="@{/css/lib/iconfont.css}" href="css/lib/iconfont.css"/>
+		<link rel="stylesheet" type="text/css" th:href="@{/layui/css/layui.css}" href="js/lib/layui/css/layui.css"/>
+		<link rel="stylesheet" type="text/css" th:href="@{/css/module/index.css}" href="css/index.css"/>
+		<script th:src="@{/js/lib/jquery-3.1.0.min.js}" src="js/lib/jquery-3.1.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script th:src="@{/layui/layui.js}" src="js/lib/layui/layui.js" type="text/javascript" charset="utf-8"></script>
+		<script th:src="@{/js/module/setting/node.js}" src="js/functions.js" type="text/javascript" charset="utf-8"></script>
+	
+	</head>
+	<body>
+	<div class="layui-tab layui-tab-brief" lay-filter="nodeNav">
+		<ul class="layui-tab-title">
+			<li class="layui-this">地圖模式</li>
+			<li>列表模式</li>
+		</ul>
+		<div class="layui-tab-content">
+			<div id="nodeSelectRegionBox">
+				<form class="layui-form" action="" id="nodeSelectRegionForm">
+					<div class="layui-form-item">
+						<label class="layui-form-label">選擇組別: </label>
+						<div class="layui-input-inline">
+							<select name="group" lay-verify="required"
+								lay-filter="nodeGroupSelectFilter" id="nodeGroupSelect">
+								<option value="0">北京</option>
+							</select>
+						</div>
+						<label class="layui-form-label">選擇區域: </label>
+						<div class="layui-input-inline">
+							<select name="region" lay-verify="required"
+								lay-filter="nodeRegionSelectFilter" id="nodeRegionSelect">
+								<option value="0">北京</option>
+							</select>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div id="nodeContentBox">
+				<!-- 顯示地圖 -->
+				<div class="map noselect" id="eNodeBMapDiv">
+					<div id="eNodeBMap">
+						<img th:src="@{/image/df98515e-5628-471a-befd-0dea29cebc10.jpg}"
+							src="" />
+					</div>
+				</div>
+				<!-- 顯示列表 -->
+				<div id="eNodeBTableDiv">
+					<table id="demo" lay-filter="eNodeBTable"></table>
+					<script type="text/html" id="eNodeBTableTool">
+  						<a class="layui-btn layui-btn-xs" lay-event="edit">編輯</a>
+  						<a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">刪除</a>
+					</script>
+				</div>
+				<!-- 基站編輯框 -->
+				<form class="layui-form" action="" id="nodeEditForm">
+				  <div class="layui-form-item">
+				    <label class="layui-form-label">設備ID:</label>
+				    <div class="layui-input-block">
+				      <input type="text" name="id" required  lay-verify="required" placeholder="請輸入設備ID" autocomplete="off" class="layui-input">
+				    </div>
+				  </div>
+				  <div class="layui-form-item">
+				    <label class="layui-form-label">設備類型:</label>
+				    <div class="layui-input-block">
+				      <select name="type" lay-verify="required">
+				        <option value="0">參考點</option>
+				        <option value="1">數據節點</option>
+				      </select>
+				    </div>
+				  </div>
+				  <div class="layui-form-item">
+				    <label class="layui-form-label">設備名稱:</label>
+				    <div class="layui-input-block">
+				      <input type="text" name="name" required  lay-verify="required" placeholder="請輸入設備名稱" autocomplete="off" class="layui-input">
+				    </div>
+				  </div>
+				  <div class="layui-form-item">
+				    <div class="layui-input-block">
+				      <button class="layui-btn" lay-submit lay-filter="nodeEditFilter">提交</button>
+				      <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+				    </div>
+				  </div>
+				</form>
+				
+			</div>
+		</div>
+	</div>
+</body>
+	<script type="text/javascript">
+		nodeInit();
+	</script>
+</html>

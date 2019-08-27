@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dmatek.zgb.db.permission.dao.PermissionDao">
+	<cache-ref namespace="com.dmatek.zgb.db.permission.dao.RoleDao"/>
+	<!-- 插入属性 -->
+	<sql id="insertAttr">
+		(PERMISSION_NAME,PERMISSION_RESOURCE,CREATETIME,CREATENAME)
+	</sql>
+	<!-- 插入值 -->
+	<sql id="insertVal">
+		(#{permission.name},#{permission.resource},NOW(),#{permission.createName})
+	</sql>
+	<!-- 插入属性 -->
+	<sql id="selectAttr">
+		PERMISSION_ID id, PERMISSION_NAME name , 
+		PERMISSION_RESOURCE resource,
+		CREATETIME createTime, CREATENAME createName,
+		UPDATETIME updateTime, UPDATENAME updateName
+	</sql>
+	<!-- 添加权限 -->
+	<insert id="addPermission" parameterType="com.dmatek.zgb.db.pojo.permission.Permission">
+	INSERT INTO PERMISSIONS <include refid="insertAttr"></include>
+	VALUES <include refid="insertVal"></include>
+	</insert>
+	<!-- 删除权限 -->
+	<delete id="deletePermission">
+	DELETE FROM PERMISSIONS WHERE PERMISSION_ID IN 
+	<include refid="com.dmatek.zgb.db.setting.dao.GroupDao.batchIds"></include>
+	</delete>
+	<!-- 查找所有的权限讯息 -->
+	<select id="findAll" resultType="com.dmatek.zgb.db.pojo.permission.Permission">
+	SELECT <include refid="selectAttr"></include> FROM PERMISSIONS 
+	</select>
+	<!-- 查找所有的權限名稱 -->
+	<select id="findName" resultType="com.dmatek.zgb.db.pojo.permission.Permission">
+	SELECT <include refid="selectAttr"></include> FROM PERMISSIONS 
+	WHERE PERMISSION_NAME=#{name}
+	</select>
+	<!-- 查找所有的權限名稱 -->
+	<select id="findOne" resultType="com.dmatek.zgb.db.pojo.permission.Permission">
+	SELECT <include refid="selectAttr"></include> FROM PERMISSIONS 
+	WHERE PERMISSION_ID=#{id}
+	</select>
+</mapper>

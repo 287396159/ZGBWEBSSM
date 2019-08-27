@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dmatek.zgb.db.log.dao.OperationLogDao">
+	<cache></cache>
+	<sql id="insertAttr">
+		(USERNAME,DES,IP,ARGS,LOGTIME)
+	</sql>
+	<sql id="insertValue">
+		(#{log.userName},#{log.des},#{log.ip},#{log.args},NOW())
+	</sql>
+	<sql id="selectAttr">
+		USERNAME userName, DES des, IP ip, ARGS args, LOGTIME logTime
+	</sql>
+	<!-- 插入操作记录 -->
+	<insert id="addOperationLog" parameterType="com.dmatek.zgb.log.bean.OperationLog">
+		INSERT INTO LOGS <include refid="insertAttr"></include> 
+		VALUES<include refid="insertValue"></include>
+	</insert>
+	<!-- 查詢所有記錄 -->
+	<select id="findAllLogs" resultType="com.dmatek.zgb.log.bean.OperationLog">
+		SELECT <include refid="selectAttr"></include> 
+		FROM LOGS ORDER BY logTime
+	</select>
+	<!-- 清除操作日誌資料 -->
+	<delete id="clearLogs">
+		DELETE FROM LOGS WHERE DATEDIFF(NOW(),LOGTIME) > #{days}
+	</delete>
+</mapper>

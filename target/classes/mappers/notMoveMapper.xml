@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dmatek.zgb.db.warn.dao.NotMoveDao">
+	<sql id="selectProperty">
+		UUID uuid,TAGID tagId,TAGNAME tagName,TAGNO tagNo,COMPANYNO companyNo,
+		COMPANYNAME companyName,JOBTYPENO jobTypeNo,JOBTYPENAME jobTypeName,
+		REFERID referId,REFERNAME referName,REGIONID regionId,REGIONNAME regionName,
+		GROUPID groupId,GROUPNAME groupName,
+		FIXEDNOTMOVETIME fixedNotMoveTime,CURNOTMOVETIME curNotMoveTime,
+		CREATETIME createTime,HANDLE isHandle,
+		HANDLETIME handleTime,CLEAR isClear,CLEARTIME clearTime 
+	</sql>
+	<sql id="insertProperty">
+		(UUID,TAGID,TAGNAME,TAGNO,COMPANYNO,
+		COMPANYNAME,JOBTYPENO,JOBTYPENAME,REFERID,REFERNAME,
+		REGIONID,REGIONNAME,GROUPID,GROUPNAME,
+		FIXEDNOTMOVETIME,CURNOTMOVETIME,
+		CREATETIME,HANDLE,HANDLETIME,CLEAR,CLEARTIME)
+	</sql>
+	<sql id="insertValues">
+		(#{notMoveWarn.uuid},#{notMoveWarn.tagId},
+		#{notMoveWarn.tagName},#{notMoveWarn.tagNo},
+		#{notMoveWarn.companyNo},#{notMoveWarn.companyName},
+		#{notMoveWarn.jobTypeNo},#{notMoveWarn.jobTypeName},
+		#{notMoveWarn.referId},#{notMoveWarn.referName},
+		#{notMoveWarn.regionId},#{notMoveWarn.regionName},
+		#{notMoveWarn.groupId},#{notMoveWarn.groupName},
+		#{notMoveWarn.fixedNotMoveTime},#{notMoveWarn.curNotMoveTime},
+		#{notMoveWarn.createTime},#{notMoveWarn.isHandle},
+		#{notMoveWarn.handleTime},#{notMoveWarn.isClear},
+		#{notMoveWarn.clearTime})
+	</sql>
+	<insert id="addNotMove" parameterType="com.dmatek.zgb.warn.bean.NotMoveWarn">
+		INSERT INTO NOTMOVE <include refid="insertProperty"></include> 
+		VALUES <include refid="insertValues"></include>
+	</insert>
+	<delete id="deleteNotMove" parameterType="java.lang.String">
+		DELETE FROM NOTMOVE WHERE UUID=#{uuid}
+	</delete>
+	<select id="findOne" resultType="com.dmatek.zgb.warn.bean.NotMoveWarn">
+		SELECT <include refid="selectProperty"></include> 
+		FROM NOTMOVE 
+		WHERE UUID=#{uuid}
+	</select>
+	<select id="findAll" resultType="com.dmatek.zgb.warn.bean.NotMoveWarn">
+		SELECT <include refid="selectProperty"></include> 
+		FROM NOTMOVE 
+	</select>
+	
+	<select id="findWarnCardReportInfo" resultType="com.dmatek.zgb.report.warn.bean.WarnTypeCardReportInfo">
+		select 
+		(SELECT COUNT(*) FROM NOTMOVE WHERE DATEDIFF(NOW(),CREATETIME) &lt; #{peroid}) 
+		AS totalNumber, 
+		(SELECT COUNT(*) FROM NOTMOVE WHERE (HANDLE = 1 AND DATEDIFF(NOW(),CREATETIME) &lt; #{peroid})) 
+		AS handleNumber,
+		(SELECT COUNT(*) FROM NOTMOVE WHERE (HANDLE = 0 AND DATEDIFF(NOW(),CREATETIME) &lt; #{peroid})) 
+		AS notHandleNumber
+	</select>
+	<!-- 查组别警告卡片上报讯息 -->
+	<select id="findGroupsWarnCardReportInfo" resultType="com.dmatek.zgb.report.warn.bean.GroupCardReportWarnInfo">
+		SELECT 
+		g.GROUP_ID groupId,g.GROUP_NAME groupName,
+		(SELECT COUNT(*) FROM groups gl INNER JOIN NOTMOVE p on gl.GROUP_ID=p.GROUPID where gl.GROUP_ID=g.GROUP_ID AND DATEDIFF(NOW(),p.CREATETIME) &lt; #{peroid}) 
+			AS totalNumber,
+		(SELECT COUNT(*) FROM groups gl INNER JOIN NOTMOVE p on gl.GROUP_ID=p.GROUPID where gl.GROUP_ID=g.GROUP_ID AND p.HANDLE = 1 AND DATEDIFF(NOW(),p.CREATETIME) &lt; #{peroid})
+			AS handleNumber,
+		(SELECT COUNT(*) FROM groups gl INNER JOIN NOTMOVE p on gl.GROUP_ID=p.GROUPID where gl.GROUP_ID=g.GROUP_ID AND p.HANDLE = 0 AND DATEDIFF(NOW(),p.CREATETIME) &lt; #{peroid}) 
+			AS notHandleNumber 
+		FROM groups g 
+	</select>
+	<!-- 清除未移动警报 -->
+	<delete id="clearNotMoves">
+		DELETE FROM NOTMOVE WHERE DATEDIFF(NOW(),CREATETIME) > #{days}
+	</delete>
+</mapper>

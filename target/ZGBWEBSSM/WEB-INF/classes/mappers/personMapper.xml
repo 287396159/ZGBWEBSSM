@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dmatek.zgb.db.person.dao.PersonDao">
+	<!-- 此时不产生PersonDao的缓存 -->
+	<cache-ref namespace="com.dmatek.zgb.db.setting.dao.GroupDao"/>
+	<!-- 批量刪除sql片段 -->
+	<sql id="batchDeletes">
+		<foreach collection="serials" open="(" close=")" separator="," item="serial">
+			#{serial}
+		</foreach>
+	</sql>
+	<!-- 插入的屬性 -->
+	<sql id="insertAttr">
+		(PERSON_NO,PERSON_NAME,PERSON_TAGNO,BIRTHDAY,IMAGE,COMPANY_NO,GROUP_ID,JOBTYPE_NO,BLOOMTYPE,RESTIME,STOPTIME,DES,CREATETIME,CREATENAME)
+	</sql>
+	<!-- 插入的值 -->
+	<sql id="insertVal">
+		(#{person.no}, #{person.name}, #{person.tagId},#{person.birthDay}, #{person.imgPath},#{person.company_No},#{person.group_id},
+		#{person.jobType_No},#{person.bloodType},#{person.resTime},#{person.stopTime},#{person.des},NOW(),#{person.createName})
+	</sql>
+	<!-- 更新值 -->
+	<sql id="updateVal">
+		PERSON_NO=#{person.no},
+		PERSON_NAME=#{person.name},
+		PERSON_TAGNO=#{person.tagId},
+		<!-- 判断工地ID是否存在 -->
+		<if test="person.group_id >= 0">
+			GROUP_ID=#{person.group_id},
+		</if>
+		BIRTHDAY=#{person.birthDay},
+		IMAGE=#{person.imgPath},COMPANY_NO=#{person.company_No},
+		JOBTYPE_NO=#{person.jobType_No},RESTIME=#{person.resTime},
+		BLOOMTYPE=#{person.bloodType},STOPTIME=#{person.stopTime},
+		DES=#{person.des},UPDATETIME=NOW(),
+		UPDATENAME=#{person.updateName} 
+	</sql>
+	<sql id="selectRelate">
+		p.SERIAL_NUMBER serialNumber, 
+		p.PERSON_NO no,
+		p.PERSON_NAME name,p.PERSON_TAGNO tagId,
+		p.BIRTHDAY birthDay,p.IMAGE imgPath,
+		p.COMPANY_NO company_No,c.COMPANY_NAME company_Name,
+		p.JOBTYPE_NO jobType_No,j.JOBTYPE_NAME jobType_Name,
+		p.BLOOMTYPE bloodType,
+		p.GROUP_ID group_id, g.GROUP_NAME group_Name,
+		p.RESTIME resTime,p.STOPTIME stopTime,p.DES des,
+		p.CREATETIME createTime, p.CREATENAME createName,
+		p.UPDATETIME updateTime, p.UPDATENAME updateName  
+	</sql>
+	<!-- 添加人员讯息 -->
+	<insert id="addPerson" parameterType="com.dmatek.zgb.db.pojo.person.Person" flushCache="true">
+		INSERT INTO PERSONS <include refid="insertAttr"></include> 
+		VALUES <include refid="insertVal"></include>
+	</insert>
+	<!-- 批量删除 -->
+	<delete id="deletePersons">
+		DELETE FROM PERSONS WHERE SERIAL_NUMBER IN 
+		<include refid="batchDeletes"></include>
+	</delete>
+	<!-- 更新人员讯息 -->
+	<update id="updatePerson" parameterType="com.dmatek.zgb.db.pojo.person.Person">
+		UPDATE PERSONS SET <include refid="updateVal"></include> 
+		WHERE SERIAL_NUMBER=#{person.serialNumber}
+	</update>
+	<!-- 根据人员编号查找人员 -->
+	<select id="findOneFromNo" resultType="com.dmatek.zgb.db.pojo.person.Person">
+		SELECT <include refid="selectRelate"></include> 
+		FROM PERSONS p 
+		LEFT JOIN COMPANYS c on p.COMPANY_NO = c.COMPANY_NO 
+		LEFT JOIN JOBTYPES j on p.JOBTYPE_NO = j.JOBTYPE_NO 
+		LEFT JOIN GROUPS g on p.GROUP_ID = g.GROUP_ID 
+		WHERE PERSON_NO=#{no} 
+	</select>
+	<!-- 根据序列号查询人员讯息 -->
+	<select id="findOneFromSerialNumber" resultType="com.dmatek.zgb.db.pojo.person.Person">
+		SELECT <include refid="selectRelate"></include> 
+		FROM PERSONS p 
+		LEFT JOIN COMPANYS c on p.COMPANY_NO = c.COMPANY_NO 
+		LEFT JOIN JOBTYPES j on p.JOBTYPE_NO = j.JOBTYPE_NO 
+		LEFT JOIN GROUPS g on p.GROUP_ID = g.GROUP_ID 
+		WHERE SERIAL_NUMBER=#{serialNumber} 
+	</select>
+	<!-- 查找公司人員 -->
+	<select id="findCompany" resultType="com.dmatek.zgb.db.pojo.person.Person">
+		SELECT <include refid="selectRelate"></include> 
+		FROM PERSONS  p 
+		LEFT JOIN COMPANYS c on p.COMPANY_NO = c.COMPANY_NO 
+		LEFT JOIN JOBTYPES j on p.JOBTYPE_NO = j.JOBTYPE_NO 
+		LEFT JOIN GROUPS g on p.GROUP_ID = g.GROUP_ID 
+		WHERE company_No=#{companyNo}
+	</select>
+	<!-- 根据人员姓名查找人员讯息 -->
+	<select id="findOneFromName" resultType="com.dmatek.zgb.db.pojo.person.Person">
+		SELECT <include refid="selectRelate"></include> 
+		FROM PERSONS  p 
+		LEFT JOIN COMPANYS c on p.COMPANY_NO = c.COMPANY_NO 
+		LEFT JOIN JOBTYPES j on p.JOBTYPE_NO = j.JOBTYPE_NO 
+		LEFT JOIN GROUPS g on p.GROUP_ID = g.GROUP_ID 
+		WHERE PERSON_NAME=#{name}
+	</select>
+	<!-- 根据卡片ID查找人员信息 -->
+	<select id="findOneFromTagId" resultType="com.dmatek.zgb.db.pojo.person.Person">
+		SELECT <include refid="selectRelate"></include> 
+		FROM PERSONS  p 
+		LEFT JOIN COMPANYS c on p.COMPANY_NO = c.COMPANY_NO 
+		LEFT JOIN JOBTYPES j on p.JOBTYPE_NO = j.JOBTYPE_NO 
+		LEFT JOIN GROUPS g on p.GROUP_ID = g.GROUP_ID  WHERE PERSON_TAGNO=#{tagId}
+	</select>
+	<!-- 根据图片名称查找人员 -->
+	<select id="findImageName" resultType="com.dmatek.zgb.db.pojo.person.Person">
+		SELECT <include refid="selectRelate"></include> FROM PERSONS p 
+		LEFT JOIN COMPANYS c on p.COMPANY_NO = c.COMPANY_NO 
+		LEFT JOIN JOBTYPES j on p.JOBTYPE_NO = j.JOBTYPE_NO 
+		LEFT JOIN GROUPS g on p.GROUP_ID = g.GROUP_ID 
+		WHERE IMAGE=#{imgName} 
+	</select>
+	<!-- 查找所有的人员信息 -->
+	<select id="findAll" resultType="com.dmatek.zgb.db.pojo.person.Person">
+		SELECT <include refid="selectRelate"></include> 
+		FROM PERSONS p 
+		LEFT JOIN COMPANYS c on p.COMPANY_NO = c.COMPANY_NO 
+		LEFT JOIN JOBTYPES j on p.JOBTYPE_NO = j.JOBTYPE_NO 
+		LEFT JOIN GROUPS g on p.GROUP_ID = g.GROUP_ID 
+	</select>
+	<select id="findPage" resultType="com.dmatek.zgb.db.pojo.person.Person">
+		SELECT <include refid="selectRelate"></include> 
+		FROM PERSONS p 
+		LEFT JOIN COMPANYS c on p.COMPANY_NO = c.COMPANY_NO 
+		LEFT JOIN JOBTYPES j on p.JOBTYPE_NO = j.JOBTYPE_NO 
+		LEFT JOIN GROUPS g on p.GROUP_ID = g.GROUP_ID 
+		ORDER BY PERSON_NO LIMIT #{page},#{limit}
+	</select>
+	<!-- 根据键值查找人员记录 -->
+	<select id="findPageKeyName" resultType="com.dmatek.zgb.db.pojo.person.Person">
+		SELECT <include refid="selectRelate"></include> FROM PERSONS p 
+		LEFT JOIN COMPANYS c on p.COMPANY_NO = c.COMPANY_NO 
+		LEFT JOIN JOBTYPES j on p.JOBTYPE_NO = j.JOBTYPE_NO 
+		LEFT JOIN GROUPS g on p.GROUP_ID = g.GROUP_ID 
+		WHERE (p.PERSON_NO LIKE CONCAT('%',#{name},'%') OR 
+			   p.PERSON_TAGNO LIKE CONCAT('%',#{name},'%') OR
+			   c.COMPANY_NAME LIKE CONCAT('%',#{name},'%') OR
+			   j.JOBTYPE_NAME LIKE CONCAT('%',#{name},'%') OR
+			   p.PERSON_NAME LIKE CONCAT('%',#{name},'%') OR
+			   g.GROUP_NAME LIKE CONCAT('%',#{name},'%'))
+		ORDER BY PERSON_NO LIMIT #{page},#{limit}
+	</select>
+</mapper>

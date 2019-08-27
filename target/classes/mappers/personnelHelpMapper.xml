@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dmatek.zgb.db.warn.dao.PersonnelHelpDao">
+	<cache></cache>
+	<sql id="selectProperty">
+		UUID uuid,TAGID tagId,TAGNAME tagName,TAGNO tagNo,COMPANYNO companyNo,
+		COMPANYNAME companyName,JOBTYPENO jobTypeNo,JOBTYPENAME jobTypeName,
+		REFERID referId,REFERNAME referName,REGIONID regionId,REGIONNAME regionName,
+		GROUPID groupId,GROUPNAME groupName,CREATETIME createTime,HANDLE isHandle,
+		HANDLETIME handleTime,CLEAR isClear,CLEARTIME clearTime 
+	</sql>
+	<sql id="insertProperty">
+		(UUID,TAGID,TAGNAME,TAGNO,COMPANYNO,
+		COMPANYNAME,JOBTYPENO,JOBTYPENAME,REFERID,REFERNAME,
+		REGIONID,REGIONNAME,GROUPID,GROUPNAME,CREATETIME,
+		HANDLE,HANDLETIME,CLEAR,CLEARTIME)
+	</sql>
+	<sql id="insertValues">
+		(#{personHelpWarn.uuid},#{personHelpWarn.tagId},
+		#{personHelpWarn.tagName},#{personHelpWarn.tagNo},
+		#{personHelpWarn.companyNo},#{personHelpWarn.companyName},
+		#{personHelpWarn.jobTypeNo},#{personHelpWarn.jobTypeName},
+		#{personHelpWarn.referId},#{personHelpWarn.referName},
+		#{personHelpWarn.regionId},#{personHelpWarn.regionName},
+		#{personHelpWarn.groupId},#{personHelpWarn.groupName},
+		#{personHelpWarn.createTime},#{personHelpWarn.isHandle},
+		#{personHelpWarn.handleTime},#{personHelpWarn.isClear},
+		#{personHelpWarn.clearTime})
+	</sql>
+	<!-- 添加人员求救 -->
+	<insert id="addPersonHelp" parameterType="com.dmatek.zgb.warn.bean.PersonnelHelpWarn">
+		INSERT INTO PERSONHELPS<include refid="insertProperty"></include>
+		VALUES<include refid="insertValues"></include>
+	</insert>
+	<!-- 删除人员求救 -->
+	<delete id="deletePersonHelp" parameterType="java.lang.String">
+		DELETE FROM personhelps WHERE UUID = #{uuid}
+	</delete>
+	<!-- 单次查找 -->
+	<select id="findOne" resultType="com.dmatek.zgb.warn.bean.PersonnelHelpWarn">
+		SELECT <include refid="selectProperty"></include>
+		FROM personhelps WHERE UUID=#{uuid}
+	</select>
+	<!-- 查找所有 -->
+	<select id="findAll" resultType="com.dmatek.zgb.warn.bean.PersonnelHelpWarn">
+		SELECT <include refid="selectProperty"></include>
+		FROM personhelps
+	</select>
+	<select id="findWarnCardReportInfo" resultType="com.dmatek.zgb.report.warn.bean.WarnTypeCardReportInfo">
+		select 
+		(SELECT COUNT(*) FROM personhelps WHERE DATEDIFF(NOW(),CREATETIME) &lt; #{peroid}) 
+		AS totalNumber, 
+		(SELECT COUNT(*) FROM personhelps WHERE (HANDLE = 1 AND DATEDIFF(NOW(),CREATETIME) &lt; #{peroid})) 
+		AS handleNumber,
+		(SELECT COUNT(*) FROM personhelps WHERE (HANDLE = 0 AND DATEDIFF(NOW(),CREATETIME) &lt; #{peroid})) 
+		AS notHandleNumber
+	</select>
+	<!-- 查组别警告卡片上报讯息 -->
+	<select id="findGroupsWarnCardReportInfo" resultType="com.dmatek.zgb.report.warn.bean.GroupCardReportWarnInfo">
+		SELECT 
+		g.GROUP_ID groupId,g.GROUP_NAME groupName,
+		(SELECT COUNT(*) FROM groups gl INNER JOIN personhelps p on gl.GROUP_ID=p.GROUPID where gl.GROUP_ID=g.GROUP_ID AND DATEDIFF(NOW(),p.CREATETIME) &lt; #{peroid} AND DATEDIFF(NOW(),p.CREATETIME) &lt; #{peroid}) 
+			AS totalNumber,
+		(SELECT COUNT(*) FROM groups gl INNER JOIN personhelps p on gl.GROUP_ID=p.GROUPID where gl.GROUP_ID=g.GROUP_ID AND p.HANDLE = 1 AND DATEDIFF(NOW(),p.CREATETIME)  &lt; #{peroid} AND DATEDIFF(NOW(),p.CREATETIME) &lt; #{peroid})
+			AS handleNumber,
+		(SELECT COUNT(*) FROM groups gl INNER JOIN personhelps p on gl.GROUP_ID=p.GROUPID where gl.GROUP_ID=g.GROUP_ID AND p.HANDLE = 0 AND DATEDIFF(NOW(),p.CREATETIME)  &lt; #{peroid} AND DATEDIFF(NOW(),p.CREATETIME) &lt; #{peroid}) 
+			AS notHandleNumber 
+		FROM groups g 
+	</select>
+	<!-- 刪除時間超過指定時間的所有數據 -->
+	<delete id="clearPersonHelps">
+	DELETE FROM personhelps WHERE DATEDIFF(NOW(),CREATETIME) > #{days}
+	</delete>
+</mapper>

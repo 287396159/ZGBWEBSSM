@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dmatek.zgb.db.setting.dao.GroupDao">
+	<cache></cache>
+	<sql id="batchIds">
+		<foreach collection="ids" open="(" close=")" separator=","
+			item="id">
+			#{id}
+		</foreach>
+	</sql>
+	<!-- 添加组群 -->
+	<insert id="addGroup" parameterType="com.dmatek.zgb.db.pojo.setting.Group">
+		INSERT INTO
+		GROUPS(GROUP_NAME,GROUP_DES,CREATETIME,CREATENAME)
+		VALUES(#{group.name},#{group.des},NOW(),#{group.createName}) 
+	</insert>
+	<!-- 根据ID删除组群 -->
+	<delete id="deleteGroup" parameterType="java.util.List">
+		DELETE FROM GROUPS WHERE GROUP_ID IN
+		<include refid="com.dmatek.zgb.db.setting.dao.GroupDao.batchIds">
+		</include>
+	</delete>
+	<!-- 更新组群 -->
+	<update id="updateGroup">
+		UPDATE GROUPS SET 
+		GROUP_NAME=#{group.name}, GROUP_DES=#{group.des},
+		UPDATETIME=NOW(), UPDATENAME=#{group.updateName} 
+		WHERE GROUP_ID=#{group.id} 
+	</update>
+	<!-- 根据ID查询组群讯息 -->
+	<select id="findOne" resultType="com.dmatek.zgb.db.pojo.setting.Group">
+		SELECT GROUP_ID id,GROUP_NAME
+		name,GROUP_DES des,CREATETIME createTime,CREATENAME createName,
+		UPDATETIME updateTime,UPDATENAME updateName 
+		FROM GROUPS WHERE GROUP_ID=#{id} 
+	</select>
+	<!-- 根據工地名稱查詢工地訊息 -->
+	<select id="findName" resultType="com.dmatek.zgb.db.pojo.setting.Group">
+		SELECT GROUP_ID id,GROUP_NAME
+		name,GROUP_DES des,CREATETIME createTime,CREATENAME createName,
+		UPDATETIME updateTime,UPDATENAME updateName 
+		FROM GROUPS WHERE GROUP_NAME=#{name} 
+	</select>
+	<!-- 查询所有的组群讯息 -->
+	<select id="findAll" resultType="com.dmatek.zgb.db.pojo.setting.Group">
+		SELECT GROUP_ID id,GROUP_NAME
+		name,GROUP_DES des,CREATETIME createTime,CREATENAME createName,
+		UPDATETIME updateTime,UPDATENAME updateName 
+		FROM GROUPS ORDER BY GROUP_ID 
+	</select>
+	<!-- 查询分页数据 -->
+	<select id="findPage" resultType="com.dmatek.zgb.db.pojo.setting.Group">
+		SELECT GROUP_ID id,GROUP_NAME
+		name,GROUP_DES des,CREATETIME createTime,CREATENAME createName,
+		UPDATETIME updateTime,UPDATENAME updateName 
+		FROM GROUPS ORDER BY GROUP_ID LIMIT #{page}, #{limit} 
+	</select>
+	<!-- 根据关键字查询分页数据 -->
+	<select id="findPageKeyName" resultType="com.dmatek.zgb.db.pojo.setting.Group">
+		SELECT GROUP_ID id,GROUP_NAME
+		name,GROUP_DES des,CREATETIME createTime,CREATENAME createName,
+		UPDATETIME updateTime,UPDATENAME updateName 
+		FROM GROUPS WHERE (GROUP_ID LIKE CONCAT('%',#{name},'%') OR
+			   GROUP_NAME LIKE CONCAT('%',#{name},'%') OR
+			   GROUP_DES LIKE CONCAT('%',#{name},'%'))
+		ORDER BY GROUP_ID LIMIT #{page}, #{limit} 
+	</select>
+</mapper>

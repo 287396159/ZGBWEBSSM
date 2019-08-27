@@ -1,0 +1,33 @@
+/*============
+ * 电子点名
+ * ===========*/
+ul.TAGclassify li{
+	background: #57545B;
+}
+div.rollCallOpera span,
+div.rollCallOpera p,
+div.rollCallOpera i{
+	display: inline-block;
+}
+div.rollCallOpera i{
+	margin-left: 3px;
+}
+div.rollCallOpera{
+	overflow: hidden;
+}
+div.rollCallOpera select{
+	margin-left: 20px;
+	padding-right: 5px;
+	float: left;
+}
+div.rollCallOpera>div{
+	float: left;
+	height: 25px;
+	line-height: 25px;
+}
+div.rollCallGoodsOpera{
+	display: none;
+}
+div.rollCallFormContent table{
+	display: none;
+}

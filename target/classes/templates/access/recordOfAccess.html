@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>進出記錄管理</title>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/lib/reset.css}" href="../../css/lib/Reset.css"/>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/lib/iconfont.css}" href="../../css/lib/iconfont.css"/>
+	<link rel="stylesheet" type="text/css" th:href="@{/layui/css/layui.css}" href="../../js/lib/layui/css/layui.css"/>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/module/index.css}" href="../../css/index.css"/>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/module/monitor/monitoring.css}" href="../../css/monitoring.css"/>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/module/access/recordOfAccess.css}" href="../../css/recordOfAccess.css"/>
+	<script th:src="@{/js/lib/jquery-3.1.0.min.js}" src="../../js/lib/jquery-3.1.0.min.js" type="text/javascript" charset="utf-8"></script>
+	<script th:src="@{/js/lib/functions.js}" src="../../js/functions.js" type="text/javascript" charset="utf-8"></script>
+	<script th:src="@{/layui/layui.js}" src="../../js/lib/layui/layui.js" type="text/javascript" charset="utf-8"></script>
+	<script th:src="@{/js/module/access/recordOfAccess.js}" src="../../js/recordOfAccess.js" type="text/javascript" charset="utf-8"></script>
+	<script th:src="@{/js/module/access/access-request.js}" src="../../js/access-request.js" type="text/javascript" charset="utf-8"></script>
+	<script th:src="@{/js/lib/websocket.js}" src="../../js/lib/websocket.js" type="text/javascript" charset="utf-8"></script>
+	<script th:src="@{/js/module/access/access-timer.js}" src="../../js/module/access/access-timer.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+<ul class="section">
+	<li>
+		<div class="setMgrLeft">
+			<ul class="classify TAGclassify" id="TAGclassify">
+				<li class="activeArea">工地選擇</li>
+			</ul>
+			<div class="areaClassifyDiv" id="accessClassifyDiv">
+				<div id="groupContentBox">
+					<ul class="groupClassifyDetail" id="groupClassify">
+					</ul>
+					<div id="scroll" class="scroll" onclick="ScroNow(event)">
+						<div id="bar" class="bar" onmousedown="ScroMove()"></div>
+					</div>
+				</div>
+				<h2>報警資訊</h2>
+				<ul class="alarmInfor" id="alarmMsg">
+					<li>
+						<span>人員求救</span>
+						<p>0</p>
+						<span>人</span>
+					</li>
+					<li>
+						<span>區域管制</span>
+						<p>0</p>
+						<span>人</span>
+					</li>
+					<li>
+						<span>電量不足</span>
+						<p>0</p>
+						<span>人</span>
+					</li>
+					<li>
+						<span>卡片異常</span>
+						<p>0</p>
+						<span>人</span>
+					</li>
+					<li>
+						<span>未移動警報</span>
+						<p>0</p>
+						<span>人</span>
+					</li>
+					<li>
+						<span>參考點異常</span>
+						<p>0</p>
+						<span>人</span>
+					</li>
+					<li>
+						<span>數據節點異常</span>
+						<p>0</p>
+						<span>人</span>
+					</li>
+				</ul>
+				<h2>區域人數</h2>
+				<ul id="regionNumber">
+				</ul>
+			</div>
+		</div>
+		<div class="setMgrRight">
+			<ul class="classifyContent" id="accessContent">
+				<li style="display: block;">
+					<div class="layui-tab layui-tab-brief" lay-filter="access">
+					  	<ul class="layui-tab-title">
+						    <li class="layui-this">卡片模式</li>
+						    <li>列表模式</li>
+						    <li>讀卡記錄補登</li>
+					  	</ul>
+					  	<div class="layui-tab-content">
+							<div class="layui-tab-item layui-show">
+							  	<div class="layui-form layui-bg-gray accessOperator">
+									<label class="layui-form-label" style="width: auto;">選擇日期：</label>
+									<div class="layui-input-inline">
+							        	<input type="text" class="layui-input" id="cardModeDtSelect" placeholder="yyyy-MM-dd">
+							        </div>
+									<div class="layui-inline">
+										<input type="text" class="layui-input" placeholder="輸入關鍵字" id="cardAcessSearchText"/>
+									</div>
+									<button type="button" class="layui-btn layui-btn-sm" id="cardAcessSearchBtn">
+										<i class="layui-icon">&#xe615;</i>搜尋
+									</button>
+									<button type="button" class="layui-btn layui-btn-primary layui-btn-sm" id="refreshAccessCardBtn">
+										<i class="layui-icon">&#xe669;</i>刷新
+									</button>
+									<div class="layui-btn-group" id="doorStatusGroup">
+									  <button class="layui-btn layui-btn-sm layui-btn-normal">進入</button>
+									  <button class="layui-btn layui-btn-sm layui-btn-normal DisableDoorStatus">離開</button>
+									</div>
+									<div class="layui-inline numInfo" id="enterNumber">
+										進工總人數：
+										<span>0</span>
+										人
+									</div>
+									<div class="layui-inline numInfo" id="offNumber">
+										出工總人數：
+										<span>0</span>
+										人
+									</div>
+								</div>
+					  			<div class="enterInfo info">
+					  				<h3 class="layui-show layui-bg-green">進入工區訊息</h3>
+									<ul id="enter">
+									</ul>
+					  			</div>
+								<div class="outInfo info">
+									<h3 class="layui-show layui-bg-blue">離開工區訊息</h3>
+									<ul id="offDuty"></ul>
+								</div>
+					  		</div>
+							<div class="layui-tab-item">
+								<script type="text/html" id="onDutyTemplate">
+									{{# if(d.onDutyTime){ }}
+										<span style='color: red'>{{ d.onDutyTime }}</span>
+									{{# } else { }}
+										<span>****</span>
+									{{# } }}
+								</script>
+								<script type="text/html" id="offDutyTemplate">
+									{{# if(d.offDutyTime){ }}
+										<span style='color: red'>{{d.offDutyTime}}</span>
+									{{# } else { }}
+										<span>****</span>
+									{{# } }}
+								</script>
+								<div class="layui-form layui-bg-gray accessOperator">
+									<label class="layui-form-label" style="width: auto;">選擇日期：</label>
+									<div class="layui-input-inline">
+							        	<input type="text" class="layui-input" id="listModeDtSelect" placeholder="yyyy-MM-dd">
+							        </div>
+									<div class="layui-inline">
+										<input type="text" class="layui-input" placeholder="輸入關鍵字" id="listAcessSearchText"/>
+									</div>
+									<button type="button" class="layui-btn layui-btn-sm" id="listAcessSearchBtn">
+										<i class="layui-icon">&#xe615;</i>搜尋
+									</button>
+									<button type="button" class="layui-btn layui-btn-primary layui-btn-sm" id="refreshAccessListBtn">
+										<i class="layui-icon">&#xe669;</i>刷新
+									</button>
+									<div class="layui-inline numInfo" id="totalAccessNumber">
+										總出入人數：
+										<span>0</span>
+										人
+									</div>
+								</div>
+								<table id="access" lay-filter="accessTable"></table>
+								<script type="text/html" id="accessTableTool">
+									<button class="layui-btn layui-btn-danger layui-btn-xs" lay-event="delete">
+										刪除
+									</button>
+								</script>
+								<!-- 卡片名称  -->
+								<script type="text/html" id="accessTagNameTool">
+									{{# if(d.tagName == ""){ }}
+										<span>****</span>
+									{{# } else { }}
+										<span style='color: red'>{{d.tagName}}</span>
+									{{# } }}
+								</script>
+								<!-- 工种名称  -->
+								<script type="text/html" id="accessJobTypeNameTool">
+									{{# if(d.jobTypeName == ""){ }}
+										<span>****</span>
+									{{# } else { }}
+										<span style='color: red'>{{ d.jobTypeName }}</span>
+									{{# } }}
+								</script>
+								<!-- 公司名称  -->
+								<script type="text/html" id="accessCompanyNameTool">
+									{{# if(d.companyName == ""){ }}
+										<span>****</span>
+									{{# } else { }}
+										<span style='color: red'>{{ d.companyName }}</span>
+									{{# } }}
+								</script>
+								<!-- 进入参考点名称 -->
+								<script type="text/html" id="enterReferNameTool">
+									{{# if(d.enterReferName == '' || d.enterReferName == null){ }}
+										{{# if(d.enterReferId == '' || d.enterReferId == null){ }}
+											<span>****</span>
+										{{# } else { }}
+											<span>{{ d.enterReferId }}</span>
+										{{# } }}
+									{{# } else { }}
+										<span style='color: red'>{{ d.enterReferName }}</span>
+									{{# } }}
+								</script>
+								<!-- 离开参考点名称 -->
+								<script type="text/html" id="leaveReferNameTool">
+									{{# if(d.leaveReferName == '' || d.leaveReferName == null){ }}
+										{{# if(d.leaveReferId == '' || d.leaveReferId == null){ }}
+											<span>****</span>
+										{{# } else { }}
+											<span>{{ d.leaveReferId }}</span>
+										{{# } }}
+									{{# } else { }}
+										<span style='color: red'>{{ d.leaveReferName }}</span>
+									{{# } }}
+								</script>
+							</div>
+							<!-- 讀卡記錄補登 -->
+							<div class="layui-tab-item">
+								<div class="layui-form layui-bg-gray accessOperator">
+									<div class="layui-inline">
+										<input type="text" class="layui-input" placeholder="輸入關鍵字" id="fillAccessRecordSearchText"/>
+									</div>
+									<button type="button" class="layui-btn layui-btn-sm" id="fillAccessRecordSearchBtn">
+										<i class="layui-icon">&#xe615;</i>搜尋
+									</button>
+									<button type="button" class="layui-btn layui-btn-primary layui-btn-sm" id="refreshfillAccessRecordBtn">
+										<i class="layui-icon">&#xe669;</i>刷新
+									</button>
+									<div class="layui-inline numInfo" id="totalPersonNumber">
+										總人數：
+										<span>0</span>
+										人
+									</div>
+								</div>
+								<table id="clockInSupplement" lay-filter="supplement"></table>
+								<!-- 表格工具 -->
+								<script type="text/html" id="supplementTableTool">
+									<button class="layui-btn layui-btn-xs" lay-event="add">
+										<i class="layui-icon">&#xe654;</i>增加記錄
+									</button>
+								</script>
+								<!-- 補登記錄表單窗口 -->
+								<form id="supplementForm" class="layui-form layui-form-pane" autocomplete="off" style="display: none;">
+									<div class="layui-form-item">
+										<label class="layui-form-label">工號：</label>
+										<div class="layui-input-inline">
+											<input type="text" name="no" class="layui-input" disabled>
+										</div>
+										<label class="layui-form-label">姓名：</label>
+										<div class="layui-input-inline">
+											<input type="text" name="name" class="layui-input" disabled>
+										</div>
+										<label class="layui-form-label">卡片ID：</label>
+										<div class="layui-input-inline">
+											<input type="text" name="tagId" class="layui-input" disabled>
+										</div>
+									</div>
+									<div class="layui-form-item" id="groupPlace">
+										<label class="layui-form-label">工地位置：</label>
+										<div class="layui-input-inline">
+											<select name="groupId" lay-filter="groupFilter">
+											</select>
+										</div>
+										<label class="layui-form-label">設備節點：</label>
+										<div class="layui-input-inline">
+											<select name="referId">
+											</select>
+										</div>
+										<label class="layui-form-label">上下班別：</label>
+										<div class="layui-input-inline">
+											<select name="accessType">
+												<option value="1">上班</option>
+												<option value="2">下班</option>
+											</select>
+										</div>
+									</div>
+									<div class="layui-form-item">
+										<label class="layui-form-label" style="width: 120px;">刷卡日期時間：</label>
+										<div class="layui-input-inline">
+											<input id="clockInTime" name="accessTime" type="text" class="layui-input" placeholder="">
+										</div>
+									</div>
+									<div class="layui-form-item">
+										<button class="layui-btn layui-btn-sm" lay-submit lay-filter="submitSupplement">
+											<i class="iconfont icon-save"></i>保存
+										</button>
+									</div>
+								</form>
+							</div>
+					  	</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</li>
+</ul>
+</body>
+<script type="text/javascript">
+	$(window).ready(function(){
+		$('#accessClassifyDiv').height($(window).height()-40);
+		$('#accessContent .info ul').height($(window).height()-130);
+	})
+	$(window).resize(function(){
+		$('#accessClassifyDiv').height($(window).height()-40);
+		$('#accessContent .info ul').height($(window).height()-130);
+	})
+
+	var Scrolling = false;
+	function _$(o) {
+		return document.getElementById(o);
+	};
+	function ScroMove() {
+		Scrolling = true;
+	};
+	document.onmousemove = function(e) {
+		if (Scrolling == false) {
+			return;
+		}
+		ScroNow(e);
+	};
+	document.onmouseup = function(e) {
+		Scrolling = false;
+	};
+	function ScroNow(event) {
+		var event = event ? event : (window.event ? window.event : null);
+		var Y = event.clientY
+				- _$("groupContentBox").getBoundingClientRect().top
+				- _$("bar").clientHeight / 2;
+		var H = _$("scroll").clientHeight - _$("bar").clientHeight;
+		var SH = Y
+				/ H
+				* (_$("groupClassify").scrollHeight - _$("groupClassify").clientHeight);
+		if (Y < 0) {
+			Y = 0;
+		}
+		;
+		if (Y > H) {
+			Y = H;
+		}
+		;
+		_$("bar").style.top = Y + "px";
+		_$("groupClassify").scrollTop = SH;
+	};
+	//註冊事件
+	if (document.addEventListener) {
+		document.addEventListener('DOMMouseScroll', ScrollWheel, false); //FF  
+	};
+	document.onmousewheel = ScrollWheel;//IE/Opera/Chrome  
+	function ScrollWheel(e) {
+		if (e.target.clientWidth > 250) {
+			return;
+		}
+		e = e || window.event;
+		var Y = _$("groupClassify").scrollTop;
+		var H = _$("groupClassify").scrollHeight
+				- _$("groupClassify").clientHeight;
+		if (e.wheelDelta) {
+			if (e.wheelDelta >= 120) {
+				Y = Y - 10
+			} else {
+				Y = Y + 10
+			}
+			; //FF
+		} else if (e.detail) {
+			if (e.detail <= -3) {
+				Y = Y - 10
+			} else {
+				Y = Y + 10
+			}
+			; //IE/Opera/Chrome
+		}
+		if (Y < 0)
+			Y = 0;
+		if (Y > H)
+			Y = H;
+		_$("groupClassify").scrollTop = Y;
+		var SH = Y / H * _$("scroll").clientHeight - _$("bar").clientHeight;
+		if (SH < 0)
+			SH = 0;
+		_$("bar").style.top = SH + "px";
+		return false;
+	};
+	/*===========自定義滾輪事件end=========*/
+</script>
+</html>

@@ -1,0 +1,21 @@
+/*===========
+ * 报警管理
+ * ==========*/
+#alarmContent .layui-table-view{
+	margin: 5px 0;
+}
+#alarmContent .layui-table-cell{
+	padding: 0 10px;
+}
+p.alarmInfo{
+	padding: 10px 15px;
+} 
+div.headTool{
+	color: red;
+}
+div.headTool button[lay-event="deal"]{
+	margin-left: 30px;
+}
+div.headTool i.icon-chuli{
+	font-size: 13px !important;
+}

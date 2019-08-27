@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dmatek.zgb.db.setting.dao.DangerNodeDao">
+	<cache></cache>
+	<!-- 添加危险基站讯息 -->
+	<insert id="addDangerNode" parameterType="com.dmatek.zgb.db.pojo.setting.DangerNode">
+		INSERT INTO
+		DANGERNODES(NODE_ID,ISSIGTHRESHOLD,SIGTHRESHOLD,CREATETIME,CREATENAME)
+		VALUES(#{id},#{isSigThreshold},#{maxSigThreshold},NOW(),#{createName})
+	</insert>
+	<!-- 根据ID删除危险基站讯息 -->
+	<delete id="deleteDangerNode">
+		DELETE FROM DANGERNODES WHERE NODE_ID IN 
+		<include refid="com.dmatek.zgb.db.setting.dao.GroupDao.batchIds"></include>
+	</delete>
+	<!-- 更新危险基站讯息 -->
+	<update id="updateDangerNode" parameterType="com.dmatek.zgb.db.pojo.setting.DangerNode">
+		UPDATE DANGERNODES SET ISSIGTHRESHOLD=#{isSigThreshold},SIGTHRESHOLD=#{maxSigThreshold},
+		UPDATETIME=NOW(),UPDATENAME=#{updateName} WHERE NODE_ID=#{id}
+	</update>
+	<!-- 根据危险基站的ID获取危险基站讯息 -->
+	<select id="findOne" resultType="com.dmatek.zgb.db.pojo.setting.DangerNode">
+		SELECT NODE_ID id,ISSIGTHRESHOLD isSigThreshold,SIGTHRESHOLD maxSigThreshold,
+		CREATETIME createTime,CREATENAME createName,UPDATETIME updateTime,
+		UPDATENAME updateName 
+		FROM DANGERNODES WHERE NODE_ID=#{0}
+	</select>
+	<!-- 获取所有的基站讯息 -->
+	<select id="findAll" resultType="com.dmatek.zgb.db.pojo.setting.DangerNode">
+		SELECT NODE_ID id,ISSIGTHRESHOLD isSigThreshold,SIGTHRESHOLD maxSigThreshold,
+		CREATETIME createTime,CREATENAME createName,UPDATETIME updateTime,
+		UPDATENAME updateName
+		FROM DANGERNODES 
+	</select>
+</mapper>

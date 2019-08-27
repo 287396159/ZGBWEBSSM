@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>ZGBWEB</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<link rel="shortcut icon" th:href="@{img/dmatek.ico}" href="img/dmatek.ico">
+		<link rel="stylesheet" type="text/css" th:href="@{/css/lib/reset.css}"/>
+		<link rel="stylesheet" type="text/css" th:href="@{/css/lib/iconfont.css}" />
+		<link rel="stylesheet" type="text/css" th:href="@{/css/module/login.css}" />
+		<script type="text/javascript" th:src="@{/js/lib/jquery-3.1.0.min.js}"></script>
+		<script type="text/javascript" th:src="@{/js/lib/lib.js}"></script>
+		<script type="text/javascript" th:src="@{/js/module/login.js}"></script>
+	</head>
+	<body>
+		<div class="global-login box-shadow">
+			<h1>用戶登入</h1>
+			<form class="login" method="post" action="login" id="login" autocomplete="off">
+				<i class="iconfont icon-yonghu-login"></i> <i class="iconfont icon-mima"></i> 
+				<input id="username" type="text" name="username" placeholder="請輸入帳號" autofocus="autofocus"></input>
+				<div class="tip" id="nameTip" th:text="${userErr}"></div>
+				<input id="password" type="password" name="password" placeholder="請輸入密碼"></input>
+				<div class="tip" id="pswTip" th:text="${pswErr}"></div>
+				<input type="button" value="登錄" id="redirectIndex" onclick="submit()" ></input>
+			</form>
+		</div>
+	</body>
+</html>

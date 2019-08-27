@@ -1,0 +1,252 @@
+/*===============
+ * 工种包商资料管理
+ * ==============*/
+#colorPick {
+	width: 35px;
+	margin-right: 8px;
+}
+
+.searchText {
+	height: 31px;
+	padding-left: 5px;
+	border-radius: 2px;
+	border: 1px solid lightgray;
+}
+
+.searchText:focus {
+	border: 1px solid darkgray;
+}
+.formTemplate {
+	display: none;
+	padding-top: 10px;
+}
+.formTemplate label {
+	width: 100px;
+}
+#selectJobColor .layui-colorpicker {
+	width: 38px;
+	height: 38px;
+}
+.layui-colorpicker-main {
+	width: 300px;
+}
+.formTemplate .layui-input-block {
+	margin-left: 100px;
+}
+#uploadPhoto {
+	float: left;
+}
+#personnelForm .layui-upload-list {
+	margin: 0 5px;
+	float: left;
+}
+#imagePreview {
+	width: 90px;
+	height: 100px;
+}
+#personnelForm .layui-form-item {
+	margin-bottom: 10px;
+}
+#personnelForm .paddingTop {
+	padding: 0 15px;
+}
+#personnelForm textarea {
+	width: 490px;
+}
+#setRegion, #setCompanyRegion {
+	display: none;
+	padding: 5px;
+	overflow: hidden;
+}
+#setRegion .layui-show, #setCompanyRegion .layui-show {
+	padding: 7px 25px 7px 15px;
+	overflow: hidden;
+}
+#setRegion .layui-show input[type='checkbox'], #setCompanyRegion .layui-show input[type='checkbox']
+	{
+	width: 15px;
+	height: 15px;
+	margin-top: 4px;
+}
+#setRegion .layui-show label, #setRegion .layui-show input, #setRegion .layui-show button,
+	#setCompanyRegion .layui-show label, #setCompanyRegion .layui-show input,
+	#setCompanyRegion .layui-show button {
+	float: left;
+}
+#setRegion .layui-show label, #setCompanyRegion .layui-show label {
+	display: inline-block;
+	height: 22px;
+	line-height: 22px;
+}
+#setRegion .layui-show label[for='checkAllRegion'], #setCompanyRegion .layui-show label[for='checkAllRegion']
+	{
+	margin: 0 10px 0 3px;
+}
+div.inlineDiv {
+	overflow: hidden;
+	margin-bottom: 10px;
+}
+/* 新增 */
+div.setRegionLeft, div.setRegionRight {
+	overflow: hidden;
+	border: 2px solid lightgray;
+	float: left;
+}
+div.setRegionRight {
+	margin-left: 5px;
+	width: 352px;
+	height: 440px;
+	overflow-y: auto;
+}
+div.setRegionRight .layui-table-view {
+	margin: 2px 0 -1px 0;
+}
+div.setRegionRight .layui-table-tool {
+	padding: 5px 10px;
+	min-height: 40px;
+}
+div.setRegionRight .layui-table td, div.setRegionRight .layui-table th {
+	padding: 2px 0;
+	font-size: 12px;
+}
+/*树形菜单*/
+ul.checkboxTree {
+	width: 100%;
+	height: 400px;
+	text-align: left;
+	float: left;
+	padding: 5px 0 0 15px;
+	overflow-y: auto;
+}
+p.parentNode {
+	overflow: hidden;
+	height: 19px;
+	line-height: 19px;
+	margin-bottom: 2px;
+}
+p.parentNode input, p.parentNode span, p.parentNode i {
+	float: left;
+	display: inline-block;
+	margin-top: 2px;
+}
+p.parentNode span:first-child, li.childNode span:first-child {
+	border: 1px solid #333;
+	width: 15px;
+	height: 15px;
+	line-height: 15px;
+	font-size: 17px;
+	cursor: pointer;
+	margin-top: 3px;
+	text-align: center;
+}
+.stretch {
+	font-size: 24px !important;
+	line-height: 10px !important;
+}
+p.parentNode input[type="checkbox"], li.childNode input[type="checkbox"]
+{
+	height: 16px;
+	width: 16px;
+	margin: 3px 8px 0 5px;
+}
+p.parentNode i:nth-of-type(1), p.parentNode i:nth-of-type(3) {
+	margin-top: 1px;
+}
+ul.childNodes {
+	/* display: none; */
+	margin-left: 7px;
+	border-left: 1px solid darkgray;
+}
+li.childNode {
+	overflow: hidden;
+	margin: 0 0 1px 12px;
+}
+li.childNode img, li.childNode input, li.childNode span {
+	float: left;
+}
+li.childNode span {
+	margin-top: 1px;
+}
+li.childNode img {
+	height: 22px;
+	margin-left: 18px;
+}
+ul.grandChildNodes {
+	clear: both;
+	overflow: hidden;
+	margin-left: 8px;
+	border-left: 1px solid darkgray;
+	/* display: none; */
+}
+ul.grandChildNodes img {
+	margin-left: 10px;
+}
+ul.grandChildNodes li.grandChildNode {
+	overflow: hidden;
+}
+li.grandChildNode input[type="checkbox"] {
+	margin: 3px 5px 0 0;
+}
+#nodeList, #companyNodeList {
+	text-align: center;
+	margin: 1px 0px;
+}
+/*---人员讯息窗体----*/
+#personalInfoWindow {
+	overflow: hidden;
+	margin: 10px;
+}
+#personalInfoWindow>div {
+	overflow: hidden;
+}
+#personalInfoWindow>div img {
+	display: block;
+	float: left;
+	margin-right: 10px;
+}
+#personalInfoWindow>div img.photo {
+	height: 95px;
+	width: 80px;
+	border-radius: 10px;
+}
+#personalInfoWindow div[qrcode] {
+	width: 55px;
+	margin-left: 13px;
+}
+#personalInfoWindow>div p {
+	font-size: 14px;
+	padding-top: 5px;
+	line-height: 26px;
+}
+#personalInfoWindow p[license] {
+	font-size: 18px;
+	font-family: cursive;
+	font-weight: bold;
+	margin-left: 19px;
+	margin-top: 9px;
+}
+#personalInfoWindow p[serialNumber] {
+	margin-top: 19px;
+	margin-left: 13px;
+}
+#personalInfoWindow>div:last-child {
+	display: block;
+	text-align: center;
+}
+#personalInfoWindow div[generateCard] {
+	padding: 8px 8px;
+    background: paleturquoise;
+    margin-bottom: 8px;
+    border-radius: 10px;
+    width: 272px;
+    height: 173px;
+}
+/* 所有表头的按钮都存在左边距 10px */
+div.layui-table-tool button {
+	margin-left: 10px;
+}
+/* 上传头像的按钮对齐 */
+form#personnelForm button[name="imgPath"] {
+	margin-top: 4px;
+    margin-left: 5px;
+}

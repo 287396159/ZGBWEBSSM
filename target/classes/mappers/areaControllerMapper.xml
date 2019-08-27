@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dmatek.zgb.db.warn.dao.AreaControllerDao">
+	<sql id="insertValues">
+		(#{areaControlWarn.uuid},#{areaControlWarn.tagId},
+		#{areaControlWarn.tagName},#{areaControlWarn.tagNo},
+		#{areaControlWarn.companyNo},#{areaControlWarn.companyName},
+		#{areaControlWarn.jobTypeNo},#{areaControlWarn.jobTypeName},
+		#{areaControlWarn.referId},#{areaControlWarn.referName},
+		#{areaControlWarn.regionId},#{areaControlWarn.regionName},
+		#{areaControlWarn.groupId},#{areaControlWarn.groupName},
+		#{areaControlWarn.createTime},#{areaControlWarn.isHandle},
+		#{areaControlWarn.handleTime},#{areaControlWarn.isClear},
+		#{areaControlWarn.clearTime})
+	</sql>
+	<!-- 添加区域管制报警 -->
+	<insert id="addAreaController" parameterType="com.dmatek.zgb.warn.bean.AreaControlWarn">
+		INSERT INTO AREACONTROLLER
+		<include refid="com.dmatek.zgb.db.warn.dao.PersonnelHelpDao.insertProperty"></include>
+		VALUES
+		<include refid="insertValues"></include>
+	</insert>
+	<!-- 删除区域管制报警 -->
+	<delete id="deleteAreaController">
+		DELETE FROM AREACONTROLLER WHERE UUID = #{uuid}
+	</delete>
+	<!-- 根据uuid查找区域管制报警 -->
+	<select id="findOne" resultType="com.dmatek.zgb.warn.bean.AreaControlWarn">
+		SELECT <include refid="com.dmatek.zgb.db.warn.dao.PersonnelHelpDao.selectProperty"></include>
+		FROM AREACONTROLLER WHERE UUID=#{uuid}
+	</select>
+	<!-- 查找所有的区域管制报警 -->
+	<select id="findAll" resultType="com.dmatek.zgb.warn.bean.AreaControlWarn">
+		SELECT <include refid="com.dmatek.zgb.db.warn.dao.PersonnelHelpDao.selectProperty"></include>
+		FROM AREACONTROLLER
+	</select>
+	
+	<select id="findWarnCardReportInfo" resultType="com.dmatek.zgb.report.warn.bean.WarnTypeCardReportInfo">
+		select 
+		(SELECT COUNT(*) FROM AREACONTROLLER WHERE DATEDIFF(NOW(),CREATETIME) &lt; #{peroid}) 
+		AS totalNumber, 
+		(SELECT COUNT(*) FROM AREACONTROLLER WHERE (HANDLE = 1 AND DATEDIFF(NOW(),CREATETIME) &lt; #{peroid})) 
+		AS handleNumber,
+		(SELECT COUNT(*) FROM AREACONTROLLER WHERE (HANDLE = 0 AND DATEDIFF(NOW(),CREATETIME) &lt; #{peroid})) 
+		AS notHandleNumber
+	</select>
+	<!-- 查组别警告卡片上报讯息 -->
+	<select id="findGroupsWarnCardReportInfo" resultType="com.dmatek.zgb.report.warn.bean.GroupCardReportWarnInfo">
+		SELECT 
+		g.GROUP_ID groupId,g.GROUP_NAME groupName,
+		(SELECT COUNT(*) FROM groups gl INNER JOIN AREACONTROLLER p on gl.GROUP_ID=p.GROUPID where gl.GROUP_ID=g.GROUP_ID AND DATEDIFF(NOW(),p.CREATETIME) &lt; #{peroid}) 
+			AS totalNumber,
+		(SELECT COUNT(*) FROM groups gl INNER JOIN AREACONTROLLER p on gl.GROUP_ID=p.GROUPID where gl.GROUP_ID=g.GROUP_ID AND p.HANDLE = 1 AND DATEDIFF(NOW(),p.CREATETIME) &lt; #{peroid})
+			AS handleNumber,
+		(SELECT COUNT(*) FROM groups gl INNER JOIN AREACONTROLLER p on gl.GROUP_ID=p.GROUPID where gl.GROUP_ID=g.GROUP_ID AND p.HANDLE = 0 AND DATEDIFF(NOW(),p.CREATETIME) &lt; #{peroid}) 
+			AS notHandleNumber 
+		FROM groups g 
+	</select>
+	<!-- 区域管制清除 -->
+	<delete id="clearAreaControllers">
+		DELETE FROM AREACONTROLLER WHERE DATEDIFF(NOW(),CREATETIME) > #{days}
+	</delete>
+</mapper>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<head>
+	<meta charset="UTF-8">
+	<title>主頁導航</title>
+		<link rel="stylesheet" type="text/css" th:href="@{/css/lib/reset.css}" href="css/lib/Reset.css"/>
+		<link rel="stylesheet" type="text/css" th:href="@{/css/lib/iconfont.css}" href="css/lib/iconfont.css"/>
+		<link rel="stylesheet" type="text/css" th:href="@{/layui/css/layui.css}" href="js/lib/layui/css/layui.css"/>
+		<link rel="stylesheet" type="text/css" th:href="@{/css/module/index.css}" href="css/index.css"/>
+		<script th:src="@{/js/lib/jquery-3.1.0.min.js}" src="js/lib/jquery-3.1.0.min.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+	<ul class="nav" id="nav">
+		<li type="0" shiro:hasPermission="module:monitor">
+			<i class="iconfont icon-jiankong"></i>
+			<p>動態監控</p>
+		</li>
+		<li type="1" shiro:hasPermission="module:warmMsg">
+			<i class="iconfont icon-jingbao-"></i>
+			<p>報警管理</p>
+		</li>
+		<li type="2" shiro:hasPermission="module:track">
+			<i class="iconfont icon-lishiguiji"></i>
+			<p>歷史數據</p>
+		</li>
+		<li type="3" shiro:hasPermission="module:access">
+			<i class="iconfont icon-jinchu"></i>
+			<p>進出管理</p>
+		</li>
+		<li type="4" shiro:hasPermission="module:report">
+			<i class="iconfont icon-baobiao"></i>
+			<p>報表輸出</p>
+		</li>
+		<li type="5" shiro:hasPermission="module:permission">
+			<i class="iconfont icon-quanxianguanli"></i>
+			<p>權限管理</p>
+		</li>
+		<li type="6" shiro:hasPermission="module:node">
+			<i class="iconfont icon-jizhan"></i>
+			<p>基站管理</p>
+		</li>
+		<li type="7" shiro:hasPermission="module:jobType_Company">
+			<i class="iconfont icon-ziliaoku"></i>
+			<p>工種包商資料管理</p>
+		</li>
+		<li type="8" shiro:hasPermission="module:setting">
+			<i class="iconfont icon-shezhi"></i>
+			<p>設置管理</p>
+		</li>
+	</ul>
+</body>
+<script type="text/javascript">
+	var $doc = $(window.parent.document);
+	$("#nav li").click(function(){
+		var navIndex = parseInt($(this).attr("type"));
+		$("#nav li").removeClass("activeNav").eq($(this).index()).addClass("activeNav");
+		if(navIndex==0){ //動態監控頁面
+			$doc.find("#options").attr("src","monitor");
+		}
+		if(navIndex==1){ //報警管理頁面
+			$doc.find("#options").attr("src","warm");
+		}
+		if(navIndex==2){ //歷史軌跡頁面
+			$doc.find("#options").attr("src","history");
+		}
+		if(navIndex==3){ //進出記錄頁面
+			$doc.find("#options").attr("src","access");
+		}
+		if(navIndex==4){ //報表輸出頁面
+			$doc.find("#options").attr("src","report");
+		}
+		if(navIndex==5){ //權限管理頁面
+			$doc.find("#options").attr("src","accountview");
+		}
+		if(navIndex==6){ //基站管理頁面
+			$doc.find("#options").attr("src","base");
+		}
+		if(navIndex==7){ //工種包商頁面
+			$doc.find("#options").attr("src", "contractor");
+		}
+		if(navIndex==8){ //設置管理頁面
+			$doc.find("#options").attr("src", "setting");
+		}
+	});
+	$("#nav li").eq(0).addClass("activeNav").click();//顯示默認選項
+</script>
+</html>

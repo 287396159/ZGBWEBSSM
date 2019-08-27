@@ -1,0 +1,14 @@
+/*============
+ * 电子围栏
+ * ===========*/
+div.fenceContent table{
+	display: none;
+}
+div.fenceAlarm1 {
+	overflow: hidden;
+	overflow-y: auto;
+}
+div.fenceAlarm1 table{
+	width: 99% !important;
+	margin: 5px auto;
+}

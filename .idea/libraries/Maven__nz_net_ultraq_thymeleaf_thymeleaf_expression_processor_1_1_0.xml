@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: nz.net.ultraq.thymeleaf:thymeleaf-expression-processor:1.1.0">
+    <CLASSES>
+      <root url="jar://G:/Users/apache-maven-3.6.1/repo/nz/net/ultraq/thymeleaf/thymeleaf-expression-processor/1.1.0/thymeleaf-expression-processor-1.1.0.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://G:/Users/apache-maven-3.6.1/repo/nz/net/ultraq/thymeleaf/thymeleaf-expression-processor/1.1.0/thymeleaf-expression-processor-1.1.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://G:/Users/apache-maven-3.6.1/repo/nz/net/ultraq/thymeleaf/thymeleaf-expression-processor/1.1.0/thymeleaf-expression-processor-1.1.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

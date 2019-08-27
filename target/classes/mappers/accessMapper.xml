@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dmatek.zgb.db.access.dao.AccessDao">
+	<cache></cache>
+	<!-- 搜索的属性 -->
+	<sql id="selectAttr">
+		 UUID uuid,TAGID tagId,REFERID referId,
+		TAGNAME tagName,PERSONNO personNo,REFERNAME referName,
+		COMPANYNO companyNo,JOBTYPENO jobTypeNo,COMPANYNAME companyName,
+		JOBTYPENAME jobTypeName,GROUPID groupId,GROUPNAME groupName,
+		REGIONID regionId,REGIONNAME regionName,ACCESSTYPE accessType,
+		ACCESSTIME accessTime,RESTIME resTime 
+	</sql>
+	<!-- 插入的属性 -->
+	<sql id="insertAttr">
+		(UUID,TAGID,REFERID,TAGNAME,PERSONNO,REFERNAME,
+		COMPANYNO,JOBTYPENO,COMPANYNAME,JOBTYPENAME,GROUPID,
+		GROUPNAME,REGIONID,REGIONNAME,ACCESSTYPE,ACCESSTIME,
+		RESTIME) 
+	</sql>
+	<!-- 插入的值 -->
+	<sql id="insertValue">
+		(#{accessRecord.uuid},#{accessRecord.tagId},#{accessRecord.referId},
+		#{accessRecord.tagName},#{accessRecord.personNo},#{accessRecord.referName},#{accessRecord.companyNo},
+		#{accessRecord.jobTypeNo},#{accessRecord.companyName},#{accessRecord.jobTypeName},#{accessRecord.groupId},
+		#{accessRecord.groupName},#{accessRecord.regionId},#{accessRecord.regionName},#{accessRecord.accessType},
+		#{accessRecord.accessTime},#{accessRecord.resTime})
+	</sql>
+	<!-- 添加操作 -->
+	<insert id="addAccessRecord" parameterType="com.dmatek.zgb.access.bean.TagAccessRecord">
+		INSERT INTO ACCESS <include refid="insertAttr"></include> 
+		VALUES <include refid="insertValue"></include>
+	</insert>
+	<!-- 删除操作 -->
+	<delete id="deleteAccessRecord" parameterType="java.lang.String">
+		DELETE FROM ACCESS WHERE UUID=#{uuid}
+	</delete>
+	<select id="findOne" resultType="com.dmatek.zgb.access.bean.TagAccessRecord"> 
+		SELECT <include refid="selectAttr"></include> 
+		FROM ACCESS WHERE 
+		(TAGID=#{tagId} AND 
+		GROUPID=#{groupId} AND
+		ACCESSTYPE=#{accessType} AND 
+	    ACCESSTIME=#{accessTime})
+	</select>
+	<!-- 搜索指定日期、tagId、上下班记录 -->
+	<select id="findAllRecordOneDay" resultType="com.dmatek.zgb.access.bean.TagAccessRecord"> 
+		SELECT <include refid="selectAttr"></include> 
+		FROM ACCESS WHERE 
+		(TAGID=#{tagId} AND 
+		ACCESSTYPE=#{accessType} AND 
+	    TO_DAYS(ACCESSTIME)=TO_DAYS(#{accessTime})) 
+	    ORDER BY ACCESSTIME
+	</select>
+	<!-- 查询所有的出入记录讯息 -->
+	<select id="findAll" resultType="com.dmatek.zgb.access.bean.TagAccessRecord">
+		SELECT <include refid="selectAttr"></include> 
+		FROM ACCESS 
+		ORDER BY ACCESSTIME
+	</select>
+	<!-- 根据组别ID、上下班时间查询记录 -->
+	<select id="findGroupTime" resultType="com.dmatek.zgb.access.bean.TagAccessRecord">
+		SELECT <include refid="selectAttr"></include> 
+		FROM ACCESS WHERE 
+		(GROUPID=#{groupId} AND
+		TO_DAYS(ACCESSTIME)=TO_DAYS(#{accessTime})) 
+		ORDER BY ACCESSTIME
+	</select>
+	<!-- 根据组别ID、上下班类型、上下班时间查询记录 -->
+	<select id="findGroupTypeTime" resultType="com.dmatek.zgb.access.bean.TagAccessRecord">
+		SELECT <include refid="selectAttr"></include> 
+		FROM ACCESS WHERE 
+		(GROUPID=#{groupId} AND 
+		ACCESSTYPE=#{accessType} AND 
+		TO_DAYS(ACCESSTIME)=TO_DAYS(#{accessTime})) 
+		ORDER BY ACCESSTIME
+	</select>
+	<!-- 选择条件搜索数据库内容 -->
+	<sql id="conditionSearch">
+		<where>
+			<if test="null!=name and name != ''">
+			AND TAGNAME=#{name}
+			</if> 
+			<if test="null!=companyNo and companyNo!=''">
+			AND COMPANYNO=#{companyNo}
+			</if> 
+			<if test="null!=jobTypeNo and jobTypeNo!=''">
+			AND JOBTYPENO=#{jobTypeNo}
+			</if> 
+			<if test="groupId > 0">
+			AND GROUPID=#{groupId}
+			</if>
+			<if test="null!=start and null!=end">
+			AND UNIX_TIMESTAMP(ACCESSTIME) BETWEEN UNIX_TIMESTAMP(#{start}) AND UNIX_TIMESTAMP(#{end})
+			</if> 
+		</where>
+	</sql>
+	<select id="searchTagAccessRecords" resultType="com.dmatek.zgb.access.bean.TagAccessRecord">
+		SELECT <include refid="selectAttr"></include> 
+		FROM ACCESS  <include refid="conditionSearch"></include> 
+		ORDER BY ACCESSTIME
+	</select> 
+	<!-- 清除记录 -->
+	<delete id="clearRecords">
+		DELETE FROM ACCESS WHERE DATEDIFF(NOW(),ACCESSTIME) > #{days}
+	</delete>
+</mapper>

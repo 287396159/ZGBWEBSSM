@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dmatek.zgb.db.setting.dao.RegionDao">
+	<cache-ref namespace="com.dmatek.zgb.db.setting.dao.GroupDao"/>
+	<!-- 添加区域讯息 -->
+	<insert id="insertRegion" parameterType="com.dmatek.zgb.db.pojo.setting.Region">
+		INSERT INTO
+		REGIONS(GROUP_ID,REGION_NAME,IMAGE,
+		CREATETIME,CREATENAME)
+		VALUES
+		(#{region.groupId},
+		#{region.name},#{region.image},
+		NOW(),#{region.createName})
+	</insert>
+	<!-- 根据区域Id删除区域讯息 -->
+	<delete id="deleteRegion">
+		DELETE FROM REGIONS WHERE REGION_ID IN
+		<include refid="com.dmatek.zgb.db.setting.dao.GroupDao.batchIds"></include>
+	</delete>
+	<!-- 修改区域讯息 -->
+	<update id="updateRegion" parameterType="com.dmatek.zgb.db.pojo.setting.Region">
+		UPDATE REGIONS SET
+		GROUP_ID=#{region.groupId},REGION_NAME=#{region.name},IMAGE=#{region.image},
+		UPDATETIME=NOW(),UPDATENAME=#{region.updateName}
+		WHERE REGION_ID=#{region.id}
+	</update>
+	<!-- 根据地图查找区域 -->
+	<select id="findImageName" resultType="com.dmatek.zgb.db.pojo.setting.Region">
+		SELECT REGION_ID id,GROUP_ID
+		groupId,REGION_NAME name,IMAGE image,
+		CREATETIME createTime,CREATENAME createName,
+		UPDATETIME updateTime,UPDATENAME updateName 
+		FROM REGIONS WHERE 
+		IMAGE=#{imgName}
+	</select>
+	
+	<!-- 根据区域Id查找区域讯息 -->
+	<select id="findOne" resultType="com.dmatek.zgb.db.pojo.setting.Region">
+		SELECT REGION_ID id,GROUP_ID
+		groupId,REGION_NAME name,IMAGE image,
+		CREATETIME createTime,CREATENAME createName,
+		UPDATETIME updateTime,UPDATENAME updateName 
+		FROM REGIONS WHERE
+		REGION_ID=#{id}
+	</select>
+	<!-- 查找所有的区域讯息 -->
+	<select id="findAll" resultType="com.dmatek.zgb.db.pojo.setting.Region">
+		SELECT REGION_ID id,GROUP_ID
+		groupId,REGION_NAME name,IMAGE image,
+		CREATETIME createTime,CREATENAME createName,
+		UPDATETIME updateTime,UPDATENAME updateName 
+		FROM REGIONS ORDER BY REGION_ID
+	</select>
+	<!-- 分页查找区域 -->
+	<select id="findPage" resultType="com.dmatek.zgb.db.pojo.setting.Region">
+		SELECT REGION_ID id,R.GROUP_ID
+		groupId,G.GROUP_NAME groupName,REGION_NAME name,IMAGE image,
+		R.CREATETIME createTime,R.CREATENAME
+		createName,R.UPDATETIME updateTime,R.UPDATENAME updateName 
+		FROM REGIONS R LEFT JOIN GROUPS G ON R.GROUP_ID=G.GROUP_ID ORDER BY REGION_ID LIMIT #{page}, #{limit}
+	</select>
+	<!-- 根据键值分页查找区域 -->
+	<select id="findPageKeyName" resultType="com.dmatek.zgb.db.pojo.setting.Region">
+		SELECT REGION_ID id,R.GROUP_ID
+		groupId,G.GROUP_NAME groupName,REGION_NAME name,IMAGE image,
+		R.CREATETIME createTime,R.CREATENAME  
+		createName,R.UPDATETIME updateTime,R.UPDATENAME updateName
+		FROM REGIONS R LEFT JOIN GROUPS G ON R.GROUP_ID=G.GROUP_ID   
+		WHERE (REGION_ID LIKE CONCAT('%',#{name},'%') OR 
+			   G.GROUP_NAME LIKE CONCAT('%',#{name},'%') OR 
+			   REGION_NAME LIKE CONCAT('%',#{name},'%'))
+		ORDER BY REGION_ID LIMIT #{page}, #{limit}
+	</select>
+	<!-- 根据组别ID查找区域 -->
+	<select id="findAllFromGroupId" resultType="com.dmatek.zgb.db.pojo.setting.Region">
+		SELECT REGION_ID id,GROUP_ID
+		groupId,REGION_NAME name,IMAGE image,
+		CREATETIME createTime,CREATENAME createName,
+		UPDATETIME updateTime,UPDATENAME updateName 
+		FROM REGIONS WHERE GROUP_ID=#{groupId} 
+		ORDER BY REGION_ID
+	</select>
+</mapper>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dmatek.zgb.db.setting.dao.SafeNodeDao">
+	<!-- 开启缓存 -->
+	<cache></cache>
+	<!-- 添加安全数据节点讯息 -->
+	<insert id="addSafeNode" parameterType="com.dmatek.zgb.db.pojo.setting.SafeNode">
+		INSERT INTO
+		SAFENODES(NODE_ID,ISALLTRIG,ISPERIODTRIG,TRIG_BEGINTIME,TRIG_ENDTIME,ISSIGTHRESHOLD,SIGTHRESHOLD,CREATETIME,CREATENAME)
+		VALUES(#{id},#{isAllTrig},#{isPeriodTrig},#{trig_BeginTime},#{trig_EndTime},#{isSigThreshold},
+		#{maxSigThreshold},NOW(),#{createName})
+	</insert>
+	<!-- 删除安全数据节点讯息 -->
+	<delete id="deleteSafeNode">
+		DELETE FROM SAFENODES WHERE NODE_ID IN 
+		<include refid="com.dmatek.zgb.db.setting.dao.GroupDao.batchIds"></include>
+	</delete>
+	<!-- 更新安全数据节点讯息 -->
+	<update id="updateSafeNode" parameterType="com.dmatek.zgb.db.pojo.setting.SafeNode">
+		UPDATE SAFENODES SET
+		ISALLTRIG=#{isAllTrig},ISPERIODTRIG=#{isPeriodTrig},
+		TRIG_BEGINTIME=#{trig_BeginTime},TRIG_ENDTIME=#{trig_EndTime},ISSIGTHRESHOLD=#{isSigThreshold},
+		SIGTHRESHOLD=#{maxSigThreshold},UPDATETIME=NOW(),UPDATENAME=#{updateName}
+		WHERE NODE_ID=#{id}
+	</update>
+	<!-- 根据安全数据节点的ID查询安全数据节点讯息 -->
+	<select id="findOne" resultType="com.dmatek.zgb.db.pojo.setting.SafeNode">
+		SELECT NODE_ID id,ISALLTRIG isAllTrig,ISPERIODTRIG isPeriodTrig,TRIG_BEGINTIME trig_BeginTime,
+		TRIG_ENDTIME trig_EndTime,ISSIGTHRESHOLD isSigThreshold,SIGTHRESHOLD maxSigThreshold,
+		CREATETIME createTime,CREATENAME createName,UPDATETIME updateTime,UPDATENAME updateName 
+		FROM SAFENODES WHERE NODE_ID=#{0}
+	</select>
+	<!-- 查询所有安全数据节点讯息 -->
+	<select id="findAll" resultType="com.dmatek.zgb.db.pojo.setting.SafeNode">
+		SELECT NODE_ID id,ISALLTRIG isAllTrig,ISPERIODTRIG isPeriodTrig,TRIG_BEGINTIME trig_BeginTime,
+		TRIG_ENDTIME trig_EndTime,ISSIGTHRESHOLD isSigThreshold,SIGTHRESHOLD maxSigThreshold,
+		CREATETIME createTime,CREATENAME createName,UPDATETIME updateTime,UPDATENAME updateName  
+		FROM SAFENODES 
+	</select>
+</mapper>

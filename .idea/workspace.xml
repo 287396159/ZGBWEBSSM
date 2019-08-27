@@ -1,0 +1,1840 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="0b2db061-a6a7-45ff-9a30-f4a634fd0678" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.classpath" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/ZGBWEBSSM_war.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/ZGBWEBSSM_war_exploded.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_druid_1_0_19.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_beust_jcommander_1_48.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_classmate_1_3_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_8_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_8_8.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_8_8.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_jai_imageio_jai_imageio_core_1_3_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_theborakompanioni_thymeleaf_extras_shiro_2_0_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_virtuald_curvesapi_1_04.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_zxing_core_3_3_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_zxing_javase_3_3_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_beanutils_commons_beanutils_1_9_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_10.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_collections_commons_collections_3_2_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_2_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_lang_commons_lang_2_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_javax_servlet_api_3_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_validation_validation_api_1_1_0_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__log4j_log4j_1_2_17.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_5_1_48.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_sf_ehcache_ehcache_core_2_5_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_sf_ezmorph_ezmorph_1_0_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_sf_json_lib_json_lib_jdk13_1_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_sourceforge_nekohtml_nekohtml_1_9_22.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__nz_net_ultraq_thymeleaf_thymeleaf_expression_processor_1_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__nz_net_ultraq_thymeleaf_thymeleaf_layout_dialect_2_0_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ognl_ognl_3_1_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_collections4_4_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_pool2_2_4_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_api_2_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_core_2_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_slf4j_impl_2_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_poi_poi_3_17.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_poi_poi_ooxml_3_17.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_poi_poi_ooxml_schemas_3_17.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_poi_poi_scratchpad_3_8.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_core_1_2_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_ehcache_1_2_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_spring_1_3_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_web_1_3_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_core_8_5_14.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_el_8_5_14.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_logging_juli_8_0_23.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_websocket_8_5_14.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_tomcat_jdbc_8_5_14.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_tomcat_juli_8_5_14.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_xmlbeans_xmlbeans_2_6_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjrt_1_8_10.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_8_10.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_attoparser_attoparser_2_0_0_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_groovy_groovy_2_4_10.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_validator_5_3_5_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_javassist_javassist_3_21_0_GA.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_3_1_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_3_4_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_spring_1_3_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_autoconfigure_1_3_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_starter_1_3_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jcl_over_slf4j_1_7_25.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jul_to_slf4j_1_7_25.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_25.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_1_5_3_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_autoconfigure_1_5_3_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_devtools_1_5_3_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_1_5_3_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_aop_1_5_3_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_data_redis_1_5_3_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_jdbc_1_5_3_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_log4j2_1_5_3_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_thymeleaf_1_5_3_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_tomcat_1_5_3_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_web_1_5_3_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_websocket_1_5_3_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_commons_1_13_3_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_keyvalue_1_2_3_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_redis_1_8_3_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_4_3_8_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_4_3_8_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_4_3_8_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_support_4_3_8_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_4_3_8_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_4_3_8_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_4_3_8_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_messaging_4_3_8_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_oxm_4_3_8_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_4_3_8_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_4_3_8_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_4_3_8_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_websocket_4_3_8_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_thymeleaf_3_0_0_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_thymeleaf_spring4_3_0_0_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_unbescape_unbescape_1_1_3_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_yaml_snakeyaml_1_17.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__redis_clients_jedis_2_9_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__stax_stax_api_1_0_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__xerces_xercesImpl_2_11_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__xml_apis_xml_apis_1_4_01.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.myeclipse/profiler/AppConfig (3).xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.myeclipse/profiler/Test (7).xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.project" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.settings/.jsdtscope" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.settings/org.eclipse.core.resources.prefs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.settings/org.eclipse.jdt.core.prefs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.settings/org.eclipse.m2e.core.prefs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.settings/org.eclipse.wst.common.component" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.settings/org.eclipse.wst.common.project.facet.core.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.settings/org.eclipse.wst.jsdt.ui.superType.container" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.settings/org.eclipse.wst.jsdt.ui.superType.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.settings/org.eclipse.wst.validation.prefs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.tern-project" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ZGBWEBSSM.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/AppConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/access/AccessDetailCapture.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/access/AccessTool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/access/AccessToolConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/access/BaseAccessTool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/access/IAccessDetailCapture.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/access/TagDetailCapture.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/access/base/BaseAccessWork.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/access/base/IWorkAccess.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/access/bean/FillAccessRecord.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/access/bean/TagAccessRecord.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/access/manager/AccessManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/access/manager/AccessManagerConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/access/manager/BaseAccessManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/access/manager/IAccessManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/access/manager/scan/ScanAccessManagerTask.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/access/offduty/LeaveAccessRecord.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/access/onduty/EntryAccessRecord.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/access/onduty/workaccess/BaseWorkAccess.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/access/onduty/workaccess/OffDutyWorkAccess.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/access/onduty/workaccess/OnDutyWorkAccess.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/access/retriever/BaseAccessRetriever.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/access/retriever/CacheAccessRetriever.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/access/retriever/DataBaseAccessRetriever.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/access/retriever/IAccessRetriever.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/access/retriever/StorageAccessRetriever.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/access/status/DoorControlStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/application/listener/ZGBApplicationListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/broadcast/config/BroadCastTransmitterConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/broadcast/imessage/BaseMessageGetter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/broadcast/imessage/DoorControlStatusGetter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/broadcast/imessage/IMessageGetter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/broadcast/imessage/KickOutMessageGetter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/broadcast/imessage/MonitorStateGetter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/broadcast/imessage/WarnMessageGetter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/broadcast/imessage/config/MessageGetterConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/broadcast/interfaces/IBroadcastTransmitter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/broadcast/interfaces/imp/BroadCastTransmitter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/broadcast/vo/BroadCastVo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/cache/tool/detail/BaseCaptureCacheData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/cache/tool/detail/CacheToolConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/cache/tool/detail/CaptureNodeCacheData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/cache/tool/detail/CaptureReferCacheData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/cache/tool/detail/CaptureTagCacheData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/comparator/AccessViewComparator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/comparator/AscInOutRecordComparator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/comparator/AscendingWarmComparator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/comparator/BaseAccessComparator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/comparator/BaseComparator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/comparator/BaseWarmComparator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/comparator/ComparatorConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/comparator/ComparatorTool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/comparator/DescAccessComparator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/comparator/DescendingWarmComparator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/comparator/IComparatorTool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/access/AccessController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/defaults/DefaultController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/module/AllModule.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/monitor/MonitorController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/node/arround/setting/ArroundSettingController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/node/arround/setting/ArroundSettingTool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/node/arround/setting/ArroundSettingToolConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/node/arround/setting/BaseArroundSettingTool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/node/data/NodeDataController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/node/data/NodeDataTool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/node/tree/ReferConnectionController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/permission/AccountAspect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/permission/AccountController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/permission/AccountTool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/permission/PermissionController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/permission/PermissionsConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/permission/PermissionsTool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/permission/RoleController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/permission/RolePermissionController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/person/PersonController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/refer/data/ReferDataController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/refer/data/ReferDataTool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/refer/data/ReferNumber.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/report/access/AccessReportController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/report/access/InOutRecordController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/report/operation/OperationController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/report/totalhours/ITotalHoursTool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/report/totalhours/TotalHoursConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/report/totalhours/TotalHoursController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/report/totalhours/TotalHoursTool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/report/warn/AbnormalNodeReportController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/report/warn/AbnormalReferReportController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/report/warn/AbnormalTagReportController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/report/warn/LowPowerReportController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/report/warn/NotMoveReportController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/report/warn/PersonHelpReportController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/report/warn/RegionControlReportController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/report/warn/ReportCardWarnController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/setting/CompanyController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/setting/GroupController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/setting/JobTypeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/setting/NodeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/setting/RegionController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/setting/ReliablePersonNodesController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/setting/aspect/NodeAspect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/setting/node/BaseDeviceParamTool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/setting/node/DeviceParamToolConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/setting/node/DevicesParamController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/setting/node/IPackTool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/setting/node/NodeParamTool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/setting/node/UdpCommunicationContainer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/setting/node/UdpPackTool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/setting/params/NetWorkParamsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/setting/params/ParamsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/setting/params/ShowParamsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/setting/params/SysParamsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/setting/params/WarmParamsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/setting/params/base/BaseSettingParams.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/setting/params/base/BaseSettingParamsTemplate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/setting/params/base/NetWorkSettingParamTool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/setting/params/base/ShowSettingParamTool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/setting/params/base/SystemSettingParamTool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/setting/params/base/WarmSettingParamTool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/setting/validation/AccountValidation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/setting/validation/BaseSettingValidation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/setting/validation/CompanyValidation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/setting/validation/GroupValidation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/setting/validation/JobTypeValidation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/setting/validation/NodeValidation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/setting/validation/PermissionValidation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/setting/validation/PersonValidation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/setting/validation/RegionValidation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/setting/validation/RolePermissionValidation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/setting/validation/RoleValidation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/sort/ISort.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/sort/Sorter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/sort/SorterConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/tag/data/TagDataController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/tag/data/TagDataTool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/tool/RegionTool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/tool/page/IPagingTool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/tool/page/PageTool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/tool/page/PageToolConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/track/TrackTool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/track/TrackValidationTool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/track/list/HistoryTrack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/track/map/GraphictraceTool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/track/map/GraphictraceValidationTool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/track/map/HistoryGraphictraceData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/validate/BaseValidateTool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/validate/ReliablePersonNodesValidationTool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/view/ViewController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/warn/AbnormalBaseWarnController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/warn/AbnormalReferWarnController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/warn/AbnormalTagWarnController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/warn/AreaControlWarnController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/warn/LowPowerWarnController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/warn/NotMoveWarnController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/warn/PersonHelpWarnController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/access/dao/AccessDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/access/service/AccessService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/access/service/impl/AccessServiceImp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/access/work/dao/AccessWorkDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/access/work/service/AccessWorkService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/access/work/service/imp/AccessWorkServiceImp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/log/dao/LogToolConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/log/dao/OperationLogDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/log/service/OperationLogService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/log/service/imp/OperationLogServiceImp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/permission/dao/AccountDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/permission/dao/PermissionDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/permission/dao/RoleDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/permission/dao/Role_PermissionDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/permission/service/AccountService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/permission/service/PermissionService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/permission/service/RoleService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/permission/service/Role_PermissionService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/permission/service/imp/AccountServiceImp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/permission/service/imp/PermissionServiceImp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/permission/service/imp/RoleServiceImp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/permission/service/imp/Role_PermissionServiceImp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/person/dao/PersonDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/person/service/PersonService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/person/service/imp/PersonServiceImp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/pojo/permission/Account.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/pojo/permission/Permission.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/pojo/permission/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/pojo/permission/Role_Permission.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/pojo/person/Person.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/pojo/setting/BaseSettingPojo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/pojo/setting/Company.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/pojo/setting/DangerNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/pojo/setting/Group.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/pojo/setting/GroupTagNumber.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/pojo/setting/JobType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/pojo/setting/Node.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/pojo/setting/Region.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/pojo/setting/ReliablePerson_Node.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/pojo/setting/SafeNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/pojo/setting/TimelyJobType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/setting/dao/CompanyDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/setting/dao/DangerNodeDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/setting/dao/GroupDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/setting/dao/JobTypeDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/setting/dao/NodeDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/setting/dao/RegionDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/setting/dao/ReliablePerson_NodeDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/setting/dao/SafeNodeDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/setting/service/CompanyService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/setting/service/DangerNodeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/setting/service/GroupService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/setting/service/JobTypeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/setting/service/NodeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/setting/service/RegionService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/setting/service/ReliablePerson_NodeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/setting/service/SafeNodeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/setting/service/imp/CompanyServiceImp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/setting/service/imp/DangerNodeServiceImp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/setting/service/imp/GroupServiceImp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/setting/service/imp/JobTypeServiceImp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/setting/service/imp/NodeServiceImp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/setting/service/imp/RegionServiceImp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/setting/service/imp/ReliablePerson_NodeServiceImp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/setting/service/imp/SafeNodeServiceImp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/warn/dao/AbnormalBaseDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/warn/dao/AbnormalReferDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/warn/dao/AbnormalTagDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/warn/dao/AreaControllerDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/warn/dao/LowPowerDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/warn/dao/NotMoveDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/warn/dao/PersonnelHelpDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/warn/service/AbnormalBaseService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/warn/service/AbnormalReferService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/warn/service/AbnormalTagService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/warn/service/AreaControllerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/warn/service/LowPowerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/warn/service/NotMoveService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/warn/service/PersonHelpService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/warn/service/impl/AbnormalBaseServiceImp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/warn/service/impl/AbnormalReferServiceImp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/warn/service/impl/AbnormalTagServiceImp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/warn/service/impl/AreaControllerServiceImp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/warn/service/impl/LowPowerServiceImp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/warn/service/impl/NotMoveServiceImp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/db/warn/service/impl/PersonnelHelpServiceImp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/dialect/CustomIPDialect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/dialect/CustomIP_IProcessor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/druid/component/DruidStatFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/druid/component/DruidStatViewServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/druid/configuration/DruidConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/exception/BusinessExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/exception/bean/ExceptionMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/export_/excel/BaseExcelExport.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/export_/excel/CompanyExcelExport.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/export_/excel/ExcelExportConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/export_/excel/IExcelExport.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/export_/excel/JobTypeExcelExport.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/export_/excel/PersonExcelExport.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/export_/word/CustomXWPFDocument.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/export_/word/DrawPersonnelCard.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/export_/word/IDrawImage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/export_/word/IWordExport.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/export_/word/WordConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/export_/word/WordExport.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/file/update/BaseFileUploadProperties.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/file/update/CardUploadProperties.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/file/update/FileUploadProperteis.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/file/update/StaffUploadProperties.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/file/update/TempUploadProperties.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/file/update/WebMvcConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/file/update/WordTemplateProperties.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/filter/MyFormAuthenticationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/history/track/BaseTrack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/import_/excel/BaseExcelImport.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/import_/excel/ColumnType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/import_/excel/CompanyExcelImport.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/import_/excel/ExcelColumn.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/import_/excel/ExcelImportConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/import_/excel/IExcelImport.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/import_/excel/JobTypeExcelImport.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/import_/excel/PersonExcelImport.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/log/anno/Operation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/log/aspect/OperationLogAspect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/log/bean/OperationLog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/login/access/filter/KickoutSessionControlFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/monitor/BaseDataMonitor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/monitor/BaseParseDataMonitor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/monitor/IDataParse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/monitor/ISendTool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/monitor/MonitorUdpSendTool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/monitor/SendToolConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/monitor/ZGBDataMonitor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/monitor/bean/BaseDevicePack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/monitor/bean/NodePack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/monitor/bean/ReferPack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/monitor/bean/ReferSig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/monitor/bean/TagPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/monitor/bean/TrackPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/monitor/callback/MonitorCallBack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/monitor/callback/ZGBMonitorCallBack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/monitor/configuration/ZGBDataMonitorConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/monitor/device/detail/NodeDetail.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/monitor/device/detail/ReferDetail.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/monitor/device/detail/TagDetail.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/monitor/device/vo/TagViewMsg.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/monitor/listener/BaseAllTaskManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/monitor/listener/BaseAllWarmCacheManagement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/monitor/listener/BaseAllWarmCacheManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/monitor/listener/MonitorStarter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/monitor/utils/DataProtocol.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/pack/construction/PacketConstruction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/pack/construction/ZGBPacketConstruction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/pack/parsing/IByteFileParse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/pack/parsing/IDataPacketParse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/pack/parsing/ZGBByteFileParse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/pack/parsing/ZGBDataPacketParse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/packages/iscan/ClassPathPackageScanner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/packages/iscan/IPackageScanner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/packages/iscan/PackageScannerConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/params/setting/cache/ParamsKey.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/params/setting/cache/SettingParams.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/params/setting/cache/configuration/SettingParamsConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/permission/anon/PermissionName.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/rawextract/BaseExtractHistoryData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/rawextract/BaseZGBExtractHistoryData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/rawextract/IRawDataExtract.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/rawextract/RawDataConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/rawextract/RootZGBExtractHistoryData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/rawextract/ZGBExtractHistoryData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/rawextract/ZGBMultiExtractHistoryData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/rawstorage/BaseStorageHistoryData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/rawstorage/BaseZGBStoreHistoryData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/rawstorage/IRawDataStorage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/rawstorage/RootZGBStoreHistoryData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/rawstorage/ZGBStoreHistoryData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/rawstorage/ZGBStoreHistoryDataConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/rawstorage/time/ZGBRawTimeDataStorage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/redis/cache/AccessRedisCache.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/redis/cache/IRedisMapCache.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/redis/cache/NodePackRedisCache.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/redis/cache/RedisConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/redis/cache/RedisMapCache.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/redis/cache/ReferPackRedisCache.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/redis/cache/TagPackRedisCache.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/redis/service/RedisService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/redis/service/impl/RedisServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/redis/util/RedisCacheName.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/report/access/tool/AccessReportTool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/report/access/tool/AccessReportToolConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/report/access/tool/BaseAccessReport.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/report/access/tool/DailyAccessTools.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/report/access/tool/IDailyAccessTools.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/report/operation/tool/LogTool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/report/statistic/warn/tool/BaseStatisticalBaseWarnPageTool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/report/statistic/warn/tool/BaseStatisticalTagWarnPageTool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/report/statistic/warn/tool/BaseStatisticalWarnPageTool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/report/statistic/warn/tool/IStatisticalWarnPageTool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/report/statistic/warn/tool/StatisticalAbnormalNodeWarnPageTool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/report/statistic/warn/tool/StatisticalAbnormalReferWarnPageTool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/report/statistic/warn/tool/StatisticalAbnormalTagPageTool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/report/statistic/warn/tool/StatisticalAreaControlPageTool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/report/statistic/warn/tool/StatisticalLowerPowerPageTool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/report/statistic/warn/tool/StatisticalNodeWarnPageTool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/report/statistic/warn/tool/StatisticalNotMovePageTool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/report/statistic/warn/tool/StatisticalPersonnelHelpPageTool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/report/statistical/warn/bean/AbnormalBaseStatictisWarn.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/report/statistical/warn/bean/AbnormalReferStatictisWarn.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/report/statistical/warn/bean/AbnormalTagStatictisWarn.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/report/statistical/warn/bean/AreaControlStatictisWarn.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/report/statistical/warn/bean/BaseStatisticalWarn.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/report/statistical/warn/bean/LowBatteryStatisticalWarn.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/report/statistical/warn/bean/NotMoveStatisticalWarn.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/report/statistical/warn/bean/PersonHelpStatisticalWarn.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/report/warn/bean/BaseCardReportWarnInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/report/warn/bean/GroupCardReportWarnInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/report/warn/bean/WarnType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/report/warn/bean/WarnTypeCardReportInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/report/warn/tool/AbnormalNodeReportWarnTool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/report/warn/tool/AbnormalReferReportWarnTool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/report/warn/tool/AbnormalTagReportWarnTool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/report/warn/tool/BaseNodeWarnReportTool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/report/warn/tool/BaseReportWarnTool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/report/warn/tool/BaseRootReportWarnTool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/report/warn/tool/BaseTagWarnReportTool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/report/warn/tool/LowPowerReportWarnTool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/report/warn/tool/NotMoveReportWarnTool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/report/warn/tool/PersonHelpReportWarnTool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/report/warn/tool/RegionControlReportWarnTool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/report/warn/tool/ReportToolConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/report/warn/tool/ReportWarnTool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/result/factory/base/BaseResultFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/result/factory/base/CheckedResultFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/result/factory/base/ViewResultFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/result/factory/configuration/FactoryConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/arround/node/read/pack/ReadArroundNodeAtCommandUdpPack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/arround/node/read/pack/ReadArroundNodeGateWayUdpPack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/arround/node/read/pack/ReadArroundNodeLanIpModeUdpPack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/arround/node/read/pack/ReadArroundNodeLanStaticIpUdpPack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/arround/node/read/pack/ReadArroundNodeLastState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/arround/node/read/pack/ReadArroundNodeMaskUdpPack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/arround/node/read/pack/ReadArroundNodeServerIpUdpPack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/arround/node/read/pack/ReadArroundNodeServerPortUdpPack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/arround/node/read/pack/ReadArroundNodeTypeVersionUdpPack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/arround/node/read/pack/ReadArroundNodeWifiIpModeUdpPack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/arround/node/read/pack/ReadArroundNodeWifiNameUdpPack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/arround/node/read/pack/ReadArroundNodeWifiPswUdpPack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/arround/node/read/pack/ReadArroundNodeWifiRssiUdpPack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/arround/node/read/pack/ReadArroundNodeWifiStaticIpUdpPack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/arround/node/read/pack/ResetArroundNodeUdpPack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/arround/node/read/pack/SearchArroundNodesUdpPack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/arround/node/setting/pack/SetArroundNodeGateWayUdpPack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/arround/node/setting/pack/SetArroundNodeLanIpModeUdpPack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/arround/node/setting/pack/SetArroundNodeLanIpUdpPack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/arround/node/setting/pack/SetArroundNodeServerIpUdpPack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/arround/node/setting/pack/SetArroundNodeServerPortUdpPack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/arround/node/setting/pack/SetArroundNodeSubMaskUdpPack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/arround/node/setting/pack/SetArroundNodeWifiIpModelUdpPack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/arround/node/setting/pack/SetArroundNodeWifiNameUdpPack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/arround/node/setting/pack/SetArroundNodeWifiPswUdpPack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/arround/node/setting/pack/SetArroundNodeWifiStaticIpUdpPack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/arround/refer/read/pack/ReadArroundBetweenSigUdpPack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/arround/refer/read/pack/ReadArroundReferSigKUdpPack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/arround/refer/read/pack/ReadArroundReferSigThresholdUdpPack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/arround/refer/read/pack/ReadArroundReferTypeVersionUdpPack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/arround/refer/read/pack/ResetArroundReferUdpPack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/arround/refer/read/pack/SearchArroundRefersUdpPack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/arround/refer/setting/pack/SetArroundReferSigKUdpPack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/arround/refer/setting/pack/SetArroundReferSigThresholdUdp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/directly/node/read/pack/ReadIPUdpPack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/directly/node/read/pack/ReadIpModeUdpPack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/directly/node/read/pack/ReadNodeArroundWifiRssiUdpPack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/directly/node/read/pack/ReadNodeChannelUdpPack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/directly/node/read/pack/ReadNodeGateWayUdpPack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/directly/node/read/pack/ReadNodeIpUdpPack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/directly/node/read/pack/ReadNodeMaskUdpPack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/directly/node/read/pack/ReadNodeTypeVersionUdpPack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/directly/node/read/pack/ReadNodeWifiIpModeUdpPack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/directly/node/read/pack/ReadNodeWifiStaticIpUdpPack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/directly/node/read/pack/ReadPortUdpPack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/directly/node/read/pack/ReadWifiNameUdpPack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/directly/node/read/pack/ReadWifiPswUdpPack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/directly/node/read/pack/ResetNodePack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/directly/node/set/pack/SetNodeIpModeUdpPack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/directly/node/set/pack/SetNodeSelfGateWayUdpPack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/directly/node/set/pack/SetNodeSelfIPUdpPack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/directly/node/set/pack/SetNodeSelfMaskUdpPack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/directly/node/set/pack/SetNodeServerIpUdpPack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/directly/node/set/pack/SetNodeServerPortUdpPack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/directly/node/set/pack/SetWifiIpModeUdpPack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/directly/node/set/pack/SetWifiNameUdpPack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/directly/node/set/pack/SetWifiPswUdpPack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/directly/node/set/pack/SetWifiStaticIpUdpPack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/directly/refer/read/pack/ReadReferReceiveSignUdpPack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/directly/refer/read/pack/ReadReferSignKUdpPack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/directly/refer/read/pack/ReadReferTypeVersionUdpPack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/directly/refer/read/pack/ResetReferUdpPack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/directly/refer/set/pack/SetReferReceiveSignUdpPack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/directly/refer/set/pack/SetReferSignKUdpPack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/groupTool/GroupTagNumberTool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/groupTool/TagNumberTool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/groupTool/TagNumberToolConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/pack/abstract_/BaseArroundNodeReadUdpPack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/pack/abstract_/BaseArroundReadUdpPack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/pack/abstract_/BaseArroundSettingUdpPack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/pack/abstract_/BaseArroundUdpPack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/pack/abstract_/BaseDirectlyNodeReadUdpPack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/pack/abstract_/BaseDirectlyNodeSettingUdpPack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/pack/abstract_/BaseDirectlyReadUdpPack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/pack/abstract_/BaseDirectlyReferReadUdpPack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/pack/abstract_/BaseDirectlyReferSettingUdpPack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/pack/abstract_/BaseDirectlySettingUdpPack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/pack/abstract_/BaseDirectlyUdpPack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/pack/abstract_/BaseSearchArroundUdpPack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/pack/abstract_/BaseUdpPack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/vo/PagesResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/vo/Result.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/vo/ResultCode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/vo/SearchDevicePo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/setting/vo/SearchNodePo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/shiro/configuration/SessionManagerConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/shiro/configuration/ShiroConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/shiro/realm/MyShiroRealm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/shiro/realm/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/show/vo/AccessView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/show/vo/Group_Regions.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/show/vo/JobTypeTags.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/show/vo/SearchReportCondition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/show/vo/SearchTrack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/show/vo/TagCheckView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/show/vo/TotalHoursView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/show/warn/vo/BaseWarnSearchInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/show/warn/vo/NodeWarnSearchInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/show/warn/vo/TagWarnSearchInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/show/warn/vo/WarnSearchConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/show/warn/vo/WarnSearchFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/task/scan/BaseScanTask.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/task/scan/CacheCleanUpTask.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/task/scan/ClearAbnormalTagPackTask.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/task/scan/ClearAccessCacheTask.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/task/scan/ClearHandleWarnTask.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/task/scan/ScanDevicesTask.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/task/scan/ScanTaskConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/task/scan/TimingBroadCastTask.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/task/timer/BaseTimeDelayTimer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/task/timer/BaseTimePointTimer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/task/timer/ITaskTimer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/task/timer/ScanNodesTimer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/task/timer/ScheduleAccessTask.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/task/timer/ScheduleAccessTimer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/tool/Inetaddress/InetAddressTools.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/tool/check/bean/CheckedResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/tool/check/bean/CheckedTools.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/udp/client/UdpClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/utils/AjaxUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/utils/Encryptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/utils/StringUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/warm/scan/BaseScanTagWarm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/warm/scan/ScanTagWarmTool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/warm/scan/ScanWarmToolConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/warn/bean/AbnormalBaseWarn.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/warn/bean/AbnormalReferWarn.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/warn/bean/AbnormalTagWarn.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/warn/bean/AreaControlWarn.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/warn/bean/LowPowerWarn.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/warn/bean/NotMoveWarn.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/warn/bean/PersonnelHelpWarn.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/warn/bean/base/BaseAbnormalNodeWarn.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/warn/bean/base/BaseNodeWarnMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/warn/bean/base/BaseTagWarnMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/warn/bean/base/BaseWarnMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/warn/cache/AbnormalBaseWarnCache.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/warn/cache/AbnormalReferWarnCache.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/warn/cache/AbnormalTagWarnCache.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/warn/cache/AreaControlWarnCache.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/warn/cache/LowPowerWarnCache.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/warn/cache/NotMoveWarnCache.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/warn/cache/PersonnelHelpWarnCache.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/warn/cache/base/BaseNodeWarnCache.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/warn/cache/base/BaseTagWarnCache.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/warn/cache/base/BaseWarnCache.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/warn/cache/configuration/WarmCacheConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/websocket/ZGBWebSocketContainerServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/websocket/config/WebSocketConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/websocket/container/BaseWebSocketContainer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/websocket/container/WarnWebSocketContainer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/websocket/container/WebSocketContainer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dmatek/zgb/websocket/container/WebSocketContainerManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/config/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/config/spring-mybatis.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/config/spring-redis.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/log4j.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mappers/ReliablePerson_NodeMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mappers/abnormalBaseMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mappers/abnormalReferMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mappers/abnormalTagMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mappers/accessMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mappers/accessWorkMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mappers/accountMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mappers/areaControllerMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mappers/companyMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mappers/dangerNodeMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mappers/groupMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mappers/jobTypeMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mappers/logMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mappers/lowPowerMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mappers/nodeMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mappers/notMoveMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mappers/permissionMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mappers/personMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mappers/personnelHelpMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mappers/regionMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mappers/roleMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mappers/role_PermissionMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mappers/safeNodeMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/shiro-ehcache.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/css/lib/iconfont.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/css/lib/reset.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/css/module/UserAccountMgr.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/css/module/access/recordOfAccess.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/css/module/account/userAccountMgr.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/css/module/exportReport.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/css/module/history/historyTrack.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/css/module/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/css/module/login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/css/module/monitor/monitoring.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/css/module/recordOfAccess.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/css/module/report/exportReport.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/css/module/setting/baseStation.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/css/module/setting/contractorDataMgr.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/css/module/warm/alarm.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/img/5c7fe97c-255b-4baf-b804-083e4fc8f9d3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/img/dmatek.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/img/join.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/img/joinLast.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/img/line.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/img/sysperson.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/img/timg.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/js/lib/ECharts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/js/lib/common-tool.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/js/lib/functions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/js/lib/html2canvas.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/js/lib/jquery-3.1.0.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/js/lib/jquery.table2excel.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/js/lib/lib.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/js/lib/qrcode.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/js/lib/websocket.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/js/module/access/access-request.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/js/module/access/access-timer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/js/module/access/recordOfAccess.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/js/module/account/request-data.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/js/module/account/userAccountMgr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/js/module/base/baseStation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/js/module/base/device-setting.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/js/module/base/drawing-setting.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/js/module/base/request-data.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/js/module/base/timer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/js/module/head/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/js/module/head/monitor-controller.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/js/module/history/historyTrack.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/js/module/history/playTrack.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/js/module/history/request-data.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/js/module/login/login.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/js/module/monitor/monitor-request.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/js/module/monitor/monitoring.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/js/module/monitor/timer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/js/module/report/exportReport.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/js/module/report/request-data.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/js/module/setting/base-setting.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/js/module/setting/contractorDataMgr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/js/module/setting/drawing.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/js/module/setting/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/js/module/setting/node.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/js/module/setting/request-data.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/js/module/warm/alarm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/js/module/warm/request-data.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/css/layui.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/css/layui.mobile.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/css/modules/code.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/css/modules/laydate/default/laydate.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/css/modules/layer/default/icon-ext.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/css/modules/layer/default/icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/css/modules/layer/default/layer.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/css/modules/layer/default/loading-0.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/css/modules/layer/default/loading-1.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/css/modules/layer/default/loading-2.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/font/iconfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/font/iconfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/font/iconfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/font/iconfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/font/iconfont.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/images/face/0.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/images/face/1.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/images/face/10.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/images/face/11.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/images/face/12.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/images/face/13.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/images/face/14.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/images/face/15.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/images/face/16.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/images/face/17.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/images/face/18.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/images/face/19.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/images/face/2.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/images/face/20.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/images/face/21.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/images/face/22.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/images/face/23.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/images/face/24.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/images/face/25.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/images/face/26.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/images/face/27.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/images/face/28.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/images/face/29.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/images/face/3.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/images/face/30.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/images/face/31.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/images/face/32.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/images/face/33.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/images/face/34.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/images/face/35.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/images/face/36.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/images/face/37.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/images/face/38.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/images/face/39.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/images/face/4.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/images/face/40.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/images/face/41.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/images/face/42.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/images/face/43.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/images/face/44.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/images/face/45.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/images/face/46.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/images/face/47.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/images/face/48.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/images/face/49.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/images/face/5.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/images/face/50.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/images/face/51.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/images/face/52.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/images/face/53.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/images/face/54.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/images/face/55.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/images/face/56.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/images/face/57.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/images/face/58.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/images/face/59.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/images/face/6.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/images/face/60.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/images/face/61.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/images/face/62.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/images/face/63.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/images/face/64.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/images/face/65.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/images/face/66.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/images/face/67.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/images/face/68.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/images/face/69.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/images/face/7.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/images/face/70.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/images/face/71.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/images/face/8.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/images/face/9.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/lay/modules/carousel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/lay/modules/code.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/lay/modules/colorpicker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/lay/modules/element.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/lay/modules/flow.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/lay/modules/form.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/lay/modules/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/lay/modules/laydate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/lay/modules/layedit.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/lay/modules/layer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/lay/modules/laypage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/lay/modules/laytpl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/lay/modules/mobile.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/lay/modules/rate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/lay/modules/slider.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/lay/modules/table.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/lay/modules/transfer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/lay/modules/tree.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/lay/modules/upload.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/lay/modules/util.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/layui.all.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/static/layui/layui.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/templates/access/recordOfAccess.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/templates/account/userAccountMgr.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/templates/base/baseStation.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/templates/error/404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/templates/error/500.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/templates/error/unauthor.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/templates/history/historyTrack.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/templates/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/templates/monitor/monitoring.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/templates/nav/mainNav.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/templates/report/exportReport.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/templates/setting/ccSetMgr.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/templates/setting/contractorDataMgr.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/templates/tab/node.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/templates/warm/alarm.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/zgbdb.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/dmatek/test/Boy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/dmatek/test/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/config/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/config/spring-mybatis.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/config/spring-redis.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/log4j.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/mappers/ReliablePerson_NodeMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/mappers/abnormalBaseMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/mappers/abnormalReferMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/mappers/abnormalTagMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/mappers/accessMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/mappers/accessWorkMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/mappers/accountMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/mappers/areaControllerMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/mappers/companyMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/mappers/dangerNodeMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/mappers/groupMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/mappers/jobTypeMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/mappers/logMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/mappers/lowPowerMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/mappers/nodeMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/mappers/notMoveMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/mappers/permissionMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/mappers/personMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/mappers/personnelHelpMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/mappers/regionMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/mappers/roleMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/mappers/role_PermissionMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/mappers/safeNodeMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/shiro-ehcache.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/css/lib/iconfont.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/css/lib/reset.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/css/module/UserAccountMgr.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/css/module/access/recordOfAccess.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/css/module/account/userAccountMgr.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/css/module/exportReport.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/css/module/history/historyTrack.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/css/module/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/css/module/login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/css/module/monitor/monitoring.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/css/module/recordOfAccess.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/css/module/report/exportReport.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/css/module/setting/baseStation.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/css/module/setting/contractorDataMgr.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/css/module/warm/alarm.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/img/5c7fe97c-255b-4baf-b804-083e4fc8f9d3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/img/dmatek.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/img/join.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/img/joinLast.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/img/line.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/img/sysperson.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/img/timg.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/js/lib/ECharts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/js/lib/common-tool.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/js/lib/functions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/js/lib/html2canvas.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/js/lib/jquery-3.1.0.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/js/lib/jquery.table2excel.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/js/lib/lib.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/js/lib/qrcode.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/js/lib/websocket.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/js/module/access/access-request.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/js/module/access/access-timer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/js/module/access/recordOfAccess.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/js/module/account/request-data.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/js/module/account/userAccountMgr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/js/module/base/baseStation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/js/module/base/device-setting.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/js/module/base/drawing-setting.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/js/module/base/request-data.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/js/module/base/timer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/js/module/head/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/js/module/head/monitor-controller.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/js/module/history/historyTrack.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/js/module/history/playTrack.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/js/module/history/request-data.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/js/module/login/login.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/js/module/monitor/monitor-request.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/js/module/monitor/monitoring.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/js/module/monitor/timer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/js/module/report/exportReport.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/js/module/report/request-data.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/js/module/setting/base-setting.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/js/module/setting/contractorDataMgr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/js/module/setting/drawing.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/js/module/setting/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/js/module/setting/node.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/js/module/setting/request-data.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/js/module/warm/alarm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/js/module/warm/request-data.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/css/layui.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/css/layui.mobile.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/css/modules/code.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/css/modules/laydate/default/laydate.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/css/modules/layer/default/icon-ext.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/css/modules/layer/default/icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/css/modules/layer/default/layer.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/css/modules/layer/default/loading-0.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/css/modules/layer/default/loading-1.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/css/modules/layer/default/loading-2.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/font/iconfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/font/iconfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/font/iconfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/font/iconfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/font/iconfont.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/images/face/0.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/images/face/1.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/images/face/10.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/images/face/11.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/images/face/12.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/images/face/13.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/images/face/14.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/images/face/15.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/images/face/16.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/images/face/17.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/images/face/18.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/images/face/19.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/images/face/2.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/images/face/20.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/images/face/21.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/images/face/22.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/images/face/23.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/images/face/24.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/images/face/25.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/images/face/26.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/images/face/27.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/images/face/28.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/images/face/29.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/images/face/3.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/images/face/30.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/images/face/31.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/images/face/32.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/images/face/33.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/images/face/34.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/images/face/35.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/images/face/36.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/images/face/37.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/images/face/38.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/images/face/39.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/images/face/4.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/images/face/40.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/images/face/41.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/images/face/42.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/images/face/43.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/images/face/44.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/images/face/45.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/images/face/46.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/images/face/47.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/images/face/48.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/images/face/49.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/images/face/5.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/images/face/50.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/images/face/51.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/images/face/52.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/images/face/53.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/images/face/54.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/images/face/55.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/images/face/56.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/images/face/57.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/images/face/58.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/images/face/59.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/images/face/6.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/images/face/60.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/images/face/61.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/images/face/62.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/images/face/63.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/images/face/64.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/images/face/65.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/images/face/66.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/images/face/67.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/images/face/68.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/images/face/69.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/images/face/7.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/images/face/70.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/images/face/71.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/images/face/8.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/images/face/9.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/lay/modules/carousel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/lay/modules/code.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/lay/modules/colorpicker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/lay/modules/element.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/lay/modules/flow.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/lay/modules/form.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/lay/modules/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/lay/modules/laydate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/lay/modules/layedit.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/lay/modules/layer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/lay/modules/laypage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/lay/modules/laytpl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/lay/modules/mobile.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/lay/modules/rate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/lay/modules/slider.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/lay/modules/table.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/lay/modules/transfer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/lay/modules/tree.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/lay/modules/upload.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/lay/modules/util.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/layui.all.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/static/layui/layui.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/templates/access/recordOfAccess.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/templates/account/userAccountMgr.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/templates/base/baseStation.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/templates/error/404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/templates/error/500.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/templates/error/unauthor.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/templates/history/historyTrack.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/templates/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/templates/monitor/monitoring.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/templates/nav/mainNav.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/templates/report/exportReport.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/templates/setting/ccSetMgr.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/templates/setting/contractorDataMgr.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/templates/tab/node.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/templates/warm/alarm.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/classes/zgbdb.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ZGBWEBSSM/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/config/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/config/spring-mybatis.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/config/spring-redis.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/log4j.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mappers/ReliablePerson_NodeMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mappers/abnormalBaseMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mappers/abnormalReferMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mappers/abnormalTagMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mappers/accessMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mappers/accessWorkMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mappers/accountMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mappers/areaControllerMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mappers/companyMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mappers/dangerNodeMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mappers/groupMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mappers/jobTypeMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mappers/logMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mappers/lowPowerMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mappers/nodeMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mappers/notMoveMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mappers/permissionMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mappers/personMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mappers/personnelHelpMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mappers/regionMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mappers/roleMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mappers/role_PermissionMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mappers/safeNodeMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/shiro-ehcache.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/lib/iconfont.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/lib/reset.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/module/UserAccountMgr.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/module/access/recordOfAccess.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/module/account/userAccountMgr.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/module/exportReport.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/module/history/historyTrack.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/module/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/module/login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/module/monitor/monitoring.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/module/recordOfAccess.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/module/report/exportReport.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/module/setting/baseStation.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/module/setting/contractorDataMgr.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/module/warm/alarm.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/5c7fe97c-255b-4baf-b804-083e4fc8f9d3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/dmatek.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/join.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/joinLast.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/line.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/sysperson.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/timg.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/lib/ECharts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/lib/common-tool.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/lib/functions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/lib/html2canvas.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/lib/jquery-3.1.0.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/lib/jquery.table2excel.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/lib/lib.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/lib/qrcode.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/lib/websocket.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/module/access/access-request.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/module/access/access-timer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/module/access/recordOfAccess.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/module/account/request-data.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/module/account/userAccountMgr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/module/base/baseStation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/module/base/device-setting.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/module/base/drawing-setting.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/module/base/request-data.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/module/base/timer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/module/head/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/module/head/monitor-controller.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/module/history/historyTrack.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/module/history/playTrack.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/module/history/request-data.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/module/login/login.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/module/monitor/monitor-request.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/module/monitor/monitoring.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/module/monitor/timer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/module/report/exportReport.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/module/report/request-data.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/module/setting/base-setting.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/module/setting/contractorDataMgr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/module/setting/drawing.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/module/setting/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/module/setting/node.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/module/setting/request-data.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/module/warm/alarm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/module/warm/request-data.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/css/layui.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/css/layui.mobile.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/css/modules/code.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/css/modules/laydate/default/laydate.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/css/modules/layer/default/icon-ext.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/css/modules/layer/default/icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/css/modules/layer/default/layer.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/css/modules/layer/default/loading-0.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/css/modules/layer/default/loading-1.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/css/modules/layer/default/loading-2.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/font/iconfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/font/iconfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/font/iconfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/font/iconfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/font/iconfont.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/images/face/0.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/images/face/1.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/images/face/10.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/images/face/11.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/images/face/12.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/images/face/13.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/images/face/14.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/images/face/15.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/images/face/16.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/images/face/17.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/images/face/18.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/images/face/19.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/images/face/2.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/images/face/20.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/images/face/21.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/images/face/22.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/images/face/23.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/images/face/24.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/images/face/25.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/images/face/26.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/images/face/27.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/images/face/28.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/images/face/29.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/images/face/3.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/images/face/30.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/images/face/31.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/images/face/32.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/images/face/33.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/images/face/34.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/images/face/35.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/images/face/36.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/images/face/37.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/images/face/38.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/images/face/39.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/images/face/4.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/images/face/40.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/images/face/41.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/images/face/42.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/images/face/43.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/images/face/44.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/images/face/45.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/images/face/46.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/images/face/47.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/images/face/48.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/images/face/49.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/images/face/5.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/images/face/50.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/images/face/51.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/images/face/52.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/images/face/53.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/images/face/54.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/images/face/55.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/images/face/56.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/images/face/57.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/images/face/58.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/images/face/59.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/images/face/6.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/images/face/60.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/images/face/61.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/images/face/62.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/images/face/63.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/images/face/64.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/images/face/65.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/images/face/66.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/images/face/67.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/images/face/68.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/images/face/69.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/images/face/7.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/images/face/70.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/images/face/71.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/images/face/8.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/images/face/9.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/lay/modules/carousel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/lay/modules/code.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/lay/modules/colorpicker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/lay/modules/element.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/lay/modules/flow.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/lay/modules/form.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/lay/modules/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/lay/modules/laydate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/lay/modules/layedit.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/lay/modules/layer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/lay/modules/laypage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/lay/modules/laytpl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/lay/modules/mobile.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/lay/modules/rate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/lay/modules/slider.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/lay/modules/table.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/lay/modules/transfer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/lay/modules/tree.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/lay/modules/upload.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/lay/modules/util.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/layui.all.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/layui/layui.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/access/recordOfAccess.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/account/userAccountMgr.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/base/baseStation.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/error/404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/error/500.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/error/unauthor.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/history/historyTrack.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/monitor/monitoring.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/nav/mainNav.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/report/exportReport.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/setting/ccSetMgr.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/setting/contractorDataMgr.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/tab/node.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/warm/alarm.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/zgbdb.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/m2e-wtp/web-resources/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/m2e-wtp/web-resources/META-INF/maven/com.dmatek/ZGBWEBSSM/pom.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/m2e-wtp/web-resources/META-INF/maven/com.dmatek/ZGBWEBSSM/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/classes/" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="testRunner" value="GRADLE" />
+    <option name="delegatedBuild" value="true" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/templates/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="80">
+              <caret line="23" column="38" lean-forward="true" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/templates/login.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="450">
+              <caret line="18" column="96" selection-start-line="18" selection-start-column="95" selection-end-line="18" selection-end-column="96" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/templates/access/recordOfAccess.html">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/templates/error/unauthor.html">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/templates/tab/node.html">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/templates/warm/alarm.html">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/templates/setting/ccSetMgr.html">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/templates/setting/contractorDataMgr.html">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/templates/error/500.html">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/templates/error/404.html">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/config/spring-mybatis.properties" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="G:/Users/apache-maven-3.6.1" />
+        <option name="userSettingsFile" value="G:\Users\apache-maven-3.6.1\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="ZGBWEB" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="ZGBWEB" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Dependencies" type="f4be9f2a:MavenProjectsStructure$DependenciesNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="778" />
+    <option name="y" value="160" />
+    <option name="width" value="961" />
+    <option name="height" value="1040" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="ZGBWEBSSM" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ZGBWEBSSM" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ZGBWEBSSM" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ZGBWEBSSM" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ZGBWEBSSM" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ZGBWEBSSM" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ZGBWEBSSM" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ZGBWEBSSM" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ZGBWEBSSM" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ZGBWEBSSM" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="zgb" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelOrder2" value="2" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RequestMappingsPanelWidth2" value="75" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Users\Administrator\eclipse-workspace\ZGBWEBSSM\src\main\resources\config" />
+      <recent name="D:\Users\Administrator\eclipse-workspace\ZGBWEBSSM\src\main\resources" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="AppConfig" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="ZGBWEBSSM" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.dmatek.zgb.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.dmatek.zgb.AppConfig" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.AppConfig" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0b2db061-a6a7-45ff-9a30-f4a634fd0678" name="Default Changelist" comment="" />
+      <created>1566875539008</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1566875539008</updated>
+      <workItem from="1566875542441" duration="12847000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="12847000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Designer" />
+      <window_info id="UI Designer" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info id="Learn" />
+      <window_info id="Web" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Spring" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" />
+      <window_info anchor="bottom" id="Java Enterprise" />
+      <window_info anchor="bottom" id="Database Changes" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.5887446" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.6829004" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Maven" weight="0.32995737" />
+      <window_info anchor="right" id="Palette" />
+      <window_info anchor="right" id="Database" />
+      <window_info anchor="right" id="Palette&#9;" />
+      <window_info anchor="right" id="Bean Validation" weight="0.32995737" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/zgbdb.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/config/application.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="jar://G:/Users/apache-maven-3.6.1/repo/org/springframework/boot/spring-boot-devtools/1.5.3.RELEASE/spring-boot-devtools-1.5.3.RELEASE-sources.jar!/org/springframework/boot/devtools/restart/RestartLauncher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="346">
+          <caret line="44" column="23" selection-start-line="44" selection-start-column="23" selection-end-line="44" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/config/spring-redis.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dmatek/zgb/druid/configuration/DruidConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="24" column="26" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://G:/Users/apache-maven-3.6.1/repo/com/alibaba/druid/1.0.19/druid-1.0.19-sources.jar!/com/alibaba/druid/pool/DruidDataSource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-15500">
+          <caret line="109" column="27" selection-start-line="109" selection-start-column="10" selection-end-line="109" selection-end-column="27" />
+          <folding>
+            <element signature="e#7483#7484#0" expanded="true" />
+            <element signature="e#7510#7511#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="64" column="27" selection-start-line="64" selection-start-column="27" selection-end-line="64" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/config/spring-mybatis.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" column="54" selection-start-line="2" selection-start-column="54" selection-end-line="2" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dmatek/zgb/application/listener/ZGBApplicationListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="53" column="27" selection-start-line="53" selection-start-column="27" selection-end-line="53" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dmatek/zgb/file/update/FileUploadProperteis.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="7" column="66" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dmatek/zgb/file/update/BaseFileUploadProperties.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="13" column="25" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/config/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="295">
+          <caret line="20" column="36" lean-forward="true" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dmatek/zgb/AppConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="16" column="26" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
+          <folding>
+            <element signature="e#797#798#0" expanded="true" />
+            <element signature="e#848#849#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/access/AccessController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="29" column="13" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dmatek/zgb/controller/view/ViewController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-395">
+          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+          <folding>
+            <element signature="e#1798#1799#0" expanded="true" />
+            <element signature="e#1819#1820#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/templates/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="18" column="96" selection-start-line="18" selection-start-column="95" selection-end-line="18" selection-end-column="96" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/templates/access/recordOfAccess.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/templates/error/500.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/templates/error/404.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/templates/error/unauthor.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/templates/tab/node.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/templates/warm/alarm.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/templates/setting/ccSetMgr.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/templates/setting/contractorDataMgr.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="23" column="38" lean-forward="true" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

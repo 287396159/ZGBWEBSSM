@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dmatek.zgb.db.warn.dao.AbnormalTagDao">
+	<sql id="selectProperty">
+		UUID uuid,TAGID tagId,TAGNAME tagName,TAGNO tagNo,COMPANYNO companyNo,
+		COMPANYNAME companyName,JOBTYPENO jobTypeNo,JOBTYPENAME jobTypeName,
+		REFERID referId,REFERNAME referName,REGIONID regionId,REGIONNAME regionName,
+		GROUPID groupId,GROUPNAME groupName,
+		SLEEPMODE sleepMode,SLEEPTIME sleepTime,CURDISTIME curDisTime,
+		CREATETIME createTime,HANDLE isHandle,
+		HANDLETIME handleTime,CLEAR isClear,CLEARTIME clearTime 
+	</sql>
+	<sql id="insertProperty">
+		(UUID,TAGID,TAGNAME,TAGNO,COMPANYNO,
+		COMPANYNAME,JOBTYPENO,JOBTYPENAME,REFERID,REFERNAME,
+		REGIONID,REGIONNAME,GROUPID,GROUPNAME,
+		SLEEPMODE,SLEEPTIME,CURDISTIME,
+		CREATETIME,HANDLE,HANDLETIME,CLEAR,CLEARTIME)
+	</sql>
+	<sql id="insertValues">
+		(#{abnormalTagWarn.uuid},#{abnormalTagWarn.tagId},
+		#{abnormalTagWarn.tagName},#{abnormalTagWarn.tagNo},
+		#{abnormalTagWarn.companyNo},#{abnormalTagWarn.companyName},
+		#{abnormalTagWarn.jobTypeNo},#{abnormalTagWarn.jobTypeName},
+		#{abnormalTagWarn.referId},#{abnormalTagWarn.referName},
+		#{abnormalTagWarn.regionId},#{abnormalTagWarn.regionName},
+		#{abnormalTagWarn.groupId},#{abnormalTagWarn.groupName},
+		#{abnormalTagWarn.sleepMode},#{abnormalTagWarn.sleepTime},
+		#{abnormalTagWarn.curDisTime},
+		#{abnormalTagWarn.createTime},#{abnormalTagWarn.isHandle},
+		#{abnormalTagWarn.handleTime},#{abnormalTagWarn.isClear},
+		#{abnormalTagWarn.clearTime})
+	</sql>
+	<insert id="addAbnormalTag" parameterType="com.dmatek.zgb.warn.bean.AbnormalTagWarn">
+		INSERT INTO abnormaltag 
+		<include refid="insertProperty"></include> 
+		VALUES <include refid="insertValues"></include>
+	</insert>
+	<delete id="deleteAbnormalTag" parameterType="java.lang.String">
+		DELETE FROM abnormaltag WHERE UUID = #{uuid}
+	</delete>
+	<select id="findOne" resultType="com.dmatek.zgb.warn.bean.AbnormalTagWarn">
+		SELECT <include refid="selectProperty"></include>
+		FROM abnormaltag WHERE UUID=#{uuid}
+	</select>
+	<select id="findAll" resultType="com.dmatek.zgb.warn.bean.AbnormalTagWarn">
+		SELECT <include refid="selectProperty"></include>
+		FROM abnormaltag
+	</select>
+	<select id="findWarnCardReportInfo" resultType="com.dmatek.zgb.report.warn.bean.WarnTypeCardReportInfo">
+		select 
+		(SELECT COUNT(*) FROM abnormaltag WHERE DATEDIFF(NOW(),CREATETIME) &lt; #{peroid}) 
+		AS totalNumber, 
+		(SELECT COUNT(*) FROM abnormaltag WHERE (HANDLE = 1 AND DATEDIFF(NOW(),CREATETIME) &lt; #{peroid})) 
+		AS handleNumber,
+		(SELECT COUNT(*) FROM abnormaltag WHERE (HANDLE = 0 AND DATEDIFF(NOW(),CREATETIME) &lt; #{peroid})) 
+		AS notHandleNumber
+	</select>
+	<!-- 查组别警告卡片上报讯息 -->
+	<select id="findGroupsWarnCardReportInfo" resultType="com.dmatek.zgb.report.warn.bean.GroupCardReportWarnInfo">
+		SELECT 
+		g.GROUP_ID groupId,g.GROUP_NAME groupName,
+		(SELECT COUNT(*) FROM groups gl INNER JOIN abnormaltag p on gl.GROUP_ID=p.GROUPID where gl.GROUP_ID=g.GROUP_ID AND DATEDIFF(NOW(),p.CREATETIME) &lt; #{peroid}) 
+			AS totalNumber,
+		(SELECT COUNT(*) FROM groups gl INNER JOIN abnormaltag p on gl.GROUP_ID=p.GROUPID where gl.GROUP_ID=g.GROUP_ID AND p.HANDLE = 1 AND DATEDIFF(NOW(),p.CREATETIME) &lt; #{peroid})
+			AS handleNumber,
+		(SELECT COUNT(*) FROM groups gl INNER JOIN abnormaltag p on gl.GROUP_ID=p.GROUPID where gl.GROUP_ID=g.GROUP_ID AND p.HANDLE = 0 AND DATEDIFF(NOW(),p.CREATETIME) &lt; #{peroid}) 
+			AS notHandleNumber 
+		FROM groups g 
+	</select>
+	<!-- 清除异常卡片警告讯息 -->
+	<select id="clearAbnormalTags">
+		DELETE FROM abnormaltag WHERE DATEDIFF(NOW(),CREATETIME) > #{days}
+	</select>
+</mapper>

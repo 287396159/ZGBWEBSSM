@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" 
+	  xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<head>
+	<meta charset="UTF-8">
+	<title>工種包商資料管理</title>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/lib/reset.css}" href="../../css/lib/Reset.css"/>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/lib/iconfont.css}" href="../../css/lib/iconfont.css"/>
+	<link rel="stylesheet" type="text/css" th:href="@{/layui/css/layui.css}" href="../../js/lib/layui/css/layui.css"/>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/module/index.css}" href="../../css/index.css"/>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/module/setting/contractorDataMgr.css}" href="../../css/contractorDataMgr.css"/>
+	<script th:src="@{/js/lib/jquery-3.1.0.min.js}"  src="../../js/lib/jquery-3.1.0.min.js" type="text/javascript" charset="utf-8"></script>
+	<script th:src="@{/js/lib/common-tool.js}" src="../../js/lib/common-tool.js" type="text/javascript" charset="utf-8"></script>
+	<script th:src="@{/js/lib/functions.js}" src="../../js/functions.js" type="text/javascript" charset="utf-8"></script>
+	<script th:src="@{/layui/layui.js}" type="text/javascript" charset="utf-8"></script>
+	<script th:src="@{/js/module/setting/contractorDataMgr.js}" src="../../js/contractorDataMgr.js" type="text/javascript" charset="utf-8"></script>
+	<script th:src="@{/js/module/setting/request-data.js}" src="../../js/contractorDataMgr.js" type="text/javascript" charset="utf-8"></script>
+	<script th:src="@{/js/module/setting/drawing.js}" src="../../js/module/setting/drawing.js" type="text/javascript" charset="utf-8"></script>
+	<script th:src="@{/js/lib/html2canvas.min.js}" src="../../js/lib/html2canvas.min.js" type="text/javascript" charset="utf-8"></script>
+	<script th:src="@{/js/lib/qrcode.min.js}" src="../../js/lib/qrcode.min.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+<ul class="section">
+	<li>
+		<div class="setMgrLeft">
+			<ul class="classify">
+				<li>資料維護</li>
+			</ul>
+			<ul class="classifyDetail" id="dataMaintainance">
+				<li class="activeSet">工種資料維護</li>
+				<li>公司資料維護</li>
+				<li>人員資料維護</li>
+				<li>人員區域權限設定</li>
+			</ul>
+		</div>
+		<div class="setMgrRight">
+			<p class="setMgrRightTop"></p>
+			<ul class="classifyContent" id="contractorDataManage">
+				<!--工種資料維護-->
+				<li style="display: block;" id="jobTypeli">
+					<table id="jobType" lay-filter="operaJobType"></table>
+					<!--表格右側工具欄模板-->
+					<script type="text/html" id="jobTypeTool">
+						<a class="layui-btn layui-btn-xs" lay-event="edit" shiro:hasPermission="jobType:update">編輯</a>
+					  	<a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del" shiro:hasPermission="jobType:delete">刪除</a>
+					</script>
+					<!--表格頭部工具欄模板-->
+					<script type="text/html" id="jobTypeHeadTool">
+					    <input id="jobTypeText" class="layui-input-inline searchText" name="" placeholder="輸入關鍵字" autocomplete="off" shiro:hasPermission="jobType:find">
+					  	<button id="searchJobType" class="layui-btn layui-btn-sm" lay-event="search" shiro:hasPermission="jobType:find">
+					  		<i class="layui-icon">&#xe615;</i>搜尋
+					  	</button>
+						<button lay-event="add" id="addJobType" class="layui-btn layui-btn-sm" shiro:hasPermission="jobType:add">
+						  	<i class="layui-icon">&#xe608;</i>新增工種
+						</button>
+						<button id="exportJobTypeBtn" class="layui-btn layui-btn-sm" shiro:hasPermission="jobType:export">
+							<i class="layui-icon">&#xe60a;</i>導出範本
+						</button>
+						<button id="importJobTypeBtn" class="layui-btn layui-btn-sm" shiro:hasPermission="jobType:import">
+							<i class="layui-icon">&#xe67c;</i>導入資料
+						</button>
+						<button lay-event="refresh" id="refreshJobType" class="layui-btn layui-btn-sm layui-btn-primary" shiro:hasPermission="jobType:find">
+						  	<i class="layui-icon">&#xe669;</i>刷新
+						</button>
+					</script>
+					<!--表格工種顏色模板-->
+					<script type="text/html" id="showJobTypeColor">
+						<span style="background:{{d.color}}; color:white; padding:3px;">{{d.name}}</span>
+					</script>
+					<!--工種資料表單模板-->
+					<form id="jobTypeForm" class="layui-form formTemplate" action="">
+						<div class="layui-form-item">
+					    	<label class="layui-form-label">工種代碼：</label>
+						    <div class="layui-input-inline">
+						      	<input type="text" name="no" placeholder="請輸入" required autocomplete="off" class="layui-input">
+						    </div>
+					  	</div>
+					  	<div class="layui-form-item">
+					    	<label class="layui-form-label">工種名稱：</label>
+						    <div class="layui-input-inline">
+						      	<input type="text" name="name" placeholder="請輸入" required autocomplete="off" class="layui-input">
+						    </div>
+					  	</div>
+					  	<div class="layui-form-item">
+					  		<label class="layui-form-label">工種顏色：</label>
+					  		<div class="layui-input-inline">
+						      	<input type="text" name="color" placeholder="請輸入" required autocomplete="off" class="layui-input">
+						    </div>
+					      	<div class="layui-inline" style="left: -11px;">
+					        	<div id="selectJobColor"></div>
+					      	</div>
+					  	</div>
+					  	<div class="layui-form-item">
+						    <div class="layui-input-block">
+						      	<button class="layui-btn" lay-submit lay-filter="submitJobType">立即提交</button>
+						    </div>
+						</div>
+					</form>
+				</li>
+				<!--公司資料維護-->
+				<li>
+					<table id="company" lay-filter="operaCompany"></table>
+					<!--表格頭部工具欄模板-->
+					<script type="text/html" id="companyHeadTool">
+					    <input id="companyText" class="layui-input-inline searchText" name="" placeholder="輸入關鍵字" autocomplete="off" shiro:hasPermission="companys:find">
+					  	<button id="" class="layui-btn layui-btn-sm" lay-event="search" shiro:hasPermission="companys:find">
+					  		<i class="layui-icon">&#xe615;</i>搜尋
+					  	</button>
+						<button lay-event="add" id="" class="layui-btn layui-btn-sm" shiro:hasPermission="companys:add">
+						  	<i class="layui-icon">&#xe608;</i>新增公司
+						</button>
+						<button id="exportCompanyBtn" class="layui-btn layui-btn-sm" shiro:hasPermission="companys:export">
+							<i class="layui-icon">&#xe60a;</i>導出模板
+						</button>
+						<button id="importCompanyBtn" class="layui-btn layui-btn-sm" shiro:hasPermission="companys:import">
+							<i class="layui-icon">&#xe67c;</i>導入資料
+						</button>
+						<button lay-event="refresh" id="refreshJobType" class="layui-btn layui-btn-sm layui-btn-primary" shiro:hasPermission="companys:find">
+						  	<i class="layui-icon">&#xe669;</i>刷新
+						</button>
+					</script>
+					<!--表格右側工具欄模板-->
+					<script type="text/html" id="companyTool">
+						<a class="layui-btn layui-btn-xs" lay-event="edit" shiro:hasPermission="companys:update">編輯</a>
+					  	<a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del" shiro:hasPermission="companys:delete">刪除</a>
+					</script>
+					<!--公司資料表單模板-->
+					<form id="companyForm" class="layui-form formTemplate" action="">
+						<div class="layui-form-item">
+					    	<label class="layui-form-label">公司編號：</label>
+						    <div class="layui-input-inline">
+						      	<input type="text" name="no" placeholder="請輸入" required autocomplete="off" class="layui-input">
+						    </div>
+					  	</div>
+					  	<div class="layui-form-item">
+					    	<label class="layui-form-label">公司名稱：</label>
+						    <div class="layui-input-inline">
+						      	<input type="text" name="name" placeholder="請輸入" required autocomplete="off" class="layui-input">
+						    </div>
+					  	</div>
+					  	<div class="layui-form-item">
+					  		<label class="layui-form-label">電話：</label>
+					  		<div class="layui-input-inline">
+						      	<input type="text" name="phone" placeholder="請輸入" required autocomplete="off" class="layui-input">
+						    </div>
+					  	</div>
+					  	<div class="layui-form-item">
+					  		<label class="layui-form-label">地址：</label>
+					  		<div class="layui-input-inline">
+						      	<input type="text" name="address" placeholder="請輸入" required autocomplete="off" class="layui-input">
+						    </div>
+					  	</div>
+					  	<div class="layui-form-item">
+						    <div class="layui-input-block">
+						      	<button class="layui-btn" lay-submit lay-filter="submitCompany">立即提交</button>
+						    </div>
+						</div>
+					</form>
+				</li>
+				<!--人員資料維護-->
+				<li>
+					<table id="personnel" lay-filter="operaPersonnel"></table>
+					<!--表格右側工具欄模板-->
+					<script type="text/html" id="personTool">
+						<a class="layui-btn layui-btn-xs" lay-event="show" shiro:hasPermission="person:find">查看</a>
+						<a class="layui-btn layui-btn-xs" lay-event="edit" shiro:hasPermission="person:update">編輯</a>
+						<a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del" shiro:hasPermission="person:delete">刪除</a>
+					</script>
+					<!--表格頭部工具欄模板-->
+					<script type="text/html" id="personnelHeadTool">
+					    <input id="personnelText" class="layui-input-inline searchText" name="" placeholder="輸入關鍵字" autocomplete="off" shiro:hasPermission="person:find">
+					  	<button id="" class="layui-btn layui-btn-sm" lay-event="search" shiro:hasPermission="person:find">
+					  		<i class="layui-icon">&#xe615;</i>搜尋
+					  	</button>
+						<button lay-event="add" id="" class="layui-btn layui-btn-sm" shiro:hasPermission="person:add">
+						  	<i class="layui-icon">&#xe608;</i>新增人員
+						</button>
+						<button id="exportPersonBtn" class="layui-btn layui-btn-sm" shiro:hasPermission="person:export">
+							<i class="layui-icon">&#xe60a;</i>導出模板
+						</button>
+						<button id="importPersonBtn" class="layui-btn layui-btn-sm" shiro:hasPermission="person:import">
+							<i class="layui-icon">&#xe67c;</i>導入資料
+						</button>
+						<button lay-event="exportCard" id="" class="layui-btn layui-btn-sm" shiro:hasPermission="person:exportCard">
+							<i class="layui-icon">&#xe630;</i>導出資料卡
+						</button>
+						<button id="refreshPerson" class="layui-btn layui-btn-sm layui-btn-primary" lay-event="refresh" shiro:hasPermission="person:find">
+						  	<i class="layui-icon">&#xe669;</i>刷新
+						</button>
+					</script>
+					<!--人員資料表單模板-->
+					<form id="personnelForm" class="layui-form formTemplate layui-form-pane" action="">
+						<!-- 新增人員資料時, 让其不可見，编辑和查看时可见但是不可编辑  -->
+						<div class="layui-form-item">
+							<!-- 編號  -->
+							<label class="layui-form-label">編號：</label>
+							<div class="layui-input-inline">
+								<input type="text" name="serialNumber" class="layui-input">
+							</div>
+							<!-- 工地 -->
+							<label class="layui-form-label">選擇工地：</label>
+							<div class="layui-input-inline">
+								<!-- 人員組別过滤 -->
+							    <select name="group_id">
+							    </select>
+							</div>
+						</div>
+						<div class="layui-form-item">
+							<label class="layui-form-label">身份證號：</label>
+					  		<div class="layui-input-inline">
+						      	<input type="text" name="no" placeholder="請輸入" required autocomplete="off" class="layui-input">
+						    </div>
+					    	<label class="layui-form-label">姓名：</label>
+						    <div class="layui-input-inline">
+						      	<input type="text" name="name" placeholder="請輸入" required autocomplete="off" class="layui-input">
+						    </div>
+					  	</div>
+					  	<div class="layui-form-item">
+					  		<label class="layui-form-label">卡號：</label>
+						    <div class="layui-input-inline">
+						      	<input type="text" name="tagId" placeholder="請輸入" required autocomplete="off" class="layui-input">
+						    </div>
+						    <label class="layui-form-label">公司：</label>
+					  		<div class="layui-input-inline">
+					  			<select name="company_No">
+					  			</select>
+						    </div>
+					  	</div>
+					  	<div class="layui-form-item">
+					    	<label class="layui-form-label">工種：</label>
+					  		<div class="layui-input-inline">
+						      	<select name="jobType_No"></select>
+						    </div>
+						    <label class="layui-form-label">血型：</label>
+						    <div class="layui-input-inline">
+						    	<select name="bloodType">
+						    		<option value="">請選擇選型</option>
+							        <option value="A" selected="">A血型</option>
+							        <option value="B">B血型</option>
+							        <option value="AB">AB血型</option>
+							        <option value="O">O血型</option>
+						    	</select>
+						    </div>
+					  	</div>
+					  	<div class="layui-form-item">
+						  	<label class="layui-form-label">出生日期：</label>
+						  	<div class="layui-input-inline">
+							    <input id="birthdate" type="text" name="birthDay" placeholder="請輸入(格式為：1900-00-00)" required autocomplete="off" class="layui-input">
+							</div>
+					  		<label class="layui-form-label">滯留報警時間(分鐘)：</label>
+							<div class="layui-input-inline">
+								<input type="text" name="stopTime" placeholder="請輸入" required autocomplete="off" class="layui-input">
+							</div>
+					  	</div>
+					  	<div class="layui-form-item">
+					  		<label class="layui-form-label">休息時間(小時)：</label>
+							<div class="layui-input-inline">
+								<input type="text" name="resTime" placeholder="請輸入" required autocomplete="off" class="layui-input">
+							</div>
+					  	</div>
+					  	<div class="layui-form-item">
+					    	<label class="layui-form-label">上傳照片：</label>
+						    <div class="layui-upload" >
+							  	<button shiro:hasPermission="person:loadImage" type="button" name="imgPath" class="layui-btn layui-btn-sm layui-btn-normal" id="uploadPhoto"><i class="layui-icon">&#xe67c;</i>上傳圖片</button>
+							  	<div class="layui-upload-list" >
+							    	<img class="layui-upload-img" id="imagePreview">
+							  	</div>
+							</div>
+							<script type="text/javascript">
+								  // 文件上傳接口
+								  layui.use(['layer','upload'], function() {
+								  	var upload = layui.upload;
+									upload.render({
+										elem : "#uploadPhoto",
+										url : "person/upload/", // 上傳接口
+										accept: "images",
+										acceptMime: "image/*",
+										before : function(obj) {
+											// 預讀本地文件示例，不支持ie8
+											obj.preview(function(index, file, result) {
+												$('#imagePreview').attr({"src":result,"alt": file.name});
+											});
+										},
+										done : function(result) {
+											// 上傳完畢回調
+											if (result.code == 600) {
+												$("#imagePreview").attr("imagePath", result.data);
+												layer.msg("上傳完成...", {
+													icon : 6,
+													time : 1200
+												});
+											} else {
+												layer.msg(result.msg, {
+													icon : 5,
+													time : 1200
+												});
+											}
+										},
+										error : function() {
+											// 請求異常回調
+											console.error("上傳區域圖片異常...");
+											layer.msg("上傳異常...", {
+												icon : 1,
+												time : 1200
+											})
+										}
+									});
+									});
+			  				</script>
+					  	</div>
+					  	<div class="layui-form-item">
+					    	<label class="layui-form-label">備註：</label>
+					  		<div class="layui-input-block">
+						      	<textarea name="des" placeholder="請輸入內容" class="layui-textarea"></textarea>
+						    </div>
+					  	</div>
+					  	<div class="layui-form-item">
+						    <div class="layui-input-block">
+						      	<button class="layui-btn" lay-submit lay-filter="submitPersonnel">立即提交</button>
+						    </div>
+						</div>
+					</form>
+				</li>
+				<!--人員區域權限設定-->
+				<li>
+				    <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+					<ul class="layui-tab-title">
+					    <li class="layui-this">公司區域權限設定</li>
+					    <li>人員區域權限設定</li>
+				    </ul>
+				    <div class="layui-tab-content" style="height: 100px;">
+					    <div class="layui-tab-item layui-show">
+					    <!-- 公司表格訊息 -->
+						<table class="layui-table" lay-data="{height:'full-83', url:'company/page/', page:true,id:'regAuthorCompanyTable',toolbar:'#regionalAuthorityCompanyHeadTool', defaultToolbar: ['filter', 'exports']}" lay-filter='regionAuthorCompanyFilter'>
+							<thead>
+    							<tr>
+    								<th lay-data="{field:'no',sort: true, width: 200}">公司編號</th>
+    								<th lay-data="{field:'name',sort: true, width: 200}">公司名稱</th>
+    								<th lay-data="{field:'phone',sort: true, width: 120}">電話</th>
+    								<th lay-data="{field:'address',sort: true, width: 200}">地址</th>
+    								<th lay-data="{toolbar:'#setRegAuthorCompanyTool',align:'center',sort: true, width: 180}">操作</th>
+    							</tr>
+    						</thead>
+						</table>
+						<script type="text/html" id="setRegAuthorCompanyTool">
+							<a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="setCompanyRegion" shiro:hasPermission="reliableNodes:find">設定工地</a>
+						</script>
+						<script type="text/html" id="regionalAuthorityCompanyHeadTool">
+					    	<input id="companyKeyword" class="layui-input-inline searchText" name="" placeholder="輸入關鍵字" autocomplete="off" shiro:hasPermission="companys:find">
+					  		<button id="" class="layui-btn layui-btn-sm" lay-event="search" shiro:hasPermission="companys:find">
+					  			<i class="layui-icon">&#xe615;</i>搜尋
+					  		</button>
+							<button lay-event="refresh" id="" class="layui-btn layui-btn-sm layui-btn-primary" shiro:hasPermission="companys:find">
+						  		<i class="layui-icon">&#xe669;</i>刷新
+							</button>
+						</script>
+						<!-- 設定公司中所有的 員工可進入 -->
+						<div id="setCompanyRegion">
+								<div class="setRegionLeft">
+									<div class="layui-show layui-bg-gray">
+										<label>選擇可進區域： </label>
+										<input type="checkbox" id="companyCheckAllRegion" />
+										<label for="checkAllRegion">ALL</label>
+										<button class="layui-btn layui-btn-xs" id="saveCompanyRegionalAuthority" shiro:hasPermission="reliableNodes:add"><i class="layui-icon">&#xe654;</i>添加</button>
+									</div>
+									<ul class="checkboxTree noselect" id="companyCheckboxTree">
+									</ul>
+								</div>
+								<div class="setRegionRight">
+									<div class="layui-show layui-bg-gray">
+										已選擇可靠近的參考點
+									</div>
+									<table id="companyNodeList" class="layui-table">
+										<thead>
+											<tr><td>設備ID</td><td>設備名稱</td></tr>
+										</thead>
+										<tbody></tbody>
+									</table>
+									<script type="text/html" id="companyNodeHeadTool">
+									<button class="layui-btn layui-btn-xs layui-btn-danger" lay-event="delete">
+										<i class="layui-icon">&#xe640;</i>刪除選中
+									</button>
+									</script>
+								</div>
+							</div>
+					    </div>
+					    <div class="layui-tab-item">
+					    	<table id="regionalAuthority" lay-filter="operaRegional"></table>
+							<!--表格頭部工具欄模板-->
+							<script type="text/html" id="regionalAuthorityHeadTool">
+					    		<input id="keyword" class="layui-input-inline searchText" name="" placeholder="輸入關鍵字" autocomplete="off" shiro:hasPermission="person:find">
+					  			<button id="" class="layui-btn layui-btn-sm" lay-event="search" shiro:hasPermission="person:find">
+					  				<i class="layui-icon">&#xe615;</i>搜尋
+					  			</button>
+								<button lay-event="refresh" id="" class="layui-btn layui-btn-sm layui-btn-primary" shiro:hasPermission="person:find">
+						  			<i class="layui-icon">&#xe669;</i> 刷新
+								</button>
+							</script>
+							<!--表格右側工具欄模板-->
+							<script type="text/html" id="regionalAuthorityTool">
+								<a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="setRegion" shiro:hasPermission="reliableNodes:find">設定工地</a>
+							</script>
+							<!--設定工地模板-->
+							<div id="setRegion">
+								<div class="setRegionLeft">
+									<div class="layui-show layui-bg-gray">
+										<label>選擇可進區域： </label>
+										<input type="checkbox" id="checkAllRegion" />
+										<label for="checkAllRegion">ALL</label>
+										<button class="layui-btn layui-btn-xs" id="saveRegionalAuthority" shiro:hasPermission="reliableNodes:add"><i class="layui-icon">&#xe654;</i>添加</button>
+									</div>
+									<ul class="checkboxTree noselect" id="checkboxTree">
+									</ul>
+								</div>
+								<div class="setRegionRight">
+									<div class="layui-show layui-bg-gray">
+										已選擇可靠近的參考點
+									</div>
+									<table id="nodeList" class="layui-table">
+										<thead>
+											<tr><td>設備ID</td><td>設備名稱</td></tr>
+										</thead>
+										<tbody></tbody>
+									</table>
+									<script type="text/html" id="nodeHeadTool">
+										<button class="layui-btn layui-btn-xs layui-btn-danger" lay-event="delete">
+											<i class="layui-icon">&#xe640;</i>刪除選中
+										</button>
+									</script>
+								</div>
+							</div>
+						 </div>
+					  </div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</li>
+</ul>
+	<script type="text/javascript">
+		function disable() {
+			for (var i = 0; i < arguments.length; i++) {
+				if(arguments[i] instanceof jQuery) {
+					arguments[i].attr("onfocus", "this.blur()");
+					arguments[i].css("cursor", "not-allowed");
+				}
+			}
+		}
+		var serialDom = $("#personnelForm input[name='serialNumber']");
+		disable(serialDom);
+	</script>
+	<!-- 查看人员讯息的弹窗  -->
+	<div id="personalInfoWindow" style="display:none;">
+		<div generateCard>
+			<div>
+				<img class="photo" th:src="@{/img/sysperson.jpg}"
+					src="../../img/defaultAvatar.png">
+				<div>
+					<p>
+						<label>姓名：</label><span name>张三</span>&nbsp;&nbsp; <label>血型：</label><span bloodType>AB</span>
+					</p>
+					<p>
+						<label>工種：</label><span jobType>水泥工</span>
+					</p>
+					<p license>XXX 識別證</p>
+				</div>
+			</div>
+			<div>
+				<div qrcode></div>
+				<div style="float: left;">
+					<p serialNumber>
+						<label>編號：</label><span serialNumber>666666</span>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div>
+			<button id="generateCardBtn" class="layui-btn layui-btn-normal">生成資料卡</button>
+		</div>
+	</div>
+</body>
+</html>

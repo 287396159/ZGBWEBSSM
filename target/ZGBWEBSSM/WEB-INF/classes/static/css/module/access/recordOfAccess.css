@@ -1,0 +1,167 @@
+/*============
+ * 进出记录管理
+ * ===========*/
+#accessClassifyDiv h2{
+	color: #30A94E;
+    text-align: left;
+    font-weight: bold;
+    padding-left: 15px;
+    font-size: 15px;
+}
+#accessClassifyDiv h2.totalNum span{
+	display: inline-block;
+	width: 60px;
+	text-align: center;
+	color: red;
+	font-weight: normal;
+}
+#accessClassifyDiv h2.totalNum i{
+	color: #333;
+	font-weight: normal;
+}
+#accessClassifyDiv ul.alarmInfor,
+#regionNumber{
+	font-weight: normal;
+}
+#accessClassify{
+	margin-bottom: 10px;
+}
+#accessContent .layui-tab{
+	margin: 0;
+}
+#accessContent>li{
+	height: 100% !important;
+}
+#accessContent .layui-tab-content{
+	padding: 0;
+	overflow-y: auto;
+}
+#accessContent .layui-table-view{
+	margin: 0;
+}
+div.accessOperator{
+	margin: 5px 0px;
+	padding: 3px 10px;
+}
+div.accessOperator div.select{
+	width: 90px;
+}
+div.accessOperator .layui-input{
+	height: 32px;
+}
+div.accessOperator .layui-form-select dl dd{
+	line-height: 30px;
+}
+div.accessOperator .layui-btn-group{
+	margin: 0 20px;
+}
+div.accessOperator button{
+	margin-left: -3px;
+}
+div.accessOperator .numInfo{
+	margin-left: 10px;
+}
+div.accessOperator .numInfo span{
+	color: red;
+	padding: 0 5px;
+}
+div.info{
+	display: inline-block;
+	float: left;
+	width: 50%;
+}
+div.info h3{
+	text-align: center;
+	font-weight: bold;
+}
+div.info ul{
+	border: 1px solid darkgray;
+	border-top: none;
+	overflow-y: auto;
+}
+div.enterInfo ul{
+	border-right: none;
+}
+div.info ul li{
+	width: 48.5%;
+	float: left;
+	border: 1px solid lightgray;
+	margin: 5px 0 0 5px;
+	padding: 5px;
+	background: #EDF9EF;
+	border-radius: 3px;
+	position: relative;
+	overflow: hidden;
+}
+div.info ul li img{
+	position: absolute;
+	right: 3px;
+	top: 2px;
+	height: 80px;
+	width: 72px;
+}
+#groupContentBox
+{
+	width: 230px;
+    height: 260px;
+    border: 1px solid #6FCD53;
+    border-radius: 7px;
+    padding: 2px 0 8px 0;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+#groupClassify
+{
+	width: 80%;
+    height: 100%;
+    float: left;
+    margin: 5px 0 0 10px;
+    overflow: hidden;
+}
+ul.groupClassifyDetail li:first-child {
+    border-top: 1px solid darkgray;
+}
+ul.groupClassifyDetail li {
+    font-size: 15px;
+    border-bottom: 1px solid darkgray;
+    cursor: pointer;
+    overflow: hidden;
+    padding: 10px 0px;
+}
+#groupClassify li.active{
+	background: #D2ECBD;
+	height: auto;
+}
+
+/* 读卡记录补登 */
+#supplementForm{
+	margin: 10px 0 30px 10px;
+}
+#supplementForm .layui-form-label{
+	padding: 8px 10px;
+	width: 95px;
+}
+#supplementForm .layui-form-select dl dd{
+	line-height: 30px;
+}
+#supplementForm i.icon-save{
+	font-size: 18px !important;
+	float: left;
+}
+#enter span ,#offDuty span{
+	width: 130px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+    float: right;
+}
+div.accessOperator input.layui-input{
+	width: 120px;
+}
+/* 禁止使用 */
+.DisableDoorStatus
+{
+	background: #c2c2c2;
+    color: white;
+}

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dmatek.zgb.db.setting.dao.CompanyDao">
+	<cache></cache>
+	<!-- 添加公司讯息 -->
+	<insert id="addCompany" parameterType="com.dmatek.zgb.db.pojo.setting.Company">
+		INSERT INTO
+		COMPANYS(COMPANY_NO,COMPANY_NAME,PHONE,ADDRESS,CREATETIME,CREATENAME)
+		VALUES(#{company.no},#{company.name},#{company.phone},#{company.address},NOW(),
+		#{company.createName})
+	</insert>
+	<!-- 删除公司讯息 -->
+	<delete id="deleteCompany">
+		<if test="null != ids">
+			DELETE FROM COMPANYS WHERE COMPANY_NO IN
+			<include refid="com.dmatek.zgb.db.setting.dao.GroupDao.batchIds"></include>
+		</if>
+	</delete>
+	<!-- 更新公司讯息 -->
+	<update id="updateCompany" parameterType="com.dmatek.zgb.db.pojo.setting.Company">
+		UPDATE COMPANYS SET
+		COMPANY_NAME=#{company.name},PHONE=#{company.phone},ADDRESS=#{company.address},
+		UPDATETIME=NOW(),UPDATENAME=#{company.updateName}
+		WHERE COMPANY_NO=#{company.no}
+	</update>
+	<!-- 根据ID查询公司讯息 -->
+	<select id="findOne" resultType="com.dmatek.zgb.db.pojo.setting.Company">
+		SELECT COMPANY_NO
+		no,COMPANY_NAME name,PHONE phone,ADDRESS
+		address,CREATETIME
+		createTime,CREATENAME createName,UPDATETIME
+		updateTime,UPDATENAME updateName
+		FROM COMPANYS 
+		WHERE COMPANY_NO=#{no}
+	</select>
+	<!-- 查询所有的公司讯息 -->
+	<select id="findAll" resultType="com.dmatek.zgb.db.pojo.setting.Company">
+		SELECT COMPANY_NO no,COMPANY_NAME name,PHONE phone,ADDRESS address,
+		CREATETIME createTime,CREATENAME createName,UPDATETIME updateTime,
+		UPDATENAME updateName FROM COMPANYS ORDER BY CREATETIME
+	</select>
+	<!-- 查询分页的公司讯息 -->
+	<select id="findPageKeyName" resultType="com.dmatek.zgb.db.pojo.setting.Company">
+		SELECT COMPANY_NO no,COMPANY_NAME name,PHONE phone,ADDRESS address,
+		CREATETIME createTime,CREATENAME createName,UPDATETIME updateTime,
+		UPDATENAME updateName
+		FROM COMPANYS WHERE (COMPANY_NO LIKE CONCAT('%',#{name},'%') 
+		OR COMPANY_NAME LIKE CONCAT('%',#{name},'%') 
+		OR PHONE LIKE CONCAT('%',#{name},'%')
+		OR ADDRESS LIKE CONCAT('%',#{name},'%') 
+		)  
+		ORDER BY CREATETIME LIMIT #{page},#{limit}
+	</select>
+	<!-- 查询分页的公司讯息 -->
+	<select id="findPage" resultType="com.dmatek.zgb.db.pojo.setting.Company">
+		SELECT COMPANY_NO no,COMPANY_NAME name,
+		PHONE phone,ADDRESS address,CREATETIME createTime,
+		CREATENAME createName,UPDATETIME updateTime,UPDATENAME updateName 
+		FROM COMPANYS ORDER BY COMPANY_NO LIMIT #{page},#{limit} 
+	</select>
+	
+	<select id="findName" resultType="com.dmatek.zgb.db.pojo.setting.Company">
+		SELECT COMPANY_NO no,COMPANY_NAME name,
+		PHONE phone,ADDRESS address,CREATETIME createTime,
+		CREATENAME createName,UPDATETIME updateTime,UPDATENAME updateName 
+		FROM COMPANYS WHERE COMPANY_NAME=#{name}
+	</select>
+</mapper>

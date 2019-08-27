@@ -1,0 +1,53 @@
+#referSetting, #nodeSetting{
+	padding: 10px 8px 10px 15px;
+	overflow: hidden;
+	font-size: 13px;
+}
+p.device{
+	margin-bottom: 2px;
+}
+p.device span{
+	display: inline-block;
+}
+i.hint{
+	display: inline-block;
+	margin-left: 5px;
+	color: dimgray;
+}
+.layui-elem-field{
+	margin-top: 5px;
+}
+.layui-elem-field legend {
+    margin-left: 7px;
+    padding: 0 2px;
+    font-size: 15px;
+}
+.layui-field-box {
+	padding: 10px 10px 0 0;
+}
+.layui-form-label{
+	width: 112px;
+	max-width: 150px;
+	padding: 5px;
+}
+#referSetting .layui-form-item, 
+#nodeSetting .layui-form-item {
+	margin-bottom: 10px;
+}
+
+.nodeSettingLeft, .nodeSettingRight {
+	float: left;
+}
+.nodeSettingLeft{
+	width: 40%;
+	padding-right: 10px;
+}
+.nodeSettingRight {
+	width: 60%;
+	border: 1px solid lightgray;
+	padding: 7px 0px 7px 7px;
+}
+.disableSetting  {
+	color: white;
+    background: rgb(194, 194, 194);
+}

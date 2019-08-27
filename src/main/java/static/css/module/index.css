@@ -1,0 +1,1005 @@
+body {
+  width: 100%;
+  min-width: 1200px;
+  background: #EEF3FA;
+  position: relative;
+}
+div.global_UWB {
+  width: 1200px;
+  margin: auto;
+}
+div.head{
+  overflow: hidden;
+  background-color: #8DD780;
+  height: 35px;
+}
+div.head>div{
+	height: 35px;
+	float: left;
+}
+div.headLeft{
+	width: 250px;
+	border-right: 2px solid #118D2F;
+	font-weight: bold;
+}
+div.headLeft i,
+div.headLeft p,
+div.headLeft span{
+	float: left;
+	height: 35px;
+	line-height: 35px;
+}
+div.headLeft i.icon-yonghu{
+	font-size: 20px;
+	height: 30px;
+	line-height: 30px;
+	padding: 0px 5px;
+	margin: 2px 10px 0px 30px;
+	border: 1px solid black;
+}
+div.headLeft span{
+	margin: 0px 3px;
+}
+p.isLogin{
+	margin-left: 10px;
+}
+div.headRight{
+	width: 950px;
+}
+div.headRight p{
+	background-color: #118D2F;
+	color: white !important;
+	height: 25px;
+	line-height: 25px;
+	margin-top: 4px;
+	padding: 0px 10px;
+	border-radius: 20px;
+	cursor: pointer;
+}
+div.headRight p.connect{
+	float: left;
+	margin-left: 20px;
+}
+div.headRight p.logOut{
+	float: right;
+	margin-right: 20px;
+}
+div.headRight p span{
+	font-weight: bold;
+}
+div.top{
+	overflow: hidden;
+	height: 85px;
+	background-color: #118D2F;
+}
+div.top>div,div.top ul{
+	float: left;
+}
+div.top div.logo{
+	width: 250px;
+	color: white;
+	font-weight: bold;
+	font-size: 16px;
+	font-family: "microsoft yahei";
+}
+div.top div.logo p{
+	margin-left: 28px;
+}
+div.top div.logo p:first-child{
+	margin-top: 15px;
+}
+div.top div.logo p.italic{
+	font-style: italic;
+	font-size: 18px;
+}
+#navIframe{
+	float: left;
+	width: 950px;
+	height: 85px;
+}
+ul.nav{
+	overflow: hidden;
+	color: white;
+	width: 950px;
+	background: #118D2F;
+}
+ul.nav li{
+	float: left;
+	width: 11.1%;
+	height: 85px;
+	text-align: center;
+	padding-top: 5px;
+	cursor: pointer;
+}
+ul.nav li[type="7"], ul.nav li[type="9"]{
+	padding-top: 0px;
+}
+ul.nav li i{
+	font-size: 30px;
+	display: inline-block;
+	margin: 6px 0;
+}
+ul.nav li p{
+	font-weight: bold;
+	font-size: 15px;
+	padding: 0 17px;
+	line-height: 19px;
+}
+.activeNav{
+	background-color: #6FCD53 !important;
+}
+#option{
+	position: relative;
+}
+#options{
+	width: 100%;
+	position: absolute;
+}
+ul.section{
+	overflow: hidden;
+	background-color: white;
+}
+ul.section>li{
+	float: left;
+	width: 1200px;
+}
+ul.section>li>div{
+	float: left;
+}
+/*========设置管理========*/
+div.setMgrLeft{
+	width: 250px;
+	font-weight: bold;
+	text-align: center;
+}
+ul.classify{
+	background-color: #D5D5D7;
+	overflow: hidden;
+	padding-left: 10px;
+}
+ul.classify li{
+	height: 40px;
+	line-height: 40px;
+	padding: 0 10px;
+	background-color: white;
+	font-size: 15px;
+	cursor: pointer;
+	float: left;
+}
+ul.classifyDetail{
+	overflow: hidden;
+}
+ul.classifyDetail li{
+	height: 45px;
+	line-height: 45px;
+	font-size: 15px;
+	border-bottom: 1px solid darkgray;
+	cursor: pointer;
+}
+ul.classifyDetail li:first-child{
+	border-top: 1px solid darkgray;
+	margin-top: 15px;
+}
+.activeSet{
+	background-color: #6BBF29;
+	color: white;
+}
+div.setMgrRight{
+	width: 950px;
+	position: relative;
+}
+ul.classifyContent{
+	overflow: hidden;
+	padding: 1px 6px;
+	background-color: #D6D6D6;
+}
+ul.classifyContent>li{
+	float: left;
+	display: none;
+	background-color: white;
+	width: 944px;
+	padding: 3px 7px 0;
+	-ms-overflow-y: auto;
+	/* overflow-y: auto; */
+}
+/*TAG设置*/
+ul.sort{
+	overflow: hidden;
+}
+ul.sort li{
+	float: left;
+	height: 30px;
+	line-height: 30px;
+	background-color: #CCCCCC;
+	font-weight: bold;
+	color: #171717;
+	margin-right: 2px;
+	padding: 0px 10px;
+	cursor: pointer;
+}
+.activeSort{
+	background-color: #999999 !important;
+}
+div.formOpera{
+	background-color: #999999;
+	padding: 7px 0px;
+	position: relative;
+}
+div.formOpera input[type="button"]{
+	margin-left: 20px;
+	border: none;
+	min-width: 90px;
+	height: 25px;
+	line-height: 25px;
+	color: white;
+	background-color: #1CC848;
+	border-radius: 3px;
+}
+.activeTAG{
+	background-color: #22C87D !important;
+}
+div.formContent{
+	-ms-overflow-y: auto;
+	overflow-y: auto;
+	padding-top: 2px;
+	position: relative;
+}
+div.formContent table{
+	width: 100%;
+}
+div.formContent table tr{
+	height: 25px;
+	text-align: center;
+}
+div.formContent table tr{
+	border-bottom: 2px solid white;
+}
+div.formContent table tr:nth-child(odd){
+	background-color: #E0E0E0;
+}
+div.formContent table tr:nth-child(even){
+	background-color: #F3F3F3;
+}
+div.formContent table tr:first-child{
+	background-color: #BCBCBC;
+}
+div.formContent table tr input[type="checkbox"]{
+	width: 15px;
+	height: 15px;
+}
+div.addTAGContent{
+	display: none;
+}
+div.addTAGContent form>p{
+	color: black;
+	font-weight: bold;
+	background-color: #999999;
+	font-size: 15px;
+	padding: 5px 20px;
+}
+div.TAGContent{
+	border: 2px solid #999999;
+	border-top: none;
+	padding: 7px;
+}
+div.requiredInfor{
+	overflow: hidden;
+}
+div.requiredInfor>div{
+	float: left;
+	border: 2px solid #999999;
+	border-radius: 2px;
+}
+div.requiredInfor div.uploadPhoto{
+	margin-right: 8px;
+	width: 44%;
+}
+div.requiredInfor div.basicInfor{
+	width: 55%;
+}
+div.uploadPhoto>p,
+div.basicInfor>p,
+div.optionals>p{
+	font-weight: bold;
+	margin: 5px 0px 0px 10px;
+}
+div.uploadPhoto>div{
+	overflow: hidden;
+}
+div.uploadPhoto>div img{
+	display: inline-block;
+	width: 95px;
+	height: 110px;
+	margin: 5px 20px 10px 10px;
+	float: left;
+}
+div.uploadPhoto>div p{
+	float: left;
+	width: 260px;
+	padding-top: 5px;
+}
+div.uploadPhoto>div input[type="button"]{
+	margin: 42px 0px 0px 179px;
+}
+div.TAGContent input[type="button"]{
+	width: 70px;
+	height: 25px;
+	border: none;
+	border-radius: 2px;
+	background-color: #21A2C9;
+	color: white;
+}
+div.uploadPhoto>div input[type="file"]{
+	display: none;
+}
+div.basicInfor{
+	height: 155px;
+}
+div.basicInfor ul{
+	margin: 15px 0px 0px 40px;
+}
+div.basicInfor ul li{
+	margin-bottom: 10px;
+}
+div.basicInfor ul li i{
+	display: inline-block;
+}
+i.width-28px{
+	width: 28px;
+}
+i.width-14px{
+	width: 14px;
+}
+div.TAGContent ul li input{
+	padding-left: 3px;
+	width: 200px;
+	height: 24px;
+	border-radius: 3px;
+	border: 1px solid darkgray;
+}
+div.TAGContent ul li input[name="breakTime"]{
+	width: 135px;
+}
+div.TAGContent ul li input[name="detentionTime"]{
+	width: 107px;
+}
+div.TAGContent ul li select{
+	width: 200px;
+	height: 22px;
+}
+div.optionals{
+	border: 2px solid #999999;
+	border-radius: 2px;
+	margin-top: 7px;
+	overflow: hidden;
+}
+div.optionals ul{
+	float: left;
+	margin: 10px 0 0 50px;
+}
+div.optionals ul li{
+	margin-bottom: 15px;
+}
+div.TAGBtn{
+	margin: 0 0 10px 466px;
+}
+.margin-right-10px{
+	margin-right: 10px;
+}
+/*区域设置*/
+div.areaBtns{
+	background-color: white;
+}
+div.areaBtns input[type="button"]{
+	width: 110px;
+}
+div.formContent input[type="button"]{
+	border: none;
+	border-radius: 2px;
+	background-color: #1CC848;
+	color: white;
+	min-width: 60px;
+	height: 20px;
+	line-height: 19px;
+	margin: 3px 5px;
+}
+div.mapPreview{
+	display: none;
+}
+div.areaTitle{
+	overflow: hidden;
+	background-color: #6E6E6E;
+	color: white;
+	font-weight: bold;
+	font-size: 15px;
+	padding: 5px 0;
+	padding-left: 10px;
+	border-top-left-radius: 2px;
+	border-top-right-radius: 2px;
+}
+div.areaTitle p,
+div.areaTitle span{
+	display: inline-block;
+	float: left;
+	margin-left: 10px;
+}
+div.areaTitle span.closeMap{
+	float: right;
+	border-left: 2px solid #ACACAC;
+	cursor: pointer;
+	padding: 0px 5px;
+	height: 22px;
+	line-height: 22px;
+	font-size: 35px;
+	text-align: center;
+	font-weight: normal;
+}
+div.areaMap{
+	border: 2px solid #6E6E6E;
+	border-top: none;
+}
+div.areaMap img{
+	display: block;
+	width: 900px;
+	margin: auto;
+}
+div.formContent table tr td input[type="text"],
+div.formContent table tr td select,
+div.areaFormContent table tr td .importMap,
+div.areaFormContent table tr td input[type="file"]{
+	display: none;
+}
+div.formContent table tr td input[type="text"]{
+	text-align: center;
+	width: 150px;
+}
+div.areaFormContent table tr td input[type="text"]{
+	width: 120px;
+}
+div.areaFormContent table tr td .importMap{
+	width: 70px;
+}
+/*基站设置*/
+div.eNodeBFormContent table{
+	display: none;
+}
+div.formContent table select{
+	height: 22px;
+}
+div.formOpera span{
+	margin-left: 20px;
+	font-weight: bold;
+}
+div.formOpera select{
+	padding-right: 30px;
+	height: 22px;
+}
+div.map{
+	border: 2px solid #999999;
+	border-radius: 2px;
+}
+div.map>div{
+    width: 900px;
+	margin: auto;
+	position: relative;
+}
+div.map img{
+	display: block;
+	width: 100%;
+}
+div.redactENodeBWindow{
+	display: none;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -131px 0 0 -110px;
+	border: 2px solid #565656;
+	background-color: white;
+	width: 220px;
+	padding-bottom: 20px;
+	z-index: 100;
+}
+div.eNodeBWindowTop{
+	background-color: #D4D4D4;
+	padding: 3px 0px;
+	overflow: hidden;
+}
+div.eNodeBWindowTop p,
+div.eNodeBWindowTop span{
+	display: inline-block;
+}
+div.eNodeBWindowTop p{
+	font-weight: bold;
+	margin-left: 10px;
+	float: left;
+}
+div.eNodeBWindowTop span{
+	float: right;
+	width: 21px;
+	line-height: 21px;
+	text-align: center;
+	background-color: #B7B7B7;
+	color: #565656;
+	font-size: 28px;
+	margin-right: 3px;
+	cursor: pointer;
+}
+div.redactENodeBWindow ul{
+	padding-top: 15px;
+}
+div.redactENodeBWindow ul li{
+	margin-bottom: 8px;
+	overflow: hidden;
+}
+div.redactENodeBWindow ul li span,
+div.redactENodeBWindow ul li input,
+div.redactENodeBWindow ul li select{
+	float: left;
+	height: 22px;
+	line-height: 22px;
+}
+div.redactENodeBWindow ul li span{
+	display: inline-block;
+	text-align: right;
+	width: 70px;
+}
+div.redactENodeBWindow ul li input{
+	width: 120px;
+	padding-left: 3px;
+	border: 1px solid #5A5A5A;
+}
+.width-55px{
+	width: 55px !important;
+	text-align: center;
+}
+.margin-left-10px{
+	margin-left: 10px !important;
+}
+div.redactENodeBWindow ul li select{
+	width: 120px;
+	border: 1px solid #5A5A5A;
+}
+div.isVisible{
+	overflow: hidden;
+	margin-bottom: 7px;
+}
+div.isVisible input[type="checkbox"]{
+	width: 14px;
+	height: 14px;
+	float: left;
+	margin: 3px 0 0 70px;
+}
+div.isVisible label{
+	margin-left: 2px;
+}
+div.redactENodeBWindow input[type="button"]{
+	display: block;
+	margin: auto;
+	margin-bottom: 4px;
+	width: 163px;
+	height: 22px;
+	line-height: 21px;
+	background-color: #CCCCCC;
+	color: #333;
+}
+.eNodeB{
+	position: absolute;
+	overflow: hidden;
+	cursor: pointer;
+}
+div.eNodeB>span:first-child{
+    background: #5FB878;
+    text-align: center;
+    display: inline-block;
+    color: #ffffff;
+}
+div.eNodeB>span:last-child{
+    margin-right: 5px;
+    float: left;
+}
+div.eRefer>span:first-child{
+	background: #2196F3;
+	width: 42px;
+}
+div.InOutNodeB>span:first-child{
+    background: #009688;
+}
+.eNodeB p{
+	padding: 0 3px;
+	height: 16px;
+	line-height: 16px;
+}
+.eNodeB p:last-child{
+	background-color: #22A2C9;
+}
+/*围栏设置*/
+div.fenceFormContent table{
+	
+}
+/*显示设置*/
+ul.displaySetup{
+	padding: 10px 0 0 10px;
+}
+ul.displaySetup li{
+	overflow: hidden;
+	margin-bottom: 5px;
+}
+ul.displaySetup span,
+ul.displaySetup input,
+ul.displaySetup label,
+ul.displaySetup select{
+	float: left;
+}
+ul.displaySetup span{
+	margin: 0 3px 0 5px;
+}
+.margin-left-32px{
+	margin-left: 32px !important;
+}
+ul.displaySetup input[type="text"]{
+	padding-left: 3px;
+	width: 120px;
+}
+ul.displaySetup input[type="checkbox"]{
+	width: 15px;
+	height: 15px;
+	margin: 3px 3px 0 0;
+}
+ul.displaySetup input[type="button"]{
+	 border: none;
+	background-color: #009688;
+	height: 22px;
+	line-height: 21px;
+	width: 65px;
+	border-radius: 2px;
+	float: right;
+	margin-right: 330px;
+	color: #fff;
+} 
+.margin-left-5px{
+	margin-left: 5px;
+}
+/*报警设置*/
+ul.alarmSet{
+	padding-top: 15px;
+}
+ul.alarmSet input[type="text"]{
+	width: 100px;
+}
+ul.alarmSet input[type="button"]{
+	margin-right: 347px;
+}
+div.detentionAlarmTime{
+	float: left;
+	overflow: hidden;
+	margin-left: 15px;
+	display: none;
+}
+div.detentionAlarmTime input{
+	margin: 0 5px;
+}
+div.detentionAlarmTime+input[type='button']{
+	/*margin-right: 410px;*/
+}
+/*网络设置*/
+ul.networkSet{
+	padding: 20px 0 0 20px;
+}
+ul.networkSet input[type="text"]{
+	width: 150px;
+}
+ul.networkSet input[type="button"]{
+	float: left;
+	margin-left: 20px;
+}
+ul.networkSet select{
+	width: 151px;
+	height: 22px;
+}
+/*系统设置*/
+ul.systemSet h2{
+	font-weight: bold;
+	font-size: 15px;
+}
+.margin-left-30px{
+	margin-left: 30px !important;
+}
+ul.systemSet input[type="text"]{
+	width: 60px;
+}
+.red{
+	color: red;
+}
+ul.systemSet input[type="radio"]{
+	width: 15px;
+	height: 15px;
+	margin: 3px 3px 0 30px;
+}
+ul.systemSet input[type="button"]{
+	margin-right: 130px;
+}
+/*新增 导入导出*/
+span.ImportExport{
+	float: right;
+	display: inline-block;
+	margin-right: 10px;
+}
+ul.secondMenu{
+	right: 10px;
+  top: 39px;
+}
+ul.thirdMenu{
+	right: 110px;
+  top: 64px;
+}
+ul.secondMenu,ul.thirdMenu,span.ImportExport{
+	width: 100px;
+	text-align: center;
+	font-size: 12px;
+}
+ul.secondMenu,ul.thirdMenu{
+	position: absolute;
+	background: #999999;
+	z-index: 99999;
+	display: none;
+}
+ul.secondMenu li,
+ul.thirdMenu li,
+span.ImportExport{
+	cursor: pointer;
+	height: 25px;
+	line-height: 25px;
+}
+ul.secondMenu li a,
+ul.thirdMenu li a{
+	color: #333;
+	display: inline-block;
+	width: 100%;
+}
+ul.secondMenu li a:hover,
+ul.thirdMenu li a:hover{
+	text-decoration: underline;
+	color: white;
+}
+ul.secondMenu li:hover,
+ul.thirdMenu li:hover{
+	background: #87CEEB;
+	color: white;
+}
+.whiteColor{
+	color: white;
+}
+input.bulkImport{
+	display: none;
+}
+/*新增 围栏报警设置*/
+input.width-90px{
+	width: 90px !important;
+}
+span.paddingLeft-30px{
+	padding-left: 30px !important;
+	width: 100px !important;
+}
+#fenceAlarmParamSet{
+	display: none;
+}
+#fenceAlarmSet{
+	display: none;
+	overflow: hidden;
+}
+#fenceAlarmSet span,
+#fenceAlarmSet select,
+#fenceAlarmSet div{
+	float: left;
+}
+#fenceAlarmSet span{
+	margin-top: 1px;
+}
+#fenceAlarmSet div{
+	display: inline-block;
+	margin-left: 15px;
+}
+#fenceAlarmSet div input[type="button"]{
+	margin-left: 5px;
+	height: 23px;
+	line-height: 23px;
+}
+#fenceAlarmDetailParamSet{
+	display: none;
+	border: 2px solid dimgray;
+	overflow: hidden;
+}
+#fenceAlarmDetailParamSet>p{
+	height: 25px;
+	line-height: 25px;
+	background: #999999;
+	padding-left: 15px;
+	font-weight: bold;
+}
+#fenceAlarmDetailParamSet>p span{
+	display: inline-block;
+	width: 25px;
+	text-align: center;
+	background: #525252;
+	color: white;
+	font-size: 28px;
+	font-weight: normal;
+	float: right;
+	cursor: pointer;
+}
+#fenceAlarmDetailParamSet>div{
+	float: left;
+	border: 2px solid #AFAFAF;
+	margin: 2px;
+	padding: 0 5px 5px 5px;
+}
+#fenceAlarmDetailParamSet>div h3{
+	color: #4CAFCC;
+	border-bottom: 1px solid #29A4CC;
+	padding-left: 5px;
+	font-weight: bold;
+}
+div.paramSetLeft{
+	width: 21%;
+	overflow-y: auto;
+}
+div.paramSetRight{
+	width: 78%;
+	overflow-y: auto;
+}
+ul#TAGCheckboxTree p span{
+	border-color: dimgray;
+}
+ul#TAGCheckboxTree{
+	width: auto;
+	height: auto;
+}
+div.selectedTAG{
+	margin-top: 3px;
+	padding-top: 3px;
+	min-height: 21px;
+	overflow: hidden;
+	overflow-y: auto;
+	background: #EBF8FE;
+}
+div.selectedTAG span{
+	float: left;
+	font-size: 13px;
+	margin: 0 0 3px 5px;
+	background: #22A2C9;
+	padding: 0 3px;
+	height: 18px;
+	line-height: 19px;
+	color: white;
+}
+div.paramSetRight ul{
+	padding: 10px 5px 0 5px;
+	border-bottom: 1px solid #29A4CC;
+	font-size: 13px;
+}
+div.paramSetRight ul li{
+	margin-bottom: 5px;
+	padding-left: 15px;
+}
+div.paramSetRight ul li input,
+div.paramSetRight ul li span{
+	float: left;
+}
+div.paramSetRight ul li input[type="checkbox"]{
+	width: 15px;
+	height: 15px;
+	margin-top: 3px;
+}
+div.paramSetRight ul li input[type="time"],
+div.paramSetRight ul li span,
+div.paramSetRight ul li input[type="text"]{
+	height: 22px;
+	line-height: 22px;
+}
+div.paramSetRight ul li input[type="text"]{
+	padding-left: 2px;
+}
+div.paramSetRight ul li span{
+	display: inline-block;
+	margin: 0 8px;
+}
+div.paramSetRight ul li p{
+	clear: both;
+	padding-left: 22px;
+}
+div.paramSetRight>div.paramSetBtn{
+	overflow: hidden;
+	padding: 5px 20px 0 0;
+}
+div.paramSetRight>div.paramSetBtn input[type="button"]{
+	float: right;
+}
+/* 组别样式LayUi */
+#editGroupForm {
+	display: none;
+	margin-top: 20px;
+}
+#editGroupForm div.layui-input-inline {
+	width : 357px;
+}
+#editGroupForm .layui-form-label,#editRegionForm .layui-form-label
+{
+	width: 107px;
+}
+#nodeSelectRegionForm .layui-form-label{
+	width: 96px;
+}
+<!--隐藏表格中文笔溢出显示工具-->
+.layui-table-tips-main{display:none}
+.layui-table-tips-c{display:none}
+.layui-table-grid-down{display:none}
+/* 区域样式LayUi */
+#editRegionForm {
+	display: none;
+	margin-top: 20px;
+}
+
+#regionImagePreview{
+	height: 150px; 
+}
+
+#regionImagePreview img{
+	width: 100%;
+	height: 100%;
+}
+
+#editRegionForm .layui-input-inline{
+	width: 241px;
+}
+/* 设置基站laui */
+#nodeContentBox{
+	margin-top: 11px;
+}
+/* 设置基站时默认基站表格讯息不可见 */
+#eNodeBMapDiv{
+	overflow-y: scroll; 
+}
+#eNodeBTableDiv{
+	display: none;
+}
+#nodeTableMapContent .layui-tab-content{
+	padding: 11px 0px;
+}
+#nodeTableMapContent{
+	margin: 0;
+}
+#nodeSelectRegionForm>.layui-form-item{
+	margin-bottom: 0px;
+}
+#eNodeBTableDiv>.layui-table-view{
+	margin: 0px;
+}
+#nodeEditForm{
+	margin-top: 15px;
+	display: none;
+}
+#nodeEditForm .layui-form-label{
+	width: 100px;
+}
+#nodeEditForm .layui-input-block{
+	margin-right: 28px;
+}
+
+.searchText {
+    height: 31px;
+    padding-left: 5px;
+    border-radius: 2px;
+    border: 1px solid lightgray;
+}
+#accessOndutyTimeinterval,#accessStatisticTimeInput {
+	width: auto;
+	height: 25px;
+}
+#accessOffdutyTimeinterval {
+	width: auto;
+	height: 25px;
+}
+
+#logOut span,#logOut i{
+	color: white;
+}

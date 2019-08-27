@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<head>
+		<meta charset="UTF-8">
+		<title>設置资料管理</title>
+		<link rel="stylesheet" type="text/css" th:href="@{/css/lib/reset.css}" href="css/lib/Reset.css"/>
+		<link rel="stylesheet" type="text/css" th:href="@{/css/lib/iconfont.css}" href="css/lib/iconfont.css"/>
+		<link rel="stylesheet" type="text/css" th:href="@{/layui/css/layui.css}" href="js/lib/layui/css/layui.css"/>
+		<link rel="stylesheet" type="text/css" th:href="@{/css/module/index.css}" href="css/index.css"/>
+		<script th:src="@{/js/lib/jquery-3.1.0.min.js}" src="js/lib/jquery-3.1.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script th:src="@{/layui/layui.js}" src="js/lib/layui/layui.js" type="text/javascript" charset="utf-8"></script>
+		<script th:src="@{/js/module/setting/base-setting.js}" src="js/module/setting/base-setting.js" type="text/javascript" charset="utf-8"></script>
+		<script th:src="@{/js/lib/functions.js}" src="js/functions.js" type="text/javascript" charset="utf-8"></script>
+		<script th:src="@{/js/module/setting/index.js}" src="js/functions.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+		<!-- 組別添加表單 -->
+		<form class="layui-form" action="" id="editGroupForm">
+			<div class="layui-form-item">
+				<label class="layui-form-label">組別名稱:</label>
+				<div class="layui-input-inline">
+					<input type="text" name="name" required lay-verify="required"
+						placeholder="請輸入名稱" autocomplete="off" class="layui-input">
+				</div>
+			</div>
+			<div class="layui-form-item layui-form-text">
+				<label class="layui-form-label">組別描述:</label>
+				<div class="layui-input-inline">
+					<textarea name="des" placeholder="請輸入描述信息" class="layui-textarea"></textarea>
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<div class="layui-input-block">
+					<button class="layui-btn" lay-submit lay-filter="groupSubmit">提交</button>
+					<button type="reset" class="layui-btn layui-btn-primary">重置</button>
+				</div>
+			</div>
+		</form>
+		<!-- 區域添加表單 -->
+		<form class="layui-form" action="" id="editRegionForm">
+			<div class="layui-form-item">
+				<label class="layui-form-label">區域名稱:</label>
+				<div class="layui-input-inline">
+					<input type="text" name="name" required lay-verify="required"
+						placeholder="區域名稱" autocomplete="off" class="layui-input">
+				</div>
+			</div>
+			<div class="layui-form-item">
+			    <label class="layui-form-label">組別名稱:</label>
+			    <div class="layui-input-inline">
+			      <!-- 需要我們去生成對應的組別訊息 -->
+			      <select name="groupId" lay-filter="aihao" id="regionGroupsSelect">
+			      </select>
+			    </div>
+			</div>
+			<div class="layui-form-item">
+			  <label class="layui-form-label">上傳圖片:</label>
+			  <div class="layui-input-inline">
+					<button type="button" class="layui-btn layui-btn-danger" id="imgUpload" shiro:hasPermission="region:upload">
+					<i class="layui-icon"></i>
+					上傳圖片</button>
+					<blockquote class="layui-elem-quote layui-quote-nm" style="margin-top: 10px;">
+					    預覽圖：
+					    <div class="layui-upload-list" id="regionImagePreview"></div>
+					</blockquote>
+			  </div>
+			  <script type="text/javascript">
+			  // 文件上傳接口
+			  layui.use(['layer','upload'], function() {
+			  	var upload = layui.upload;
+				upload.render({
+					elem : "#imgUpload", // 綁定元素
+					url : "region/uploadImage/", // 上傳接口
+					accept: "images",
+					acceptMime: "image/*",
+					before : function(obj) {
+						// 預讀本地文件示例，不支持ie8
+						$('#regionImagePreview').empty();
+						obj.preview(function(index, file, result) {
+							$('#regionImagePreview').append(
+									'<img src="' + result + '" alt="' + file.name
+											+ '" class="layui-upload-img">');
+						});
+					},
+					done : function(result) {
+						// 上傳完畢回調
+						if (result.code == 600) {
+							$("#regionImagePreview").attr("imagePath", result.data);
+							layer.msg("上傳完成...", {
+								type : 6,
+								time : 1200
+							});
+						} else {
+							layer.msg(result.msg, {
+								type : 5,
+								time : 1200
+							})
+						}
+					},
+					error : function() {
+						// 請求異常回調
+						console.error("上傳區域圖片異常...");
+						layer.msg("上傳異常...", {
+							type : 1,
+							time : 1200
+						})
+					}
+				});
+				});
+			  </script>
+			</div> 
+			<div class="layui-form-item">
+				<div class="layui-input-block">
+					<button class="layui-btn" lay-submit lay-filter="regionSubmit">添加</button>
+					<button type="reset" class="layui-btn layui-btn-primary">重置</button>
+				</div>
+			</div>
+		</form>
+		
+<ul class="section">
+	<li class="setMgr">
+		<div class="setMgrLeft">
+			<ul class="classify">
+				<li>設置分類</li>
+			</ul>
+			<ul class="classifyDetail" id="setClassify">
+				<li>組別設置</li>
+				<li>區域設置</li>
+				<li>基站設置</li>
+				<li>顯示設置</li>
+				<li>警報設置</li>
+				<li>網絡設置</li>
+				<li>系統設置</li>
+			</ul>
+		</div>
+		<div class="setMgrRight">
+			<p class="setMgrRightTop"></p>
+			<ul class="classifyContent" id="setClassifyContent">
+				<!--組別設置-->
+				<li>
+					<div>
+						<!-- 組別表格模板 -->
+						<table id="group" lay-filter="operateGroup" >
+						</table>
+						<script type="text/html" id="groupManipulation">
+							<a class="layui-btn layui-btn-sm" lay-event="edit" shiro:hasPermission="group:update">編輯</a>
+							<a class="layui-btn layui-btn-danger layui-btn-sm" lay-event="del" shiro:hasPermission="group:delete">刪除</a>
+						</script>
+						<script type="text/html" id="addGroupModule">
+							<input id="groupText" class="layui-input-inline searchText" name="" placeholder="輸入關鍵字" autocomplete="off" shiro:hasPermission="group:find">
+					  		<button id="searchGroup" class="layui-btn layui-btn-sm" lay-event="search" shiro:hasPermission="group:find">
+					  			<i class="layui-icon">&#xe615;</i>搜尋
+					  		</button>
+							<button lay-event="add" id="addGroup" class="layui-btn layui-btn-sm" shiro:hasPermission="group:add">
+							<i class="layui-icon">&#xe608;</i> 新增組別
+							</button>
+							<button lay-event="refresh" id="refreshGroup" class="layui-btn layui-btn-sm layui-btn-primary" shiro:hasPermission="group:find">
+						  		<i class="layui-icon">&#xe669;</i> 刷新
+							</button>
+						</script>
+					</div>
+				</li>
+				<!--區域設置-->
+				<li>
+					<div>
+						<table id="regionTable" lay-filter="operateRegion"></table>
+						<script type="text/html" id="regionManipulation">
+							<a class="layui-btn layui-btn-sm" lay-event="edit" shiro:hasPermission="region:update">編輯</a>
+							<a class="layui-btn layui-btn-danger layui-btn-sm" lay-event="del" shiro:hasPermission="region:delete">刪除</a>
+						</script>
+						<script type="text/html" id="addRegionModule">
+							<input id="regionText" class="layui-input-inline searchText" name="" placeholder="輸入關鍵字" autocomplete="off" shiro:hasPermission="region:find">
+					  		<button id="searchRegion" class="layui-btn layui-btn-sm" lay-event="search" shiro:hasPermission="region:find">
+					  			<i class="layui-icon">&#xe615;</i>搜尋
+					  		</button>
+							<button lay-event="add" id="addRegion" class="layui-btn layui-btn-sm" shiro:hasPermission="region:add">
+							<i class="layui-icon">&#xe608;</i> 新增區域
+							</button>
+							<button lay-event="refresh" id="refreshRegion" class="layui-btn layui-btn-sm layui-btn-primary" shiro:hasPermission="region:find">
+						  		<i class="layui-icon">&#xe669;</i> 刷新
+							</button>
+						</script>
+					</div>
+				</li>
+				<!--基站設置-->
+				<li>
+					<div class="layui-tab layui-tab-brief" lay-filter="nodeNav"  id="nodeTableMapContent">
+						<ul class="layui-tab-title">
+							<li class="layui-this">地圖模式</li>
+							<li>列表模式</li>
+						</ul>
+						<div class="layui-tab-content">
+							<div id="nodeSelectRegionBox">
+								<form class="layui-form" action="" id="nodeSelectRegionForm">
+									<div class="layui-form-item">
+										<label class="layui-form-label">選擇組別: </label>
+										<div class="layui-input-inline">
+											<select name="group" lay-verify="required"
+												lay-filter="nodeGroupSelectFilter" id="nodeGroupSelect">
+												<!-- <option value="0">北京</option> -->
+											</select>
+										</div>
+										<label class="layui-form-label">選擇區域: </label>
+										<div class="layui-input-inline">
+											<select name="region" lay-verify="required"
+												lay-filter="nodeRegionSelectFilter" id="nodeRegionSelect">
+											</select>
+										</div>
+									</div>
+								</form>
+								<script type="text/html" id="addNodeModule">
+									<input id="nodeText" class="layui-input-inline searchText" name="" placeholder="輸入關鍵字" autocomplete="off" shiro:hasPermission="node:find">
+						  			<button id="searchNode" class="layui-btn layui-btn-sm" lay-event="search" shiro:hasPermission="node:find">
+						  					<i class="layui-icon">&#xe615;</i>搜尋
+						  			</button>
+									<button lay-event="refresh" id="refreshNode" class="layui-btn layui-btn-sm layui-btn-primary" shiro:hasPermission="node:find">
+							  				<i class="layui-icon">&#xe669;</i> 刷新
+									</button>
+								</script>
+							</div>
+							<div id="nodeContentBox">
+								<!-- 顯示地圖 -->
+								<div class="map noselect" id="eNodeBMapDiv">
+									<div id="eNodeBMap">
+										<img th:src="@{/img/5c7fe97c-255b-4baf-b804-083e4fc8f9d3.png}" src="" />
+									</div>
+								</div>
+								<!-- 顯示列表 -->
+								<div id="eNodeBTableDiv">
+									<table id="eNodeBTable" lay-filter="eNodeBTable"></table>
+									<script type="text/html" id="eNodeBTableTool">
+  										<a class="layui-btn layui-btn-xs" lay-event="edit" shiro:hasPermission="node:update">編輯</a>
+  										<a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del" shiro:hasPermission="node:delete">刪除</a>
+									</script>
+								</div>
+								<!-- 基站編輯框 -->
+								<form class="layui-form" action="" id="nodeEditForm">
+								  <div class="layui-form-item">
+								    <label class="layui-form-label">設備ID:</label>
+								    <div class="layui-input-block">
+								      <input type="text" name="id" required  lay-verify="required" placeholder="請輸入設備ID" autocomplete="off" class="layui-input">
+								    </div>
+								  </div>
+								  <div class="layui-form-item">
+								    <label class="layui-form-label">設備類型:</label>
+								    <div class="layui-input-block">
+								      <select name="type" lay-verify="required">
+								        <option value="0">參考點</option>
+								        <option value="1">數據節點</option>
+								        <option value="2">進出判斷設備</option>
+								      </select>
+								    </div>
+								  </div>
+								  <div class="layui-form-item">
+								    <label class="layui-form-label">設備名稱:</label>
+								    <div class="layui-input-block">
+								      <input type="text" name="name" required  lay-verify="required" placeholder="請輸入設備名稱" autocomplete="off" class="layui-input">
+								    </div>
+								  </div>
+								  <div class="layui-form-item">
+								    <div class="layui-input-block">
+								      <button class="layui-btn" lay-submit lay-filter="nodeEditFilter">提交</button>
+								      <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+								      <button type="button" class="layui-btn layui-btn-primary" id="nodeDeleteBtn" shiro:hasPermission="node:delete">刪除</button>
+								    </div>
+								  </div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</li>
+				<!--顯示設置-->
+				<li>
+					<ul class="displaySetup" id="displaySetup">
+						<li>
+							<input type="checkbox" id="isShowENodeB" th:checked="${allParams['isBsVisible']}"/>
+							<label for="isShowENodeB">在地圖上顯示基站</label>
+							<input type="button" id="" value="保存" shiro:hasPermission="showparams:set"/>
+						</li>
+						<li>
+							<input type="checkbox" id="TAGTimeout" th:checked="${allParams['isTagOverVisible']}"/>
+							<label for="TAGTimeout">當未接收到TAG信息</label>
+							<span>超過：</span>
+							<input type="text" id="" th:value="${allParams['tagVisibleOverTime']}"/>
+							<span>秒時,地圖上不顯示卡片</span>
+							<input type="button" id="" value="保存" shiro:hasPermission="showparams:set"/>
+						</li>
+						<li>
+							<input type="checkbox" id="nodeManagerShow" th:checked="${allParams['isNodeManagerShowReport']}"/>
+							<label for="nodeManagerShow">基站管理地圖模式中是否顯示基站上報時間</label>
+							<input type="button" id="" value="保存" shiro:hasPermission="showparams:set"/>
+						</li>
+						<li>
+						   	  <label class="">警告報表默認顯示的記錄數為：</label>
+						      <select name="reportWarnTime">
+						        <option value="365" th:selected="${allParams['reportWarnInfoTime']=='365'}">近1個年</option>
+						        <option value="180" th:selected="${allParams['reportWarnInfoTime']=='180'}">近6個月</option>
+						        <option value="90" th:selected="${allParams['reportWarnInfoTime']=='90'}">近3個月</option>
+						        <option value="30" th:selected="${allParams['reportWarnInfoTime']=='30'}">近1個月</option>
+						        <option value="7" th:selected="${allParams['reportWarnInfoTime']=='7'}">近1個星期</option>
+						      </select>
+							  <input type="button" id="reportWarnTimeBtn" value="保存" shiro:hasPermission="showparams:set"/>
+						</li>
+						<li>
+							  <input type="checkbox" id="treeConnectIntervalCb" th:checked="${allParams['isRefreshTreeTime']}"/>
+						   	  <label for="treeConnectIntervalCb" class="">基站/參考點連接圖刷新間隔：</label>
+						   	  <input type="text" id="" th:value="${allParams['refreshTreeTime']}"/>&nbsp;s
+							  <input type="button" value="保存" shiro:hasPermission="showparams:set"/>
+						</li>
+						<li>
+							  <input type="checkbox" id="monitorRegionNumShowCb" th:checked="${allParams['isShowMonitorRegionNumber']}"/>
+						   	  <label for="monitorRegionNumShowCb" class="">動態監控區域切換頁面顯示人員數量</label>
+							  <input type="button" value="保存" shiro:hasPermission="showparams:set"/>
+						</li>
+						<li>
+							<input type="checkbox" id="isShowDebugerCb" th:checked="${allParams['isShowDebug']}"/>
+							<label for="isShowDebugerCb" class="">是否顯示調試的帳號訊息</label>
+							<input type="button" value="保存" shiro:hasPermission="showparams:set"/>
+						</li>
+					</ul>
+				</li>
+				<!--報警設置-->
+				<li>
+					<ul class="displaySetup alarmSet" id="alarmSet">
+						<li>
+							<input type="checkbox" id="TAGoff" th:checked="${allParams['isTagDisAlarm']}"/>
+							<label for="TAGoff">當超過&nbsp;&nbsp;</label>
+							<input type="text" id="" th:value="${allParams['tagDisAlarmTime']}"/>
+							<span>&nbsp;&nbsp;秒時沒有接收到卡片上報的訊息，產生斷開報警</span>
+							<input type="button" id="" value="保存" shiro:hasPermission="warmparams:set"/>
+						</li>
+						<li>
+							<input type="checkbox" id="eNodeBoff" th:checked="${allParams['isNodeDisAlarm']}"/>
+							<label for="eNodeBoff">當超過&nbsp;&nbsp;</label>
+							<input type="text" id="" th:value="${allParams['nodeDisAlarmTime']}"/>
+							<span>&nbsp;&nbsp;秒時沒有接收到基站上報的訊息，產生斷開報警</span>
+							<input type="button" id="" value="保存" shiro:hasPermission="warmparams:set"/>
+						</li>
+						<li>
+							<input type="checkbox" id="batteryLow" th:checked="${allParams['isLowBattery']}"/>
+							<label for="batteryLow">當電量低於&nbsp;&nbsp;</label>
+							<input type="text" id="" th:value="${allParams['lowBatter']}"/>
+							<span>&nbsp;&nbsp;%時，產生電量不足報警</span>
+							<input type="button" id="" value="保存" shiro:hasPermission="warmparams:set"/>
+						</li>
+						<li>
+							<input type="checkbox" id="personHelpAlarm" th:checked="${allParams['isPersonHelp']}"/>
+							<label for="personHelpAlarm">是否啟用人員求救報警</label>
+							<input type="button" id="" value="保存" shiro:hasPermission="warmparams:set"/>
+						</li>
+						<li>
+							<input type="checkbox" id="areaAlarm" th:checked="${allParams['isAreaAlarm']}"/>
+							<label for="areaAlarm">是否啟用區域報警</label>
+							<input type="button" id="" value="保存" shiro:hasPermission="warmparams:set"/>
+						</li>
+						
+						<li>
+							<input type="checkbox" id="autoClearHandledAlarm" checked="checked" th:checked="${allParams['autoClearHandleWarn']}"/>
+							<label for="autoClearHandledAlarm">自動清除已處理超過&nbsp;&nbsp;</label>
+							<input type="text" th:value="${allParams['autoClearHandleWarnTime']}"/>
+							<span>&nbsp;&nbsp;s 的警報訊息</span>
+							<input type="button" value="保存" shiro:hasPermission="warmparams:set"/>
+						</li>
+						
+						<li>
+							<label>滯留報警模式：</label>
+							<select name="" id="selectRetentionModel">
+								<option value="0" th:selected="${allParams['resWarmMode']=='0'}">不啟用</option>
+								<option value="1" th:selected="${allParams['resWarmMode']=='1'}">自定義</option>
+								<option value="2" th:selected="${allParams['resWarmMode']=='2'}">啟用系統</option>
+							</select>
+							<div class="detentionAlarmTime" th:attr="defaultShow=${allParams['resWarmMode']=='2'}">
+								<label>滯留報警時間：</label>
+								<input type="text" id="" th:value="${allParams['notMoveTime']}"/> min
+							</div>
+							<script type="text/javascript">
+								var show = $("#selectRetentionModel~div.detentionAlarmTime").attr("defaultShow")
+								if(show == 'true'){
+									$("#selectRetentionModel~div.detentionAlarmTime").show();
+								}else{
+									$("#selectRetentionModel~div.detentionAlarmTime").hide();
+								}
+							</script>
+							<input type="button" id="" value="保存" shiro:hasPermission="warmparams:set"/>
+						</li>
+					</ul>
+				</li>
+				<!--網絡設置-->
+				<li>
+					<ul class="displaySetup networkSet">
+						<li>
+							<span>IP地址：</span>
+							<custom:ip th:attr="param=${allParams['ip']}"/>
+							<input type="button" id="saveIP" value="保存" shiro:hasPermission="netparams:set"/>
+						</li>
+						<li>
+							<span>端口號：</span>
+							<input type="text" id="port" th:value="${allParams['port']}"/>
+							<input type="button" id="savePort" value="保存" shiro:hasPermission="netparams:set"/>
+						</li>
+					</ul>
+				</li>
+				<!--系統設置-->
+				<li>
+					<ul class="displaySetup systemSet" id="systemSet">
+						<li><h2>設備檢測時間設置：</h2></li>
+						<li>
+							<span class="margin-left-30px">檢測異常斷開時間間隔：</span>
+							<input type="text" value="20" th:value="${allParams['checkedDisconnectTime']}"/>
+							<span>秒</span>
+							<span class="red">(預設為20秒，表示系統沒經過20秒判斷設備是否斷開)</span>
+							<input type="button" id="scanDisIntervalBtn" value="保存" shiro:hasPermission="sysparams:set"/>
+						</li>
+						<li>
+							<span class="margin-left-30px">TAG異常斷開時間：</span>
+							<input type="text" value="4" th:value="${allParams['checkedTagdisK1']}"/>
+							<span>* 休眠時間 +</span>
+							<input type="text" value="50" th:value="${allParams['checkedTagdisK2']}"/>
+							<span>秒</span>
+							<span class="red">(卡片斷開的判斷時間預設為4*卡片休眠時間+50s)</span>
+							<input type="button" id="tagDisTimeBtn" value="保存" shiro:hasPermission="sysparams:set"/>
+						</li>
+						<li>
+							<span class="margin-left-30px">基站異常斷開時間：</span>
+							<input type="text" value="4" th:value="${allParams['checkedDevdisK1']}"/>
+							<span>* 休眠時間 +</span>
+							<input type="text" value="50" th:value="${allParams['checkedDevdisK2']}"/>
+							<span>秒</span>
+							<span class="red">(基站斷開的判斷時間預設為4*卡片休眠時間+50s)</span>
+							<input type="button" id="baseStationDisTimeBtn" value="保存" shiro:hasPermission="sysparams:set"/>
+						</li>
+						<li><h2>清理資料：</h2></li>
+						<li>
+							<span class="margin-left-30px">定時清理警報資訊：</span>
+							<input type="checkbox" checked="checked" th:checked="${allParams['autoClearAlarmMsg']}"/>
+							<span>時間間隔 ></span>
+							<input type="text" th:value="${allParams['autoClearAlarmMsgTime']}"/>
+							<span>天</span>
+							<span class="red">(系統經過指定時間自動清除警報訊息資料)</span>
+							<input type="button" id="timerClearAlarmBtn" value="保存" shiro:hasPermission="sysparams:set"/>
+						</li>
+						<li>
+							<span class="margin-left-30px">定時清理日常數據：</span>
+							<input type="checkbox" checked="checked" th:checked="${allParams['autoClearDutyData']}"/>
+							<span>時間間隔 ></span>
+							<input type="text" th:value="${allParams['autoClearDutyDataTime']}"/>
+							<span>天</span>
+							<span class="red">(系統經過指定時間自動清除已保存的原始資料)</span>
+							<input type="button" id="timerClearDutyDataBtn" value="保存" shiro:hasPermission="sysparams:set"/>
+						</li>
+						<li>
+							<span class="margin-left-30px">定時清理日常操作記錄：</span>
+							<input type="checkbox" checked="checked" th:checked="${allParams['autoClearOperationRecord']}"/>
+							<span>時間間隔 ></span>
+							<input type="text" th:value="${allParams['autoClearOperationRecordTime']}"/>
+							<span>天</span>
+							<span class="red">(系統經過指定時間自動清除已保存的人員操作記錄)</span>
+							<input type="button" id="timerClearDutyOperationBtn" value="保存" shiro:hasPermission="sysparams:set"/>
+						</li>
+						<li>
+							<span class="margin-left-30px">定時清理出入記錄：</span>
+							<input type="checkbox" checked="checked" th:checked="${allParams['autoClearAccessRecord']}"/>
+							<span>時間間隔 ></span>
+							<input type="text" th:value="${allParams['autoClearAccessRecordTime']}"/>
+							<span>天</span>
+							<span class="red">(系統經過指定時間自動清除人員出入記錄)</span>
+							<input type="button" id="timerClearAccessRecordBtn" value="保存" shiro:hasPermission="sysparams:set"/>
+						</li>
+						<li><h2>登陆系统参数：</h2></li>
+						<li>
+							<span class="margin-left-30px">同一個帳號可以被</span>
+							<input type="text" th:value="${allParams['maxNumberAccounts']}"/>
+							<span>人登入</span>
+							<input type="button" id="maxNumberAccountsBtn" value="保存" shiro:hasPermission="sysparams:set"/>
+						</li>
+						<li><h2>防跳點優化：</h2></li>
+						<li>
+							<span class="margin-left-30px">選擇優化模式: </span>
+							<select name="optimizeMode" th:attr="selectedIndex=${allParams['optimizeMode']}">
+								<option value="1">連續跳點次數優化</option>
+								<option value="2">信號差值閥值優化</option>
+							</select>
+							<script type="text/javascript">
+								var index = $("select[name='optimizeMode']").attr("selectedIndex");
+								$("select[name='optimizeMode']").find("option[value='" + index + "']")
+																.attr("selected","selected");
+							</script>
+							<span>&nbsp;&nbsp;&nbsp;</span>
+							<span>連續跳點次數: </span>
+							<select name="optimizeValue" th:attr="selectedIndex=${allParams['optimizeVal']}">
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="10">10</option>
+							</select>
+							<script type="text/javascript">
+								var index = $("select[name='optimizeValue']").attr("selectedIndex");
+								$("select[name='optimizeValue']").find("option[value='" + index + "']")
+																 .attr("selected","selected");
+								
+							</script>
+							<input type="button" id="optimizeModeBtn" value="保存" shiro:hasPermission="sysparams:set"/>
+						</li>
+						<li><h2>進出統計參數：</h2></li>
+						<li>
+							<input id="isAutoStatisticAccess" class="margin-left-30px" type="checkbox" checked="checked" th:checked="${allParams['isAutoStatisticAccess']}"/>
+							<label for="isAutoStatisticAccess">啟用自動統計上下班時間功能</label>
+							<input type="button" id="isAutoStatisticAccessBtn" value="保存" shiro:hasPermission="sysparams:set"/>
+						</li>
+						<li id="manualSetCurrentDoorStatusParam" th:attr="accessStatisticTime=${allParams['manualSetCurrentDoorStatusDelay']}">
+							<span class="margin-left-30px">手動改變門控狀態的延時時間： </span>
+						    <div class="layui-input-inline">
+						       <input type="text" id="manualSetCurrentDoorStatusTimeInput" th:value="${allParams['manualSetCurrentDoorStatusDelay']}">&nbsp;&nbsp;s
+						    </div>
+						    <input type="button" id="manualSetCurrentDoorStatusTimeBtn" value="保存" shiro:hasPermission="sysparams:set"/>
+						</li>
+						<li id="accessStatisticTimeParam" th:attr="accessStatisticTime=${allParams['accessStatisticTime']}">
+							<span class="margin-left-30px">統計上下班記錄時刻： </span>
+						    <div class="layui-input-inline">
+						       <input type="text" class="layui-input" id="accessStatisticTimeInput" placeholder="HH:mm:ss">
+						    </div>
+						    <input type="button" id="accessStatisticTimeBtn" value="保存" shiro:hasPermission="sysparams:set"/>
+						</li>
+						<li id="accessOndutyParam" th:attr="defaultStart=${allParams['accessOndutyStartTime']},defaultEnd=${allParams['accessOndutyEndTime']}">
+							<span class="margin-left-30px">上班時間段: </span>
+						    <div class="layui-input-inline">
+						       <input type="text" class="layui-input" id="accessOndutyTimeinterval" placeholder=" - ">
+						    </div>
+						    <input type="button" id="accessOndutyTimeIntervalBtn" value="保存" shiro:hasPermission="sysparams:set"/>
+						</li>
+						<li id="accessOffdutyParam" th:attr="defaultStart=${allParams['accessOffdutyStartTime']},defaultEnd=${allParams['accessOffdutyEndTime']}">
+							<span class="margin-left-30px">下班時間段: </span>
+						    <div class="layui-input-inline">
+						       <input type="text" class="layui-input" id="accessOffdutyTimeinterval" placeholder=" - ">
+						    </div>
+							<input type="button" id="accessOffdutyTimeIntervalBtn" value="保存" shiro:hasPermission="sysparams:set"/>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</li>
+</ul>
+</body>
+</html>

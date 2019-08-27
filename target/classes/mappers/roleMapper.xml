@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dmatek.zgb.db.permission.dao.RoleDao">
+	<cache></cache>
+	<!-- 添加角色讯息  -->
+	<insert id="addRole" parameterType="com.dmatek.zgb.db.pojo.permission.Role">
+	INSERT INTO ROLES(ROLE_NAME,ROLE_DES,CREATETIME,CREATENAME)
+	VALUES(#{role.name},#{role.des},NOW(),#{role.createName})
+	</insert>
+	<!-- 删除角色讯息 -->
+	<delete id="deleteRole">
+	DELETE FROM ROLES WHERE ROLE_ID IN 
+	<include refid="com.dmatek.zgb.db.setting.dao.GroupDao.batchIds"></include>
+	</delete>
+	<!-- 删除角色名称 -->
+	<delete id="deleteRoleName" parameterType="java.lang.String">
+	DELETE FROM ROLES WHERE ROLE_NAME=#{name}
+	</delete>
+	<!-- 修改角色讯息 -->
+	<update id="updateRole">
+	UPDATE ROLES SET 
+	ROLE_NAME=#{role.name},ROLE_DES=#{role.des},UPDATETIME=NOW(),UPDATENAME=#{role.updateName}
+	WHERE UPDATENAME=#{role.updateName}
+	</update>
+	<!-- 修改角色讯息 -->
+	<update id="updateRoleName" parameterType="com.dmatek.zgb.db.pojo.permission.Role">
+	UPDATE ROLES SET ROLE_DES=#{role.des},UPDATETIME=NOW(),UPDATENAME=#{role.updateName} 
+	WHERE ROLE_NAME=#{role.name}
+	</update>
+	<!-- 根据角色查找讯息 -->
+	<select id="findOne" resultType="com.dmatek.zgb.db.pojo.permission.Role">
+	SELECT ROLE_ID id,ROLE_NAME name,ROLE_DES des,CREATETIME
+	createTime,CREATENAME createName,
+	UPDATETIME updateTime,UPDATENAME updateName 
+	FROM ROLES
+	WHERE ROLE_ID=#{id}
+	</select>
+	
+	<select id="findOneName" resultType="com.dmatek.zgb.db.pojo.permission.Role">
+	SELECT ROLE_ID id,ROLE_NAME name,ROLE_DES des,CREATETIME
+	createTime,CREATENAME createName,
+	UPDATETIME updateTime,UPDATENAME updateName 
+	FROM ROLES 
+	WHERE ROLE_NAME=#{name}
+	</select>
+	<!-- 查询所有的角色讯息 -->
+	<select id="findAll" resultType="com.dmatek.zgb.db.pojo.permission.Role">
+	SELECT ROLE_ID id,ROLE_NAME name,ROLE_DES des,CREATETIME
+	createTime,CREATENAME createName,
+	UPDATETIME updateTime,UPDATENAME updateName  
+	FROM ROLES
+	</select>
+</mapper>

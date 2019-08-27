@@ -1,0 +1,3 @@
+$(function(){
+	loginObj($("#username"),$("#password"))();
+})

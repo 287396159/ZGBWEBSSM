@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dmatek.zgb.db.permission.dao.Role_PermissionDao">
+	<cache-ref namespace="com.dmatek.zgb.db.permission.dao.RoleDao"/>
+	<!-- 插入的屬性 -->
+	<sql id="insertAttr">
+		(ROLE_ID,PERMISSION_ID,CREATETIME,CREATENAME)
+	</sql>
+	<!-- 插入的值 -->
+	<sql id="insertVal">
+		<foreach collection="rolePermissions" item="rolePermission" separator=",">
+			(#{rolePermission.role_id},#{rolePermission.permissionId},NOW(),#{rolePermission.createName})
+		</foreach>
+	</sql>
+	<!-- 查詢的屬性 -->
+	<sql id="selectAttr">
+		ROLE_ID role_id,PERMISSION_ID permissionId,CREATETIME
+		createTime, CREATENAME createName,UPDATETIME updateTime,
+		UPDATENAME updateName
+	</sql>
+	<!-- 添加角色权限 -->
+	<insert id="addRolePermissions" parameterType="com.dmatek.zgb.db.pojo.permission.Role_Permission">
+		INSERT INTO ROLE_PERMISSIONS <include refid="insertAttr"></include>
+		VALUES <include refid="insertVal"></include>
+	</insert>
+	<!-- 删除角色权限 -->
+	<delete id="clearRolePermissions">
+		DELETE FROM ROLE_PERMISSIONS WHERE ROLE_ID=#{roleId}
+	</delete>
+	<!-- 根据角色Id查找所有的权限讯息 -->
+	<select id="findAllFromRoleId" resultType="com.dmatek.zgb.db.pojo.permission.Role_Permission">
+		SELECT <include refid="selectAttr"></include> 
+		FROM ROLE_PERMISSIONS WHERE ROLE_ID = #{roleId}
+	</select>
+	
+	<select id="findAllFromRoleName" resultType="com.dmatek.zgb.db.pojo.permission.Role_Permission">
+		SELECT rp.ROLE_ID role_id,rp.PERMISSION_ID permissionId,
+			 rp.CREATENAME createName,rp.CREATETIME createTime,
+			 rp.UPDATENAME updateName,rp.UPDATETIME updateTime  
+		FROM ROLE_PERMISSIONS rp 
+		LEFT JOIN roles r ON rp.ROLE_ID=r.ROLE_ID 
+		WHERE r.ROLE_NAME = #{roleName}
+	</select>
+	
+	<!-- 根据权限ID查找所有的权限讯息 -->
+	<select id="findAllFromPermissionId" resultType="com.dmatek.zgb.db.pojo.permission.Role_Permission">
+		SELECT <include refid="selectAttr"></include>
+		FROM ROLE_PERMISSIONS WHERE PERMISSION_ID=#{permissionId}
+	</select>
+</mapper>

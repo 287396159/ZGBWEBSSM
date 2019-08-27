@@ -1,0 +1,98 @@
+#reportContent>li{
+	height: 100% !important;
+}
+#reportContent .layui-table-view{
+	margin: 0;
+}
+#reportContent .layui-table-cell{
+	padding: 0 8px;
+}
+div.filtrate{
+	padding-top: 7px;
+}
+div.filtrate .layui-form-item{
+	margin-bottom: 10px;
+}
+div.filtrate label.layui-form-label{
+	padding: 5px 10px;
+	width: auto;
+}
+div.filtrate .layui-input{
+	height: 30px;
+}
+div.filtrate .layui-input-inline{
+	width: 160px;
+	margin-right: 5px;
+}
+div.filtrate .dateInterval{
+	width: 320px;
+}
+div.filtrate .layui-form-select dl dd{
+	line-height: 30px;
+}
+div.filtrate button.search{
+	margin-left: 20px;
+}
+dl.warnType{
+	height: 100%;
+}
+dl.warnType>dd{
+	display: inline-block;
+	width: 24.6%;
+	height: 48%;
+	border: 1px solid darkgray;
+	border-radius: 3px;
+	margin-top: 5px;
+	padding: 5px;
+	cursor: pointer;
+	overflow-y: auto;
+}
+dl.warnType>dd:hover{
+	background-color: #e7e7e7;
+}
+dl.warnType>dd p{
+	padding: 1px 0;
+    font-size: 12px;
+}
+dl.warnType>dd>p:first-child span{
+	font-weight: bold;
+}
+dl.group{
+	padding-left: 20px;
+}
+div.warnTypeWindow{
+	margin: 0 10px;
+	display: none;
+}
+#warnType table.reportWarnCardTable td{
+	padding: 2px 0px;
+	text-align: center;
+}
+.layui-table {
+	width: 100% !important;
+}
+#reportContent .layui-tab{
+	margin: 0px;
+}
+#reportContent .layui-tab-content{
+	padding: 0px;
+}
+table.warn-Table {
+	text-align: center;
+	display: inline-block;
+	height: 450px;
+	overflow: auto;
+	margin: 0px auto;
+	border: 1px solid #e6e6e6;
+}
+table.warn-Table th{
+	text-align: center;
+}
+div.warn-pagetool.align{
+	border: 1px solid #e6e6e6;
+    padding: 5px 0px 0px 19px;
+    margin-top: -4px;
+}
+div.warn-pagetool div.layui-laypage{
+	margin: 0px 0px;
+}

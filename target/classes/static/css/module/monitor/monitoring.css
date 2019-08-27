@@ -1,0 +1,345 @@
+/*===========
+ * 动态监控
+ * ==========*/
+ul.areaSelect li{
+	background-color: #D5D5D7;
+}
+.activeArea{
+	background-color: white !important;
+}
+div.TAGMgr{
+	display: none;
+	font-weight: normal;
+}
+p.place{
+	color: black;
+	line-height: 40px;
+	padding-left: 30px;
+	overflow: hidden;
+}
+div.checkboxs{ 
+	height: 21px;
+	margin: 5px 0;
+	position: relative;
+}
+div.checkboxs input[type="checkbox"],
+div.checkboxs label{
+	float: left;
+}
+div.checkboxs input[type="checkbox"]{
+	width: 15px;
+	height: 15px;
+	margin-top: 3px;
+	margin-left: 5px;
+	margin: 3px 0 0 13px;
+}
+div.checkboxs label{
+	margin-left: 3px;
+}
+div.checkboxTreeDiv{
+	width: 230px;
+	height: 260px;
+	margin: auto;
+	border: 1px solid #6FCD53;
+	border-radius: 7px;
+	padding: 2px 0 8px 0;
+}
+div.scroll{
+	float: right;
+	width: 2px;
+	height: 250px;
+	background-color: #6FCD53;
+	margin: 2px 8px 0 0;
+	position: relative;
+}
+div.bar{
+	position: absolute;
+	top: 5px;
+	left: -3px;
+	width: 8px;
+	height: 30px;
+	background-color: #6FCD53;
+}
+/*树形菜单*/
+ul.checkboxTree{
+	width: auto;
+	height: 100%;
+	text-align: left;
+	float: left;
+	margin: 5px 0 0 10px;
+	overflow: hidden;
+}
+p.parentNode{
+	overflow: hidden;
+	height: 19px;
+	line-height: 19px;
+	margin-bottom: 2px;
+}
+p.parentNode input,
+p.parentNode span,
+p.parentNode i{
+	float: left;
+	display: inline-block;
+	margin-top: 2px;
+}
+p.parentNode span:first-child{
+	border: 1px solid #333;
+	width: 15px;
+	height: 15px;
+	line-height: 15px;
+	font-size: 17px;
+	cursor: pointer;
+	margin-top: 3px;
+	text-align: center;
+}
+.stretch{
+	font-size: 24px !important;
+	line-height: 10px !important;
+}
+p.parentNode input[type="checkbox"],
+li.childNode input[type="checkbox"]{
+	height: 16px;
+	width: 16px;
+	margin: 3px 8px 0 5px;
+}
+p.parentNode i:nth-of-type(1),
+p.parentNode i:nth-of-type(3){
+	margin-top: 1px;
+}
+ul.childNodes{
+	display: none;
+}
+li.childNode{
+	overflow: hidden;
+}
+li.childNode img,
+li.childNode input,
+li.childNode span{
+	float: left;
+}
+li.childNode span{
+	margin-top: 2px;
+}
+li.childNode img{
+	height: 22px;
+	margin-left: 18px;
+}
+li.childNode input[type="checkbox"]{
+	margin-left: 0px;
+}
+p.hr{
+	width: 224px;
+	margin: 10px auto;
+	margin-bottom: 5px;
+	border-top: 1px solid darkgray;
+	border-bottom: 1px solid darkgray;
+}
+.TAGMgr h2{
+	color: #34A653;
+	text-align: left;
+	font-weight: bold;
+	padding-left: 15px;
+	font-size: 15px;
+}
+ul.alarmInfor li, #regionNumber li{
+	overflow: hidden;
+	text-align: left;
+	padding-left: 30px;
+	margin-bottom: 3px;
+	font-size: 14px;
+}
+ul.alarmInfor li span,
+ul.alarmInfor li p,
+#regionNumber li span,
+#regionNumber li p{
+	display: inline-block;
+}
+ul.alarmInfor li p,#regionNumber li p{
+	color: red;
+	width: 60px;
+	text-align: center;
+}
+div.monitorFormContent table{
+	display: none;
+}
+/*修改*/
+div.areaClassifyDiv{ 
+	position: relative;
+	width: 268px;
+	overflow-x: hidden;
+}
+div.areaClassifyDiv ul{
+	border-left: none;
+}
+ul.areaClassify{
+	width: 251px;
+	color: rgba(0,0,0,.8);
+}
+ul.areaClassify li{
+	height: auto;
+	border: none;
+}
+ul.areaClassify li:first-child{
+	margin-top: 10px;
+}
+ul.areaClassify li a{
+	display: inline-block;
+	width: 100%;
+	background: #6BBF29;
+	color: rgba(255,255,255,.8);
+	position: relative;
+	border-bottom: 1px solid dimgray;
+}
+ul.areaClassify li a:hover{
+	color: rgba(255,255,255,1);
+}
+ul.areaClassify li a i{
+	font-size: 25px;
+	position: absolute;
+	right: 10px;
+}
+ul.areaClassify li dl{
+	display: none;
+}
+ul.areaClassify li dl dd{
+	border-bottom: 1px solid dimgray;
+	padding-left: 30px;
+}
+.selected{
+	background: #D2ECBD;
+}
+.zhankai{
+	color: rgba(255,255,255,1) !important;
+}
+/*修改 end*/
+#monitorContent>li{
+	display: block;
+}
+#monitorContent .layui-tab{
+	margin: 0;
+}
+#monitorContent .layui-tab-content{
+	padding: 5px 0;
+	overflow-y: auto;
+}
+#monitorContent .layui-table-view{
+	margin: 0;
+}
+span.search{
+	margin-left: 50px;	
+}
+span.search input{
+	padding: 6px 5px 5px;
+	border: 1px solid darkgray;
+}
+span.search input:focus{
+	border-color: gray;
+}
+span.search button{
+	background: #5FB878;
+}
+/*筛选功能*/
+#filtrate{
+	float: right;
+	margin-right: 10px;
+}
+#filtrateForm{
+	display: none;
+	padding: 10px;
+	text-align: left;
+}
+#filtrateForm h3{
+	text-align: left;
+	border-bottom: 1px solid darkgray;
+	margin-bottom: 10px;
+	font-weight: bold;
+	color: #009688;
+}
+#filtrateForm .layui-form-checkbox{
+	margin-bottom: 5px;
+}
+#filtrateForm button[lay-submit]{
+	display: block;
+	margin: auto;
+}
+/*新增 地图放大缩小功能*/
+i.icon-fangda,
+i.icon-suoxiao{
+	position: absolute;
+	z-index: 8888;
+	cursor: pointer;
+	font-size: 21px;
+	width: 24px;
+	height: 24px;
+	line-height: 25px;
+	color: #333;
+	text-align: center;
+	font-weight: bold;
+}
+i.icon-fangda{
+	right: 2px;
+    top: 4px;
+}
+i.icon-suoxiao{
+	right: 0px;
+    top: 0px;
+}
+div.fullScreen{
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: rgba(100,104,113,0.4);
+	width: 100%;
+	height: 100%;
+	display: none;
+	z-index: 999998;
+	overflow-y: auto;
+}
+div.fullScreenMap{
+	position: absolute;
+	top: 0;
+	left: 50%;
+	z-index: 999999;
+	width: 1100px;
+	display: none;
+	margin-left: -550px;
+}
+#monitorMap .taglist {
+	position: absolute;
+}
+#monitorMap .taglist li{
+ 	height: 22px;
+	line-height: 22px;
+	
+}
+#monitorMap .taglist li i{
+    font-size: 21px;
+    color: #009688;
+    float: left;
+}
+/* 参考点点击显示 */
+div#showReferTags {
+	display: none;
+	width: auto;
+	
+}
+div.pRefer{
+	position: absolute;
+}
+div.pRefer span:first-child{
+	background: #5FB878;
+}
+div.pNode span:first-child{
+	background: #009688;
+}
+div.pRefer span:last-child{
+	float: left;
+    line-height: 20px;
+    height: 20px;
+    display: inline-block;
+    margin-top: -1px;
+    margin-right: 5px;
+}
+div.InOutNodeB>span:first-child{
+    background: #009688;
+}

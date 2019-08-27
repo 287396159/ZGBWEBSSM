@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dmatek.zgb.db.setting.dao.ReliablePerson_NodeDao">
+	<cache></cache>
+	<sql id="addBatchSql">
+		<foreach collection="personNodes" item="personNode" open="" close="" separator=",">
+			(#{personNode.personNo},#{personNode.nodeId},NOW(),#{personNode.createName})
+		</foreach>
+	</sql>
+	<!-- 添加可靠近的卡片和基站 -->
+	<insert id="addReliablePerson_Node" parameterType="com.dmatek.zgb.db.pojo.setting.ReliablePerson_Node">
+		INSERT INTO RELIABLEPERSON_NODES(PERSON_NO, NODE_ID, CREATETIME, CREATENAME) 
+		VALUES <include refid="addBatchSql"></include>
+	</insert>
+	<!-- 删除卡片 -->
+	<delete id="deleteReliablePerson_Node">
+		DELETE FROM RELIABLEPERSON_NODES WHERE PERSON_NO=#{personNo}
+	</delete>
+	<!-- 刪除指定公司的所有人員訊息 -->
+	<delete id="deleteReliableCompany_Node">
+		DELETE FROM RELIABLEPERSON_NODES WHERE 
+		PERSON_NO IN (SELECT PERSON_NO FROM PERSONS WHERE COMPANY_NO=#{companyNo})
+	</delete>
+	<!-- 查询所有的卡片可靠近的参考点 -->
+	<select id="selectAll" resultType="com.dmatek.zgb.db.pojo.setting.ReliablePerson_Node">
+		SELECT 
+		PERSON_NO personNo,
+		NODE_ID nodeId,
+		CREATETIME createTime,
+		CREATEName createName, 
+		UPDATETIME updateTime,
+		UPDATENAME updateName
+		FROM RELIABLEPERSON_NODES 
+		ORDER BY TAG_ID
+	</select>
+	<!-- 查询分页可靠近的参考点 -->
+	<select id="selectPage" resultType="com.dmatek.zgb.db.pojo.setting.ReliablePerson_Node">
+		SELECT 
+		PERSON_NO personNo,
+		NODE_ID nodeId,
+		CREATETIME createTime,
+		CREATENAME createName, 
+		UPDATETIME updateTime,
+		UPDATENAME updateName 
+		FROM RELIABLEPERSON_NODES 
+		ORDER BY TAG_ID 
+		LIMIT #{page},#{limit} 
+	</select>
+	<!-- 查询分页可靠近的参考点 -->
+	<select id="selectPageKeyName" resultType="com.dmatek.zgb.db.pojo.setting.ReliablePerson_Node">
+		SELECT PERSON_NO personNo, NODE_ID nodeId,
+		CREATETIME createTime, CREATENAME createName, 
+		UPDATETIME updateTime, UPDATENAME updateName  
+		FROM RELIABLEPERSON_NODES 
+		WHERE 
+		(TAG_ID LIKE CONCAT('%',#{name},'%') || NODE_ID LIKE CONCAT('%',#{name},'%')) 
+		ORDER BY TAG_ID LIMIT #{page},#{limit} 
+	</select>
+	<!-- 根据卡片ID查询分页可靠近的参考点 -->
+	<select id="selectOne" resultType="com.dmatek.zgb.db.pojo.setting.Node">
+		SELECT r.NODE_ID id, n.NODE_NAME name,n.NODE_TYPE typeName,
+		n.REGION_ID regionId,
+		r.CREATETIME createTime, r.CREATENAME createName, 
+		r.UPDATETIME updateTime, r.UPDATENAME updateName  
+		FROM RELIABLEPERSON_NODES r 
+		LEFT JOIN NODEs n ON r.NODE_ID=n.NODE_ID
+		WHERE PERSON_NO=#{personNo}  
+		ORDER BY id
+	</select>
+	<!-- 获取公司靠近的参考点讯息，若这个公司有一个人不靠近参考点都不行 -->
+	<select id="findReliableCompany_Node" resultType="com.dmatek.zgb.db.pojo.setting.Node">
+		SELECT rpn.NODE_ID id, n.NODE_NAME name,
+		n.NODE_TYPE type,n.REGION_ID regionId 
+		FROM RELIABLEPERSON_NODES rpn
+		LEFT JOIN NODES n ON rpn.NODE_ID = n.NODE_ID
+		WHERE rpn.PERSON_NO IN
+		(SELECT PERSON_NO FROM PERSONS WHERE COMPANY_NO=#{companyNo})
+		GROUP BY rpn.NODE_ID HAVING COUNT(*) >= #{psNumber}
+	</select>
+</mapper>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dmatek.zgb.db.permission.dao.AccountDao">
+	<cache-ref namespace="com.dmatek.zgb.db.permission.dao.RoleDao"/>
+	<!-- 添加账户 -->
+	<insert id="addAccount" parameterType="com.dmatek.zgb.db.pojo.permission.Account">
+		INSERT INTO ACCOUNTS(ACCOUNT_ID,USER_NAME,USER_PSW,ROLE_ID,
+		USER_STATUS,USER_REPORT,CREATETIME,CREATENAME)
+		VALUES(#{account.id},#{account.name},#{account.psw},#{account.roleId},#{account.status},
+		#{account.reportTime},NOW(),#{account.createName})
+	</insert>
+	<!-- 批量删除账户 -->
+	<delete id="deleteAccount">
+		DELETE FROM ACCOUNTS WHERE ACCOUNT_ID IN 
+		<include refid="com.dmatek.zgb.db.setting.dao.GroupDao.batchIds"></include>
+	</delete>
+	<!-- 更具名称删除账户讯息 -->
+	<delete id="deleteAccountName" parameterType="java.lang.String">
+		DELETE FROM ACCOUNTS WHERE USER_NAME=#{name}
+	</delete>
+	
+	<!-- 更新账户讯息 -->
+	<update id="updateAccount" parameterType="com.dmatek.zgb.db.pojo.permission.Account">
+		UPDATE ACCOUNTS SET
+		USER_NAME=#{account.name},USER_PSW=#{account.psw},ROLE_ID=#{account.roleId},
+		USER_STATUS=#{account.status},USER_REPORT=#{account.reportTime},
+		UPDATETIME=NOW(),UPDATENAME=#{account.updateName} WHERE USER_NAME=#{account.name}
+	</update>
+	<!-- 根据账户ID查询账户讯息 -->
+	<select id="findOne" resultType="com.dmatek.zgb.db.pojo.permission.Account">
+		SELECT ACCOUNT_ID id,USER_NAME name,USER_PSW psw,ROLE_ID roleId,
+		USER_STATUS status,USER_REPORT reportTime,CREATETIME createTime,
+		CREATENAME createName,UPDATETIME updateTime,UPDATENAME updateName 
+		FROM ACCOUNTS WHERE ACCOUNT_ID=#{0}
+	</select>
+	<select id="findOneFromName" resultType="com.dmatek.zgb.db.pojo.permission.Account">
+		SELECT ACCOUNT_ID id,USER_NAME name,USER_PSW psw,ROLE_ID roleId,
+		USER_STATUS status,USER_REPORT reportTime,CREATETIME createTime,
+		CREATENAME createName,UPDATETIME updateTime,UPDATENAME updateName 
+		FROM ACCOUNTS WHERE USER_NAME=#{name}
+	</select>
+	<!-- 查询所有的账户讯息 -->
+	<select id="findAll" resultType="com.dmatek.zgb.db.pojo.permission.Account">
+		SELECT ACCOUNT_ID id,USER_NAME name,USER_PSW psw,a.ROLE_ID roleId,r.ROLE_NAME roleName,
+		USER_STATUS status,USER_REPORT reportTime,a.CREATETIME createTime,
+		a.CREATENAME createName,a.UPDATETIME updateTime,a.UPDATENAME updateName 
+		FROM ACCOUNTS a LEFT JOIN ROLES r on a.ROLE_ID = r.ROLE_ID
+	</select>
+</mapper>

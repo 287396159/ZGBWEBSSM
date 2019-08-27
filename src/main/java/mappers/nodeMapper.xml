@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dmatek.zgb.db.setting.dao.NodeDao">
+	<cache></cache>
+	<!-- 插入新的参考点 -->
+	<insert id="addNode" parameterType="com.dmatek.zgb.db.pojo.setting.Node">
+		INSERT INTO
+		NODES(NODE_ID,NODE_NAME,NODE_TYPE,NODE_X,NODE_Y,REGION_ID,REGION_WIDTH,
+		REGION_HEIGHT,CREATETIME,CREATENAME)
+		VALUES(#{node.id},#{node.name},#{node.type},#{node.mapX},#{node.mapY},#{node.regionId},
+		${node.width},${node.height},NOW(),#{node.createName})
+	</insert>
+	<!-- 删除参考点 -->
+	<delete id="deleteNode">
+		DELETE FROM NODES WHERE NODE_ID IN
+		<include refid="com.dmatek.zgb.db.setting.dao.GroupDao.batchIds"></include>
+	</delete>
+	<!-- 修改基站讯息 -->
+	<update id="updateNode" parameterType="com.dmatek.zgb.db.pojo.setting.Node">
+		UPDATE NODES SET 
+		NODE_NAME=#{node.name},
+		NODE_TYPE=#{node.type},
+		NODE_X=#{node.mapX},
+		NODE_Y=#{node.mapY},
+		REGION_ID=#{node.regionId},
+		REGION_WIDTH=#{node.width},
+		REGION_HEIGHT=#{node.height},
+		UPDATETIME=NOW(),
+		UPDATENAME=#{node.updateName} 
+		WHERE NODE_ID=#{node.id}
+	</update>
+	<!-- 查询单个基站讯息 -->
+	<select id="findOne" resultType="com.dmatek.zgb.db.pojo.setting.Node">
+		SELECT NODE_ID id,NODE_NAME
+		name,NODE_TYPE type,NODE_X mapX,NODE_Y mapY,
+		REGION_ID
+		regionId,
+		REGION_WIDTH width,
+		REGION_HEIGHT height,
+		CREATETIME createTime,CREATENAME createName,
+		UPDATETIME updateTime,UPDATENAME updateName 
+		FROM NODES WHERE NODE_ID=#{id}
+	</select>
+	<!-- 查询所有的 基站讯息 -->
+	<select id="findAll" resultType="com.dmatek.zgb.db.pojo.setting.Node">
+		SELECT 
+		NODE_ID id,
+		NODE_NAME name,
+		NODE_TYPE type,
+		NODE_X mapX,NODE_Y mapY,
+		REGION_ID regionId,
+		REGION_WIDTH width,
+		REGION_HEIGHT height,
+		CREATETIME createTime,CREATENAME createName,
+		UPDATETIME updateTime,UPDATENAME updateName 
+		FROM NODES ORDER BY NODE_ID
+	</select>
+	<!-- 查询基站分页讯息 -->
+	<select id="findPage" resultType="com.dmatek.zgb.db.pojo.setting.Node">
+		SELECT NODE_ID id,NODE_NAME
+		name,NODE_TYPE type,NODE_X mapX,NODE_Y mapY,
+		REGION_ID regionId,
+		REGION_WIDTH width,
+		REGION_HEIGHT height,
+		CREATETIME createTime,CREATENAME createName,
+		UPDATETIME updateTime,UPDATENAME updateName 
+		FROM NODES ORDER BY NODE_ID LIMIT #{page},#{limit}
+	</select>
+	
+	<select id="findPageFromRegionId" resultType="com.dmatek.zgb.db.pojo.setting.Node">
+		SELECT NODE_ID id,NODE_NAME
+		name,NODE_TYPE type,NODE_X mapX,NODE_Y mapY,
+		REGION_ID regionId,
+		REGION_WIDTH width,
+		REGION_HEIGHT height,
+		CREATETIME createTime,CREATENAME createName,
+		UPDATETIME updateTime,UPDATENAME updateName 
+		FROM NODES WHERE REGION_ID=#{regionId} ORDER BY NODE_ID LIMIT #{page},#{limit}
+	</select>
+	
+	<select id="findPageKeyNameFromRegionId" resultType="com.dmatek.zgb.db.pojo.setting.Node">
+		SELECT NODE_ID id,NODE_NAME
+		name,NODE_TYPE type,NODE_X mapX,NODE_Y mapY,
+		REGION_ID
+		regionId,
+		REGION_WIDTH width,
+		REGION_HEIGHT height,
+		CREATETIME createTime,CREATENAME createName,
+		UPDATETIME updateTime,UPDATENAME updateName 
+		FROM NODES WHERE REGION_ID=#{regionId} 
+		AND 
+		(NODE_ID LIKE CONCAT('%',#{name},'%') OR 
+		 NODE_NAME LIKE CONCAT('%',#{name},'%')
+		 )  
+		ORDER BY NODE_ID LIMIT #{page},#{limit}
+	</select>
+	<!-- 根据区域ID查询所有的基站讯息 -->
+	<select id="findNodesFromRegionId" resultType="com.dmatek.zgb.db.pojo.setting.Node">
+		SELECT NODE_ID id,NODE_NAME
+		name,NODE_TYPE type,NODE_X mapX,NODE_Y mapY,
+		REGION_ID regionId,
+		REGION_WIDTH width,
+		REGION_HEIGHT height,
+		CREATETIME createTime,CREATENAME createName,
+		UPDATETIME updateTime,UPDATENAME updateName 
+		FROM NODES WHERE REGION_ID=#{regionId} ORDER BY NODE_ID
+	</select>
+	
+	<select id="findNodesFromGroupId" resultType="com.dmatek.zgb.db.pojo.setting.Node">
+		SELECT n.NODE_ID id,n.NODE_NAME
+		name,n.NODE_TYPE type,n.NODE_X mapX,n.NODE_Y mapY, n.REGION_ID regionId,
+		n.REGION_WIDTH width, n.REGION_HEIGHT height,
+		n.CREATETIME createTime,n.CREATENAME createName, 
+		n.UPDATETIME updateTime,n.UPDATENAME updateName 
+		FROM NODES n LEFT JOIN REGIONS r ON r.REGION_ID=n.REGION_ID 
+		LEFT JOIN GROUPS g ON r.GROUP_ID=g.GROUP_ID WHERE
+		g.GROUP_ID=#{groupId} ORDER BY id
+	</select>
+	
+	<select id="findRefersFromGroupId" resultType="com.dmatek.zgb.db.pojo.setting.Node">
+		SELECT n.NODE_ID id,n.NODE_NAME
+		name,n.NODE_TYPE type,n.NODE_X mapX,n.NODE_Y mapY,
+		n.REGION_ID regionId,
+		n.REGION_WIDTH width,
+		n.REGION_HEIGHT height,
+		n.CREATETIME createTime,n.CREATENAME createName,
+		n.UPDATETIME updateTime,n.UPDATENAME updateName 
+		FROM NODES n LEFT JOIN REGIONS r ON r.REGION_ID=n.REGION_ID 
+		LEFT JOIN GROUPS g ON r.GROUP_ID=g.GROUP_ID WHERE
+		g.GROUP_ID=#{groupId} AND n.NODE_TYPE IN(0,2) ORDER BY id 
+	</select>
+</mapper>

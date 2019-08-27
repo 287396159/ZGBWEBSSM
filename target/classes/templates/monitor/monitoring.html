@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>動態監控</title>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/lib/reset.css}" href="../../css/lib/Reset.css"/>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/lib/iconfont.css}" href="../../css/lib/iconfont.css"/>
+	<link rel="stylesheet" type="text/css" th:href="@{/layui/css/layui.css}" href="../../js/lib/layui/css/layui.css"/>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/module/index.css}" href="../../css/index.css"/>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/module/monitor/monitoring.css}" href="../../css/monitoring.css"/>
+	<script th:src="@{/js/lib/jquery-3.1.0.min.js}" src="../../js/lib/jquery-3.1.0.min.js" type="text/javascript" charset="utf-8"></script>
+	<script th:src="@{/js/lib/functions.js}" src="../../js/functions.js" type="text/javascript" charset="utf-8"></script>
+	<script th:src="@{/layui/layui.js}" src="../../js/lib/layui/layui.js" type="text/javascript" charset="utf-8"></script>
+	<script th:src="@{/js/module/monitor/monitor-request.js}" src="../../js/module/monitor/monitor-request.js" type="text/javascript" charset="utf-8"></script>
+	<script th:src="@{/js/module/monitor/monitoring.js}" src="../../js/module/monitor/monitoring.js" type="text/javascript" charset="utf-8"></script>
+	<script th:src="@{/js/module/monitor/timer.js}" src="../../js/module/monitor/timer.js" type="text/javascript" charset="utf-8"></script>
+	<script th:src="@{/js/lib/websocket.js}" src="../../js/lib/websocket.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+<ul class="section">
+	<li>
+		<div class="setMgrLeft">
+			<ul class="classify areaSelect" id="areaSelect">
+				<li th:attr="monitorRegionShowNumber=${isShowMonitorRegionNumber}">區域選擇</li>
+				<li>TAG管理</li>
+			</ul>
+			<div class="areaClassifyDiv" id="areaClassifyDiv">
+				<ul class="classifyDetail areaClassify" id="areaClassify"></ul>
+			</div>
+			<div class="TAGMgr" id="TAGMgr">
+				<div class="checkboxs">
+					<input type="checkbox" id="isAllChecked" />
+					<label for="isAllChecked">全選</label>
+					<input type="checkbox" id="inverse" />
+					<label for="inverse">反選</label>
+					<!--篩選功能-->
+					<button class="layui-btn layui-btn-xs" id="filtrate">
+						<i class="layui-icon">&#xe653;</i>篩選
+					</button>
+					<div class="layui-form" id="filtrateForm" lay-filter="">
+						<h3>TAG類型</h3>
+						<div class="filtrateDiv">
+							<input type="checkbox" name="rebar" title="鋼筋" lay-skin="primary" checked> 
+							<input type="checkbox" name="handyman" title="水電" lay-skin="primary" checked> 
+						</div>
+						<h3>報警類型</h3>
+						<div class="filtrateDiv">
+							<input type="checkbox" name="personnelhelp" title="人員求救" lay-skin="primary"> 
+							<input type="checkbox" name="areacontrol" title="區域管制" lay-skin="primary"> 
+							<input type="checkbox" name="notmove" title="人員未移動" lay-skin="primary"> 
+						</div>
+						<div class="filtrateDiv">
+							<input type="checkbox" name="lowpower" title="電量不足" lay-skin="primary"> 
+							<input type="checkbox" name="abnormaltag" title="卡片異常" lay-skin="primary"> 
+						</div>
+						<button class="layui-btn layui-btn-sm" lay-submit lay-filter="confirm">確定</button>
+					</div>
+				</div>
+				<div id="checkboxTreeDiv" class="checkboxTreeDiv" >
+					<ul class="checkboxTree noselect" id="checkboxTree">
+					</ul>
+					<div id="scroll" class="scroll" onclick="ScroNow(event)">
+						<div id="bar" class="bar" onmousedown="ScroMove()"></div>
+					</div>
+				</div>
+				<p class="hr"></p>
+				<h2>人員資訊</h2>
+				<ul class="alarmInfor" id="regionNumberMessage">
+					<li>
+						<span>工地總人數：</span>
+						<p>0</p>
+						<span>人</span>
+					</li>
+					<li>
+						<span>區域人數：</span>
+						<p>0</p>
+						<span>人</span>
+					</li>
+				</ul>
+				<h2>警報資訊</h2>
+				<ul class="alarmInfor" id="warnNumberMessage">
+					<li>
+						<span>人員求救</span>
+						<p>0</p>
+						<span>人</span>
+					</li>
+					<li>
+						<span>區域管制</span>
+						<p>0</p>
+						<span>人</span>
+					</li>
+					<li>
+						<span>電量不足</span>
+						<p>0</p>
+						<span>人</span>
+					</li>
+					<li>
+						<span>卡片異常</span>
+						<p>0</p>
+						<span>人</span>
+					</li>
+					<li>
+						<span>未移動警報</span>
+						<p>0</p>
+						<span>人</span>
+					</li>
+					<li>
+						<span>參考點異常</span>
+						<p>0</p>
+						<span>人</span>
+					</li>
+					<li>
+						<span>數據節點異常</span>
+						<p>0</p>
+						<span>人</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="setMgrRight">
+			<p class="setMgrRightTop place">
+				【 位置 】：
+				<span id="place">1組  / A廠區壹樓</span>
+				<span class="search">
+					<input type="text" class="" placeholder="輸入人員ID、名稱、編號..."/>
+					<button class="layui-btn layui-btn-sm">
+						<i class="layui-icon">&#xe615;</i>搜索
+					</button>
+				</span>
+			</p>
+			<ul class="classifyContent" id="monitorContent" th:attr="baseVisible=${isBsVisible}">
+				<li>
+					<div class="layui-tab layui-tab-brief" lay-filter="monitor">
+					  	<ul class="layui-tab-title">
+						    <li class="layui-this">地圖模式</li>
+						    <li>列表模式</li>
+					  	</ul>
+					  	<div class="layui-tab-content">
+					  		<div class="layui-tab-item layui-show">
+					  			<div class="map noselect" id="monitorMapDiv">
+									<div id="monitorMap">
+										<img src="img/timg.bmp"/>
+									</div>
+								</div>
+					  		</div>
+    						<div class="layui-tab-item">
+    							<table id="monitor" class='layui-table' lay-size="sm">
+    								<thead>
+    									<tr>
+											<th>TAG ID</th>
+											<th>名        稱</th>
+											<th>公       司</th>
+											<th>工       種</th>
+											<th>参 考 点</th>
+											<th>信號強度</th>
+											<th>休眠時間</th>
+											<th>電       量</th>
+											<th>未移動時間</th>
+											<th>上報時間</th>
+										</tr>
+    								</thead>	
+    								<tbody>
+    								</tbody>
+								</table>
+    						</div>
+					  	</div>
+					</div> 
+				</li>
+			</ul>
+			<div id="showReferTags">
+				<table class="layui-table" lay-size="sm">
+					<thead>
+						<tr><th>TAG ID</th>
+							<th>名        稱</th>
+							<th>公       司</th>
+							<th>工       種</th>
+							<th>信號強度</th>
+							<th>休眠時間</th>
+							<th>電       量</th>
+							<th>未移動時間</th>
+							<th>上報時間</th>
+						</tr>
+					</thead>
+					<tbody>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</li>
+</ul>
+</body>
+<script type="text/javascript">
+	$(window).ready(function(){
+		$('#monitorContent .layui-tab-content').height($(window).height()-102);
+		$('#areaClassifyDiv').height($(window).height()-40);
+	})
+	$(window).resize(function(){
+		$('#monitorContent .layui-tab-content').height($(window).height()-102);
+		$('#areaClassifyDiv').height($(window).height()-40);
+	})
+</script>
+</html>
